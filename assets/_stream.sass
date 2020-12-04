@@ -1,0 +1,173 @@
+.stream
+  margin-bottom: 40px
+  &-wrapper
+    display: grid
+    grid-template-columns: 70% 28%
+    grid-gap: 20px
+  &-video
+    background: #FFFFFF
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+    border-radius: 3px
+    margin-bottom: 20px
+    padding: 15px 20px
+    &__top
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 15px
+      &--user
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-basis: 155px
+        img
+          width: 45px
+          height: 45px
+          border-radius: 100%
+          object-fit: cover
+        &--info
+          p
+            &:first-child
+              font-size: 14px
+              font-weight: bold
+            &:last-child
+              font-size: 12px
+              color: $color-text-grey
+      &--stats
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-basis: 100px
+    &__content
+      position: relative
+      height: 420px
+      background-size: cover
+      display: flex
+      align-items: center
+      justify-content: center
+      &--play
+        position: absolute
+
+        left: 50%
+        transform: translateX(-50%)
+        margin: auto
+        cursor: pointer
+        z-index: 10
+
+
+
+  &-best-donaters
+    background: #FFFFFF
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+    border-radius: 3px
+    padding: 15px 20px
+    h3
+      font-weight: bold
+      font-size: 24px
+      margin-bottom: 15px
+    &__top
+    &__top3
+      &--item
+        display: grid
+        grid-template-columns: 2fr 3fr 3fr 3fr 3fr
+        align-items: center
+        margin-bottom: 10px
+        &--place
+          font-weight: 700
+          font-family: 'Inter', sans-serif
+          font-size: 10px
+        &--user
+          display: flex
+          align-items: center
+          justify-content: flex-start
+          img
+            width: 35px
+            height: 35px
+            border-radius: 100%
+            object-fit: cover
+            margin-right: 20px
+          p
+            font-weight: bold
+            font-size: 12px
+        &--nickname
+          font-size: 12px
+          color: $color-text-grey
+          text-align: center
+          a
+            color: inherit
+        &--donate
+          display: flex
+          align-items: center
+          justify-content: flex-end
+          img
+            width: 15px
+            height: 15px
+            object-fit: cover
+            margin-right: 5px
+          p
+            font-size: 9px
+            color: #4D94FF
+  &-right
+    background: #FFFFFF
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+    border-radius: 3px
+  &-tabs
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 55px
+    margin-bottom: 20px
+  &-tab
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-basis: 50%
+    height: 100%
+    cursor: pointer
+    transition: all .2s linear
+    svg
+      fill: #CECFDF
+      margin-right: 5px
+      transition: all .2s linear
+    p
+      color: $color-text-grey
+      font-size: 14px
+      transition: all .2s linear
+    &:hover
+      background: #F8F8FB
+      border-radius: 2px
+      svg
+        fill: $color-text-d-blue
+      p
+        color: $color-text-d-blue
+    &.streamTabActive
+      background: #F8F8FB
+      border-radius: 2px
+      svg
+        fill: $color-text-d-blue
+      p
+        color: $color-text-d-blue
+      &::before
+        position: absolute
+        content: ''
+        top: 0
+        width: 100%
+        left: 0
+        background: $color-text-d-blue
+        height: 4px
+        border-radius: 5px
+  &-tab-chat
+    padding: 0 20px
+    height: calc(100% - 90px)
+    overflow: auto
+    & .chat-messages
+      max-height: 605px
+    & .chat-new-message__input
+      width: 100%
+    & .chat-message
+      margin-bottom: 22px
+
+
+
+

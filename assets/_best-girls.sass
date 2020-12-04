@@ -1,0 +1,65 @@
+.best-girls
+  margin-bottom: 70px
+  & .section-title
+    margin-bottom: 75px
+  &-wrapper
+    position: relative
+    background: #FFFFFF
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+    border-radius: 5px
+    padding: 55px 0
+    &::after
+      position: absolute
+      content: url(/best-girl-shadow.png)
+      right: -40%
+      top: -150%
+      z-index: -1
+  &-item
+    position: relative
+    display: grid
+    align-items: center
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr
+    height: 70px
+    cursor: pointer
+    transition: all .2s linear
+    &::before
+      position: absolute
+      content: ''
+      transition: all .2s linear
+      background: #ffffff
+    &:hover
+      background: #F8F8FB
+      border-radius: 5px
+      &::before
+        position: absolute
+        content: ''
+        width: 4px
+        height: 100%
+        top: 0
+        left: 0
+        background: $color-text-d-blue
+        border-radius: 5px
+    &__num
+      padding-left: 50px
+      font-size: 14px
+      font-weight: bold
+    &__img
+      img
+        width: 45px
+        height: 45px
+        object-fit: cover
+        border-radius: 100%
+        border: 3px solid #F8F8FB
+    &__score
+      font-size: 14px
+      font-weight: bold
+      color: $color-text-grey
+    &__name
+      font-size: 14px
+      font-weight: bold
+
+    &__link
+      font-size: 14px
+      font-weight: bold
+      color: $color-text-d-blue
+      padding-right: 70px

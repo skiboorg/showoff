@@ -1,0 +1,123 @@
+.slider-girls
+  margin-bottom: 125px
+  & .section-title
+    margin-bottom: 70px
+  &__wrapper
+    height: 560px
+
+.slide
+  position: relative
+  bottom: -30px
+  transition: bottom .2s linear
+  cursor: pointer
+  border-radius: 10px
+  img
+    border-radius: 10px
+
+  &-badge
+    position: absolute
+    border-radius: 20px
+    height: 45px
+    padding: 0 20px
+    left: 20px
+    right: 20px
+    font-weight: bold
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 0
+
+    &.badge-name
+      bottom: -25px
+      background: #FFFFFF
+      color: #383845
+      transition: all .3s linear
+    &.badge-link
+      bottom: -25px
+      background: #615DFA
+      color: #ffffff
+      transition: all .2s linear
+      a
+        color: inherit
+  &:hover
+    bottom: 0
+    & .badge-name
+      bottom: 40px
+      opacity: 1
+    & .badge-link
+      bottom: -15px
+      opacity: 1
+
+.slider-streams
+  margin-bottom: 125px
+  & .section-title
+    margin-bottom: 70px
+  &__wrapper
+    height: 380px
+
+.slide-stream
+  position: relative
+  box-shadow: 0px 1px 20px #E6E6F0
+  border-radius: 10px
+  height: 280px
+  cursor: pointer
+  bottom: -30px
+  transition: bottom .2s linear
+  &.slide-stream-vip
+    cursor: not-allowed
+    &:before
+      position: absolute
+      content: url(/stream-vip.png)
+      right: 10px
+      top: 10px
+  &__play
+    position: absolute
+    left: 0
+    right: 0
+    top: 70px
+    margin: 0 auto
+
+  &__name
+    position: absolute
+    border-radius: 20px
+    height: 45px
+    padding: 0 20px
+    left: 20px
+    right: 20px
+    font-weight: bold
+    font-size: 24px
+    display: flex
+    align-items: center
+    justify-content: center
+    bottom: 30px
+    background: #FFFFFF
+    color: #383845
+  &__link
+    position: absolute
+    display: flex
+    align-items: center
+    bottom: -25px
+    left: 20px
+    right: 20px
+    img
+      width: 45px
+      height: 45px
+      border-radius: 100%
+      object-fit: cover
+      border: 3px solid #F8F8FB
+      margin-right: 5px
+    p
+      background: #615DFA
+      color: #ffffff
+      height: 45px
+      padding: 0 20px
+      border-radius: 20px
+      width: 100%
+      font-weight: bold
+      display: flex
+      align-items: center
+      justify-content: center
+  &:hover
+    bottom: 0
+
+

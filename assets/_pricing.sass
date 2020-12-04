@@ -1,0 +1,56 @@
+.pricing
+  margin-bottom: 125px
+  & .section-title
+    margin-bottom: 75px
+  &-wrapper
+    display: grid
+    grid-template-columns: repeat(3,1fr)
+    grid-gap: 20px
+  &-item
+    position: relative
+    background: #FFFFFF
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+    border-radius: 5px
+    padding: 40px 85px
+    text-align: center
+    &__decor
+      position: absolute
+      right: 30px
+      top: -30px
+      width: 60px
+      height: 60px
+      border-radius: 100%
+      box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+      display: flex
+      align-items: center
+      justify-content: center
+      &.decor-one
+        background: #ffffff
+      &.decor-two
+        background: $color-text-d-blue
+
+
+    &__name
+      font-weight: bold
+      &.price-one
+        color: #23D2E2
+      &.price-two
+        color: $color-text-d-blue
+      &.price-three
+        color: $color-text-pink
+    &__infos
+      margin-bottom: 55px
+      text-align: center
+      display: inline-block
+    &__info
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      margin-bottom: 10px
+      img
+        margin-right: 10px
+    &__price
+      margin-bottom: 30px
+      font-size: 50px
+      span
+        font-size: 30px

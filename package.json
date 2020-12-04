@@ -1,0 +1,26 @@
+{
+  "name": "showoff",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.12.2",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "nuxt": "^2.14.6",
+    "swiper": "^5.3.6",
+    "vue-awesome-swiper": "^4.1.1",
+    "video.js": "^7.10.2",
+    "videojs-flash": "^2.2.1"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.0.5"
+  }
+}

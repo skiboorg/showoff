@@ -1,0 +1,132 @@
+.user-profile-stats
+  &__bar
+    position: relative
+    width: 100%
+    height: 120px
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 80%
+    margin: 0 auto
+    &--step
+      position: absolute
+      top: 0
+      z-index: 10
+      svg
+        fill: #CECFDF
+      &.progressStepActive
+        svg
+          fill: #23D2E2
+      &.progress-step1
+        left: 25%
+      &.progress-step2
+        left: 50%
+      &.progress-step3
+        left: 75%
+      &.progress-step4
+        left: 98%
+      &--top
+        position: absolute
+        top: 0
+        svg
+          filter: drop-shadow(2px 2px 3px rgba(46, 46, 106, 0.16))
+        &::before
+          position: absolute
+          content: attr(data-num)
+          color: #ffffff
+          font-family: 'Inter', sans-serif
+          z-index: 11
+          left: 50%
+          top: 50%
+          transform: translate(-50%,-78%)
+          font-weight: bold
+          font-size: 14px
+      &--separator
+        position: absolute
+        top: 55px
+        left: 16px
+
+      &--points
+        position: absolute
+        font-size: 10px
+        color: $color-text-grey
+        top: 75px
+        font-weight: bold
+        right: -28px
+        font-family: 'Inter', sans-serif
+      &--bottom
+        position: absolute
+        top: 90px
+        left: -2px
+        svg
+          filter: drop-shadow(2px 2px 3px rgba(46, 46, 106, 0.16))
+        &::before
+          position: absolute
+          content: attr(data-num)
+          color: #ffffff
+          font-family: 'Inter', sans-serif
+          z-index: 11
+          left: 50%
+          top: 50%
+          transform: translate(-50%,-75%)
+          font-weight: bold
+          font-size: 10px
+  &__mainbar
+    position: relative
+    width: 100%
+    height: 10px
+    background: #EEEEF9
+  &__progressbar
+    position: absolute
+    height: 14px
+    left: 0
+    top: -2px
+    background: linear-gradient(270.8deg, #615DFA 0.68%, #23D2E2 99.31%)
+    border-radius: 4px
+    right: 50%
+    padding-right: 20px
+    p
+      font-family: 'Inter', sans-serif
+      font-size: 10px
+      color: #ffffff
+      font-weight: bold
+      display: flex
+      align-items: center
+      justify-content: flex-end
+    &::after
+      position: absolute
+      content: ''
+      width: 20px
+      height: 20px
+      border-radius: 100%
+      border: 3px solid #ffffff
+      right: -10px
+      top: -6px
+      background: $color-text-d-blue
+
+.user-profile-stats-info
+  &__item
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+    p
+      background: #F8F8FB
+      border-radius: 22.5px
+      padding: 0 30px
+      height: 45px
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      &:first-child
+        font-size: 14px
+        flex-grow: 1
+        margin-right: 15px
+      &:last-child
+        font-size: 18px
+        font-weight: bold
+        flex-basis: 150px
+        display: flex
+        justify-content: center

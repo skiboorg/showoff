@@ -1,0 +1,64 @@
+.faq
+  margin-bottom: 125px
+  &-wrapper
+    display: grid
+    grid-template-columns: 26% 70%
+    grid-column-gap: 100px
+  &-items
+    position: relative
+    &::after
+      position: absolute
+      content: url(/shadow.png)
+      bottom: -100%
+      left: -50%
+      z-index: -1
+  &-item
+    background: #FFFFFF
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+    border-radius: 5px
+    margin-bottom: 10px
+    overflow: hidden
+    &:last-child
+      margin-bottom: 0
+
+
+    &.faqItemActive
+      & .faq-item__content
+        max-height: 250px
+        opacity: 1
+      & .faq-item__top
+        p
+          color: #4E4AC8
+        svg
+          transform: rotate(180deg)
+          path
+            fill: $color-text-d-blue
+          circle
+            stroke: $color-text-d-blue
+    &__top
+      padding: 20px 40px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      cursor: pointer
+      p
+        font-size: 24px
+        font-weight: bold
+      svg
+
+        transition: all .2s linear
+        path
+          fill: #CECFDF
+        circle
+          stroke: #CECFDF
+
+    &__content
+      max-height: 0
+      opacity: 1
+      transition: max-height .4s linear
+      &--inner
+        padding: 0 40px 40px 40px
+        overflow: hidden
+      p
+        font-size: 14px
+        color: $color-text-grey

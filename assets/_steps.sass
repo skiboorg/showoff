@@ -1,0 +1,40 @@
+.steps
+  background: url(/tips.png) no-repeat center
+  background-position-y: center
+  height: 1050px
+  & .section-title
+    margin-bottom: 75px
+    max-width: 460px
+    word-break: keep-all
+  &-wrapper
+    padding: 100px 0
+    //display: grid
+    //grid-template-columns: 2fr 1fr
+    //grid-gap: 75px
+    //align-items: center
+  &-item
+    background: #FFFFFF
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+    border-radius: 10px
+    padding: 15px 35px
+    max-width: 620px
+    margin-bottom: 15px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    &:last-child
+      margin-bottom: 0
+    &__num
+      margin-right: 45px
+      color: $color-text-d-blue
+      font-size: 30px
+      line-height: 32px
+    &__group
+      &--top
+        font-weight: bold
+        font-size: 24px
+        margin-bottom: 5px
+      &--bottom
+        color: $color-text-grey
+        font-size: 14px
+        line-height: 18px

@@ -1,0 +1,55 @@
+.user-profile-gallery
+  display: grid
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr))
+  grid-gap: 50px
+  padding-bottom: 20px
+  &__item
+    position: relative
+    background-size: cover !important
+    height: 170px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 10px
+    cursor: pointer
+    &.galleryVIP
+      cursor: not-allowed
+
+    &--number
+      position: absolute
+      right: 10px
+      top: 10px
+      width: 24px
+      height: 24px
+      background: rgba(56, 56, 69, 0.6)
+      color: #ffffff
+      font-size: 12px
+      font-weight: bold
+      font-family: 'Inter', sans-serif
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 100%
+    &--title
+      position: absolute
+      background: #F8F8FB
+      border-radius: 20px
+      left: 10px
+      right: 10px
+      bottom: -20px
+      text-align: center
+      padding: 5px 0
+      min-height: 44px
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      p
+        &:first-child
+          font-weight: bold
+          font-size: 14px
+        &:last-child
+          font-size: 9px
+          color: $color-text-grey
+
+
