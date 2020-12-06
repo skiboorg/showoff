@@ -41,3 +41,34 @@
     position: absolute
     right: 0
     bottom: -100px
+  &-info-block
+
+    padding: 50px
+
+    z-index: 1000
+    transition: all .05s linear
+
+    &__top
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      margin-bottom: 25px
+      &--img
+        width: 150px
+        height: 150px
+        object-fit: cover
+        border-radius: 100%
+        margin-right: 50px
+      &--name
+        p
+          letter-spacing: 0.05em
+          text-transform: uppercase
+          &:first-child
+            font-size: 40px
+          &:last-child
+            font-size: 14px
+            opacity: .8
+    &__content
+      p
+
+        line-height: 150%

@@ -51,8 +51,6 @@
         </div>
       </div>
     </div>
-
-
     <el-dialog class="authModal" :visible.sync="authModal"  >
       <el-tabs  v-model="activeTab" :stretch="true">
         <el-tab-pane label="登录帐号" name="loginTab">
@@ -96,38 +94,10 @@
             </div>
             <p class="btn btn-l-blue text-f-14 mb-15" @click="userRegister">在网站上注册</p>
           </div>
-
         </el-tab-pane>
-
       </el-tabs>
-
-
     </el-dialog>
-    <el-dialog
-      title="LOGIN"
-      :visible.sync="logInDialogVisible"
-      width="30%">
-      <el-input class="mb-30" placeholder="email" v-model="userData.email"></el-input>
-      <el-input placeholder="password" v-model="userData.password"></el-input>
-      <span slot="footer" class="dialog-footer">
 
-    <el-button type="primary" @click="userLogin">LOGIN</el-button>
-  </span>
-    </el-dialog>
-    <el-dialog
-      title="REGISTER"
-      :visible.sync="registerDialogVisible"
-      width="30%">
-      <el-input class="mb-30" placeholder="nickname" v-model="registerData.nickname"></el-input>
-      <el-input class="mb-30" placeholder="email" v-model="registerData.email"></el-input>
-      <el-input class="mb-30" placeholder="email" v-model="registerData.email"></el-input>
-      <el-input placeholder="password1" v-model="registerData.password1"></el-input>
-      <el-input placeholder="password2" v-model="registerData.password2"></el-input>
-      <span slot="footer" class="dialog-footer">
-
-    <el-button type="primary" @click="userRegister">REgister</el-button>
-  </span>
-    </el-dialog>
   </header>
 </template>
 
@@ -186,6 +156,7 @@
         try {
           let response = await this.$auth.loginWith('local', { data: this.userData })
           console.log(response)
+          this.authModal=false
         } catch (error) {
           this.notify('Ошибка','Проверьте введеные данные','error')
         }

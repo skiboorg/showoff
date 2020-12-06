@@ -29,14 +29,14 @@
                   <div class="user-profile-about__girl-stats--item">
                     <img src="/girl_rating_icon.png" alt="">
                     <div class="user-profile-about__girl-stats--item--info">
-                      <p>712</p>
+                      <p>{{girl_rating}}</p>
                       <p>广播评级</p>
                     </div>
                   </div>
                   <div class="user-profile-about__girl-stats--item">
                     <img src="/girl_streams_icon.png" alt="">
                     <div class="user-profile-about__girl-stats--item--info">
-                      <p>712</p>
+                      <p>{{stream_rating}}</p>
                       <p>广播评级</p>
                     </div>
                   </div>
@@ -48,7 +48,7 @@
 
 <script>
   export default {
-    props:['avatar','level','fio','nickname','balance','is_man'],
+    props:['avatar','level','fio','nickname','balance','is_man','girl_rating','stream_rating'],
 
     data() {
       return {

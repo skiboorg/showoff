@@ -75,7 +75,13 @@ body
   &:hover
     color: $color-text-d-blue
     transform: scale(1.1)
-
+.el-textarea__inner
+  &:focus
+    border-color: $color-text-d-blue
+.el-select .el-input.is-focus .el-input__inner
+  border-color: $color-text-d-blue
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected
+  color: $color-text-d-blue
 .authModal
   &-group
     display: flex
@@ -121,3 +127,36 @@ body
   & .el-tabs__nav
     height: 50px
 
+
+.page-fixed
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  position: fixed
+  z-index: 1000
+  right: 20px
+  bottom: 20px
+  &__top-btn
+    background: rgba(255, 255, 255, 0.8)
+    border-radius: 8px
+    padding: 16px
+    display: inline-block
+    cursor: pointer
+  &__info-btn
+    background: rgba(255, 255, 255, 0.8)
+    border-radius: 8px
+    padding: 11px
+    display: inline-flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    height: 386px
+    cursor: pointer
+    margin-bottom: 15px
+    svg
+      margin-bottom: 10px
+    span
+      display: block
+      max-width: 35px
+      margin: 0 auto

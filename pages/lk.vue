@@ -132,7 +132,7 @@
                          :balance="this.$auth.user.balance"
                          :is_man="true"/>
               <div class="user-profile-block">
-                <div @click="tabActive='settingsTab'" class="user-profile-block__edit">
+                <div @click="accordeon1Active=true, tabActive='settingsTab'" class="user-profile-block__edit">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="30" height="30" rx="3" fill="#F8F8FB"/>
                     <path d="M8 20.9999H12.24C12.3716 21.0007 12.5021 20.9755 12.6239 20.9257C12.7457 20.8759 12.8566 20.8026 12.95 20.7099L19.87 13.7799L22.71 10.9999C22.8037 10.907 22.8781 10.7964 22.9289 10.6745C22.9797 10.5527 23.0058 10.422 23.0058 10.2899C23.0058 10.1579 22.9797 10.0272 22.9289 9.90536C22.8781 9.7835 22.8037 9.6729 22.71 9.57994L18.47 5.28994C18.377 5.19621 18.2664 5.12182 18.1446 5.07105C18.0227 5.02028 17.892 4.99414 17.76 4.99414C17.628 4.99414 17.4973 5.02028 17.3754 5.07105C17.2536 5.12182 17.143 5.19621 17.05 5.28994L14.23 8.11994L7.29 15.0499C7.19732 15.1434 7.12399 15.2542 7.07423 15.376C7.02446 15.4979 6.99924 15.6283 7 15.7599V19.9999C7 20.2652 7.10536 20.5195 7.29289 20.707C7.48043 20.8946 7.73478 20.9999 8 20.9999ZM17.76 7.40994L20.59 10.2399L19.17 11.6599L16.34 8.82994L17.76 7.40994ZM9 16.1699L14.93 10.2399L17.76 13.0699L11.83 18.9999H9V16.1699ZM24 22.9999H6C5.73478 22.9999 5.48043 23.1053 5.29289 23.2928C5.10536 23.4804 5 23.7347 5 23.9999C5 24.2652 5.10536 24.5195 5.29289 24.707C5.48043 24.8946 5.73478 24.9999 6 24.9999H24C24.2652 24.9999 24.5196 24.8946 24.7071 24.707C24.8946 24.5195 25 24.2652 25 23.9999C25 23.7347 24.8946 23.4804 24.7071 23.2928C24.5196 23.1053 24.2652 22.9999 24 22.9999Z" fill="#CECFDF"/>
@@ -142,26 +142,39 @@
                 <h3 class="user-profile-block__title">简要信息</h3>
                 <div class="user-profile-block__info-grid">
                   <p>已加入</p>
-                  <p>2020年3月26日</p>
+                  <p>{{ new Date(this.$auth.user.date_joined).getFullYear()}}年
+                    {{ new Date(this.$auth.user.date_joined).getMonth()}}月
+                    {{ new Date(this.$auth.user.date_joined).getDay()}}</p>
                 </div>
                 <div class="user-profile-block__info-grid">
                   <p>市</p>
-                  <p>莫斯科</p>
+                  <p>{{this.$auth.user.city}}</p>
                 </div>
                 <div class="user-profile-block__info-grid">
                   <p>国家</p>
                   <p>俄罗斯联邦</p>
                 </div>
-                <div class="user-profile-block__info-grid">
+                <div v-if="this.$auth.user.birthday" class="user-profile-block__info-grid">
                   <p>年龄</p>
-                  <p>24</p>
+                  <p>{{this.$auth.user.years}}</p>
                 </div>
-                <p class="user-profile-block__text">嗨！ 我的名字叫，但有些人可能将我称为GameHuntress！ 我有一个Twitch频道，可以在其中播放，播放和查看所有最新游戏。我的名字叫，
-                  播放和查看所有最新游戏。我的名字叫播放和查看所有最新游戏。我的名字叫播放和查看所有最新游戏。我的名字叫但有些人可能将我称为</p>
+                <p v-if="this.$auth.user.about" class="user-profile-block__text">{{this.$auth.user.about}}</p>
 
               </div>
+              <div v-if="this.$auth.user.interests || this.$auth.user.interests_additional" class="user-profile-block">
+                 <div @click="accordeon2Active=true, tabActive='settingsTab'" class="user-profile-block__edit">
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="30" height="30" rx="3" fill="#F8F8FB"/>
+                    <path d="M8 20.9999H12.24C12.3716 21.0007 12.5021 20.9755 12.6239 20.9257C12.7457 20.8759 12.8566 20.8026 12.95 20.7099L19.87 13.7799L22.71 10.9999C22.8037 10.907 22.8781 10.7964 22.9289 10.6745C22.9797 10.5527 23.0058 10.422 23.0058 10.2899C23.0058 10.1579 22.9797 10.0272 22.9289 9.90536C22.8781 9.7835 22.8037 9.6729 22.71 9.57994L18.47 5.28994C18.377 5.19621 18.2664 5.12182 18.1446 5.07105C18.0227 5.02028 17.892 4.99414 17.76 4.99414C17.628 4.99414 17.4973 5.02028 17.3754 5.07105C17.2536 5.12182 17.143 5.19621 17.05 5.28994L14.23 8.11994L7.29 15.0499C7.19732 15.1434 7.12399 15.2542 7.07423 15.376C7.02446 15.4979 6.99924 15.6283 7 15.7599V19.9999C7 20.2652 7.10536 20.5195 7.29289 20.707C7.48043 20.8946 7.73478 20.9999 8 20.9999ZM17.76 7.40994L20.59 10.2399L19.17 11.6599L16.34 8.82994L17.76 7.40994ZM9 16.1699L14.93 10.2399L17.76 13.0699L11.83 18.9999H9V16.1699ZM24 22.9999H6C5.73478 22.9999 5.48043 23.1053 5.29289 23.2928C5.10536 23.4804 5 23.7347 5 23.9999C5 24.2652 5.10536 24.5195 5.29289 24.707C5.48043 24.8946 5.73478 24.9999 6 24.9999H24C24.2652 24.9999 24.5196 24.8946 24.7071 24.707C24.8946 24.5195 25 24.2652 25 23.9999C25 23.7347 24.8946 23.4804 24.7071 23.2928C24.5196 23.1053 24.2652 22.9999 24 22.9999Z" fill="#CECFDF"/>
+                  </svg>
+
+                </div>
+                <h3 class="user-profile-block__title">TAB2</h3>
+                <p v-if="this.$auth.user.interests" class="user-profile-block__text">{{this.$auth.user.interests}}</p>
+                <p v-if="this.$auth.user.interests_additional" class="user-profile-block__text">{{this.$auth.user.interests_additional}}</p>
+              </div>
               <div class="user-profile-block">
-                <div @click="tabActive='settingsTab'" class="user-profile-block__edit">
+                <div @click="accordeon2Active=true,tabActive='settingsTab'" class="user-profile-block__edit">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="30" height="30" rx="3" fill="#F8F8FB"/>
                     <path d="M8 20.9999H12.24C12.3716 21.0007 12.5021 20.9755 12.6239 20.9257C12.7457 20.8759 12.8566 20.8026 12.95 20.7099L19.87 13.7799L22.71 10.9999C22.8037 10.907 22.8781 10.7964 22.9289 10.6745C22.9797 10.5527 23.0058 10.422 23.0058 10.2899C23.0058 10.1579 22.9797 10.0272 22.9289 9.90536C22.8781 9.7835 22.8037 9.6729 22.71 9.57994L18.47 5.28994C18.377 5.19621 18.2664 5.12182 18.1446 5.07105C18.0227 5.02028 17.892 4.99414 17.76 4.99414C17.628 4.99414 17.4973 5.02028 17.3754 5.07105C17.2536 5.12182 17.143 5.19621 17.05 5.28994L14.23 8.11994L7.29 15.0499C7.19732 15.1434 7.12399 15.2542 7.07423 15.376C7.02446 15.4979 6.99924 15.6283 7 15.7599V19.9999C7 20.2652 7.10536 20.5195 7.29289 20.707C7.48043 20.8946 7.73478 20.9999 8 20.9999ZM17.76 7.40994L20.59 10.2399L19.17 11.6599L16.34 8.82994L17.76 7.40994ZM9 16.1699L14.93 10.2399L17.76 13.0699L11.83 18.9999H9V16.1699ZM24 22.9999H6C5.73478 22.9999 5.48043 23.1053 5.29289 23.2928C5.10536 23.4804 5 23.7347 5 23.9999C5 24.2652 5.10536 24.5195 5.29289 24.707C5.48043 24.8946 5.73478 24.9999 6 24.9999H24C24.2652 24.9999 24.5196 24.8946 24.7071 24.707C24.8946 24.5195 25 24.2652 25 23.9999C25 23.7347 24.8946 23.4804 24.7071 23.2928C24.5196 23.1053 24.2652 22.9999 24 22.9999Z" fill="#CECFDF"/>
@@ -170,11 +183,8 @@
                 </div>
                 <h3 class="user-profile-block__title">简要信息</h3>
                 <div class="user-profile-block__tags">
-                  <p class="user-profile-block__tag">宠物</p>
-                  <p class="user-profile-block__tag">旅行与和平</p>
-                  <p class="user-profile-block__tag">烹饪</p>
-                  <p class="user-profile-block__tag">宠物</p>
-                  <p class="user-profile-block__tag">旅行与和平</p>
+                  <p v-if="$auth.user.tags.includes(tag.id)" class="user-profile-block__tag" v-for="tag in tags" :key="tag.id">{{tag.name}}</p>
+
                 </div>
 
               </div>
@@ -216,7 +226,7 @@
                 <p class="user-profile-block__text mb-30">坐下来，自私自利。 在分娩期产卵期相中麻醉。 原始证据 ，位于拉库斯的门，贵族坐着。 恩尼姆，对引信的重视。 在智慧世界中，智慧得到了满足。坐下来，自私自利。 在分娩期产卵期相中麻醉。 原始证据 ，位于拉库斯的门，贵族坐着。 恩尼姆，对引信的重视。 在智慧世界中，智慧得到了满足。坐下来，自私自利。 在分娩期产卵期相中麻醉。 原始证据 ，位于拉库斯的门，贵族坐着。 恩尼姆，对引信的重视。 在智慧世界中，智慧得到了满足。</p>
                 <div class="user-profile-stats">
                   <div class="user-profile-stats__bar">
-                    <div class="user-profile-stats__bar--step progress-step1 progressStepActive">
+                    <div class="user-profile-stats__bar--step progress-step1 " :class="{'progressStepActive': this.$auth.user.level >= 1  }">
                       <div data-num="1" class="user-profile-stats__bar--step--top">
                         <svg width="36" height="46" viewBox="0 0 36 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.692 39.7342L18 42.0645L19.308 39.7342L22.0541 34.8421C29.2313 32.982 34.5 26.3173 34.5 18.4286C34.5 9.11929 27.1523 1.5 18 1.5C8.84775 1.5 1.5 9.11929 1.5 18.4286C1.5 26.3173 6.76866 32.982 13.9459 34.8421L16.692 39.7342Z"  stroke="white" stroke-width="3"/>
@@ -232,7 +242,7 @@
                         </svg>
                       </div>
                     </div>
-                    <div class="user-profile-stats__bar--step progress-step2">
+                    <div class="user-profile-stats__bar--step progress-step2" :class="{'progressStepActive': this.$auth.user.level >= 2}">
                       <div data-num="2" class="user-profile-stats__bar--step--top">
                         <svg width="36" height="46" viewBox="0 0 36 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.692 39.7342L18 42.0645L19.308 39.7342L22.0541 34.8421C29.2313 32.982 34.5 26.3173 34.5 18.4286C34.5 9.11929 27.1523 1.5 18 1.5C8.84775 1.5 1.5 9.11929 1.5 18.4286C1.5 26.3173 6.76866 32.982 13.9459 34.8421L16.692 39.7342Z"  stroke="white" stroke-width="3"/>
@@ -250,7 +260,7 @@
 
 
                     </div>
-                    <div class="user-profile-stats__bar--step progress-step3">
+                    <div class="user-profile-stats__bar--step progress-step3" :class="{'progressStepActive': this.$auth.user.level >= 3}">
                       <div data-num="3" class="user-profile-stats__bar--step--top">
                         <svg width="36" height="46" viewBox="0 0 36 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.692 39.7342L18 42.0645L19.308 39.7342L22.0541 34.8421C29.2313 32.982 34.5 26.3173 34.5 18.4286C34.5 9.11929 27.1523 1.5 18 1.5C8.84775 1.5 1.5 9.11929 1.5 18.4286C1.5 26.3173 6.76866 32.982 13.9459 34.8421L16.692 39.7342Z"  stroke="white" stroke-width="3"/>
@@ -268,7 +278,7 @@
 
 
                     </div>
-                    <div class="user-profile-stats__bar--step progress-step4">
+                    <div class="user-profile-stats__bar--step progress-step4" :class="{'progressStepActive': this.$auth.user.level === 4}">
                       <div data-num="4" class="user-profile-stats__bar--step--top">
                         <svg width="36" height="46" viewBox="0 0 36 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.692 39.7342L18 42.0645L19.308 39.7342L22.0541 34.8421C29.2313 32.982 34.5 26.3173 34.5 18.4286C34.5 9.11929 27.1523 1.5 18 1.5C8.84775 1.5 1.5 9.11929 1.5 18.4286C1.5 26.3173 6.76866 32.982 13.9459 34.8421L16.692 39.7342Z"  stroke="white" stroke-width="3"/>
@@ -287,8 +297,8 @@
 
                     </div>
                     <div class="user-profile-stats__mainbar">
-                      <div class="user-profile-stats__progressbar">
-                        <p>510</p>
+                      <div class="user-profile-stats__progressbar" :style="'width:' + 100 / this.$auth.user.rating + '%'">
+                        <p>{{this.$auth.user.rating}}</p>
                       </div>
                     </div>
                   </div>
@@ -460,9 +470,6 @@
                       编辑封面图片
                     </p>
                   </el-upload>
-
-
-
                 </div>
 
                 <div class="user-profile-about__form">
@@ -482,8 +489,28 @@
                   </div>
                   <div class="faq-item__content">
                     <div class="faq-item__content--inner">
-                      <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！
-                        每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
+                      <el-form ref="form" :model="userData" label-width="120px" label-position="left">
+                        <el-form-item label="city">
+                          <el-input v-model="userData.city"></el-input>
+                        </el-form-item>
+                        <el-form-item label="education">
+                          <el-input v-model="userData.education" placeholder="education"></el-input>
+                        </el-form-item>
+                        <el-form-item label="work_place">
+                          <el-input v-model="userData.work_place" placeholder="work_place"></el-input>
+                        </el-form-item>
+                        <el-form-item label="birthday">
+                          <el-date-picker v-model="userData.birthday" type="date" placeholder="birthday"
+                                          format="yyyy/MM/dd" value-format="yyyy-MM-dd">
+                          </el-date-picker>
+                        </el-form-item>
+                        <el-form-item label="about">
+                           <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.about"></el-input>
+                        </el-form-item>
+
+
+                      </el-form>
+                      <el-button type="primary" @click="updateUser">save</el-button>
                     </div>
 
                   </div>
@@ -498,8 +525,31 @@
                   </div>
                   <div class="faq-item__content">
                     <div class="faq-item__content--inner" >
-                      <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！
-                        每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
+
+                      <el-form ref="form" :model="userData" label-width="120px" label-position="left">
+                        <el-form-item label="interests">
+                          <el-select v-model="userData.tags" multiple placeholder="tags">
+                            <el-option
+                              v-for="item in tags"
+                              :key="item.id"
+                              :label="item.name"
+                              :value="item.id">
+                            </el-option>
+                          </el-select>
+                        </el-form-item>
+
+
+
+                        <el-form-item label="interests">
+                         <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests"></el-input>
+                        </el-form-item>
+                        <el-form-item label="interests_additional">
+                        <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests_additional"></el-input>
+                        </el-form-item>
+
+                      </el-form>
+                      <el-button type="primary" @click="updateUser">save</el-button>
+
                     </div>
 
                   </div>
@@ -514,23 +564,7 @@
                   </div>
                   <div class="faq-item__content">
                     <div class="faq-item__content--inner">
-                      <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！
-                        每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="faq-item" :class="{'faqItemActive':accordeon4Active}">
-                  <div class="faq-item__top" @click="accordeon4Active ? accordeon4Active=false : accordeon4Active=true">
-                    <p>如何使用我们的平台？</p>
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
-                      <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
-                    </svg>
-                  </div>
-                  <div class="faq-item__content">
-                    <div class="faq-item__content--inner">
-                      <el-form ref="form" :model="userData" label-width="120px" label-position="left">
+                          <el-form ref="form" :model="userData" label-width="120px" label-position="left">
                         <el-form-item label="旧密码">
                           <el-input v-model="userData.email"></el-input>
                         </el-form-item>
@@ -543,12 +577,42 @@
                           <el-input v-model="userData.password2" placeholder="repeat pass"></el-input>
                         </el-form-item>
 
+
                       </el-form>
                       <el-button type="primary" @click="updateUser">save</el-button>
                     </div>
 
                   </div>
                 </div>
+<!--                <div class="faq-item" :class="{'faqItemActive':accordeon4Active}">-->
+<!--                  <div class="faq-item__top" @click="accordeon4Active ? accordeon4Active=false : accordeon4Active=true">-->
+<!--                    <p>如何使用我们的平台？</p>-->
+<!--                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                      <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>-->
+<!--                      <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>-->
+<!--                    </svg>-->
+<!--                  </div>-->
+<!--                  <div class="faq-item__content">-->
+<!--                    <div class="faq-item__content&#45;&#45;inner">-->
+<!--                      <el-form ref="form" :model="userData" label-width="120px" label-position="left">-->
+<!--                        <el-form-item label="旧密码">-->
+<!--                          <el-input v-model="userData.email"></el-input>-->
+<!--                        </el-form-item>-->
+
+<!--                        <el-form-item label="新密码">-->
+
+<!--                          <el-input v-model="userData.password1" placeholder="new pass"></el-input>-->
+<!--                        </el-form-item>-->
+<!--                        <el-form-item label="重复新密码">-->
+<!--                          <el-input v-model="userData.password2" placeholder="repeat pass"></el-input>-->
+<!--                        </el-form-item>-->
+
+<!--                      </el-form>-->
+<!--                      <el-button type="primary" @click="updateUser">save</el-button>-->
+<!--                    </div>-->
+
+<!--                  </div>-->
+<!--                </div>-->
               </div>
             </div>
             <div v-if="tabActive==='vipTab'" class="user-profile-tab">
@@ -603,10 +667,29 @@
                   <el-form-item label="Ник">
                     <el-input v-model="userData.nickname"></el-input>
                   </el-form-item>
-                  <el-form-item label="Лет">
-                    <el-input v-model="userData.years"></el-input>
-                  </el-form-item>
-
+                  <el-form-item label="city">
+                          <el-input v-model="userData.city"></el-input>
+                        </el-form-item>
+                        <el-form-item label="education">
+                          <el-input v-model="userData.education" placeholder="education"></el-input>
+                        </el-form-item>
+                        <el-form-item label="work_place">
+                          <el-input v-model="userData.work_place" placeholder="work_place"></el-input>
+                        </el-form-item>
+                        <el-form-item label="birthday">
+                          <el-date-picker v-model="userData.birthday" type="date" placeholder="birthday"
+                                          format="yyyy/MM/dd" value-format="yyyy-MM-dd">
+                          </el-date-picker>
+                        </el-form-item>
+                        <el-form-item label="about">
+                           <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.about"></el-input>
+                        </el-form-item>
+                  <el-form-item label="interests">
+                         <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests"></el-input>
+                        </el-form-item>
+                        <el-form-item label="interests_additional">
+                        <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests_additional"></el-input>
+                        </el-form-item>
                 </el-form>
                 <p class="btn btn-l-blue" @click="updateUser">Сохранить</p>
 
@@ -922,11 +1005,13 @@
         const user_gift = await $axios.get(`/api/v1/gift/get_user_gifts?nickname=${$auth.user.nickname}`)
         const user_sended_gift = await $axios.get(`/api/v1/gift/get_user_sended_gifts?nickname=${$auth.user.nickname}`)
         const user_posts = await $axios.get(`/api/v1/post/get_posts_by_user_nickname?nickname=${$auth.user.nickname}`)
+        const user_tags = await $axios.get(`/api/v1/user/get_user_tags`)
         const user_gifts = user_gift.data
         const sended_gift = user_sended_gift.data
+        const tags = user_tags.data
 
         const posts = user_posts.data
-        return {user_gifts,posts,sended_gift}
+        return {user_gifts,posts,sended_gift,tags}
       }catch (e) {
         const err = 404
         return {err}
@@ -961,10 +1046,19 @@
           avatar:this.$auth.user.avatar,
           bg_image:this.$auth.user.bg_image,
           nickname:this.$auth.user.nickname,
-          //birthday:this.$auth.user.birthday,
+          birthday:this.$auth.user.birthday,
           years:this.$auth.user.years,
           password1:null,
           password2:null,
+          interests:this.$auth.user.interests,
+          interests_additional:this.$auth.user.interests_additional,
+          work_place:this.$auth.user.work_place,
+          education:this.$auth.user.education,
+          city:this.$auth.user.city,
+          about:this.$auth.user.about,
+          tags:this.$auth.user.tags,
+
+
         },
         newMessage:null,
         chats:[],
@@ -1086,8 +1180,9 @@
         }
       },
       async sendBlankChatMessage(nickname){
-        const responce  = await this.$axios.post('/api/v1/chat/new_message',
-          {nickname:nickname,message:'Привет'})
+        await this.$axios.post('/api/v1/chat/new_message',{nickname:nickname,message:'Привет'})
+        this.user_from_url = nickname
+        this.tabActive = 'chatsTab'
       },
       async sendChatMessage(){
         const rex = /[\u{1f300}-\u{1f5ff}\u{1f900}-\u{1f9ff}\u{1f600}-\u{1f64f}\u{1f680}-\u{1f6ff}\u{2600}-\u{26ff}\u{2700}-\u{27bf}\u{1f1e6}-\u{1f1ff}\u{1f191}-\u{1f251}\u{1f004}\u{1f0cf}\u{1f170}-\u{1f171}\u{1f17e}-\u{1f17f}\u{1f18e}\u{3030}\u{2b50}\u{2b55}\u{2934}-\u{2935}\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{3297}\u{3299}\u{303d}\u{00a9}\u{00ae}\u{2122}\u{23f3}\u{24c2}\u{23e9}-\u{23ef}\u{25b6}\u{23f8}-\u{23fa}]/ug;

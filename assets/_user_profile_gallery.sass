@@ -52,4 +52,41 @@
           font-size: 9px
           color: $color-text-grey
 
+.user-profile-images
+  &__top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 30px
+    &--left
+      display: flex
+      align-items: center
+      justify-content: flex-start
 
+      & .user-profile-block__title
+        margin-bottom: 0
+        margin-right: 20px
+      svg
+        margin-right: 20px
+      p
+        font-weight: bold
+        font-size: 14px
+
+    &--right
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex-basis: 80px
+      cursor: pointer
+      p
+        font-weight: bold
+        font-size: 14px
+        color: $color-l-green
+
+  &__wrapper
+    display: grid
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr))
+    grid-gap: 20px
+  &__item
+    img
+      object-fit: cover
