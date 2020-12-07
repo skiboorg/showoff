@@ -2,14 +2,14 @@
   <header class="header" >
     <div class="header-wrapper">
       <div class="header-logo">
-        <nuxt-link to="/">LOGO</nuxt-link>
+        <nuxt-link to="/"><img src="/logo.png" alt=""></nuxt-link>
       </div>
       <div class="header-nav">
         <ul>
           <li><nuxt-link to="/">我们的女孩</nuxt-link></li>
           <li><nuxt-link to="/">社会团体</nuxt-link></li>
           <li><nuxt-link to="/">我们的广播</nuxt-link></li>
-          <li><nuxt-link to="/">广播类别</nuxt-link></li>
+          <li @click="logOut">EXIT</li>
         </ul>
       </div>
       <div v-if="this.$auth.loggedIn" class="header-btn">

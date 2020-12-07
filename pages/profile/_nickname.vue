@@ -129,39 +129,35 @@
               </div>
             </div>
             <div v-show="tabActive==='infoTab'" class="user-profile-tab">
-              <div class="user-profile-block">
+             <div class="user-profile-block">
+
                 <h3 class="user-profile-block__title">简要信息</h3>
                 <div class="user-profile-block__info-grid">
                   <p>已加入</p>
-                  <p>2020年3月26日</p>
+                  <p>{{ new Date(user.date_joined).getFullYear()}}年
+                    {{ new Date(user.date_joined).getMonth()}}月
+                    {{ new Date(user.date_joined).getDay()}}</p>
                 </div>
                 <div class="user-profile-block__info-grid">
                   <p>市</p>
-                  <p>莫斯科</p>
+                  <p>{{user.city}}</p>
                 </div>
                 <div class="user-profile-block__info-grid">
                   <p>国家</p>
                   <p>俄罗斯联邦</p>
                 </div>
-                <div class="user-profile-block__info-grid">
+                <div v-if="user.birthday" class="user-profile-block__info-grid">
                   <p>年龄</p>
-                  <p>24</p>
+                  <p>{{user.years}}</p>
                 </div>
-                <p class="user-profile-block__text">嗨！ 我的名字叫，但有些人可能将我称为GameHuntress！ 我有一个Twitch频道，可以在其中播放，播放和查看所有最新游戏。我的名字叫，
-                  播放和查看所有最新游戏。我的名字叫播放和查看所有最新游戏。我的名字叫播放和查看所有最新游戏。我的名字叫但有些人可能将我称为</p>
+                <p v-if="user.about" class="user-profile-block__text">{{user.about}}</p>
 
               </div>
-              <div class="user-profile-block">
+              <div v-if="user.interests || user.interests_additional" class="user-profile-block">
 
-                <h3 class="user-profile-block__title">简要信息</h3>
-                <div class="user-profile-block__tags">
-                  <p class="user-profile-block__tag">宠物</p>
-                  <p class="user-profile-block__tag">旅行与和平</p>
-                  <p class="user-profile-block__tag">烹饪</p>
-                  <p class="user-profile-block__tag">宠物</p>
-                  <p class="user-profile-block__tag">旅行与和平</p>
-                </div>
-
+                <h3 class="user-profile-block__title">TAB2</h3>
+                <p v-if="user.interests" class="user-profile-block__text">{{user.interests}}</p>
+                <p v-if="user.interests_additional" class="user-profile-block__text">{{user.interests_additional}}</p>
               </div>
             </div>
             <div v-show="tabActive==='galleryTab'" class="user-profile-tab">

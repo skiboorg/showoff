@@ -9,7 +9,7 @@
          </ul>
        </div>
        <div class="footer-bottom">
-         <p>vipjr.com 版权所有 (2008- 2020) 翻印必究</p>
+         <p>QR Company (C) 2020.</p>
        </div>
 
 
