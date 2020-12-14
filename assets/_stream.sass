@@ -1,6 +1,7 @@
 .stream
-  margin-bottom: 40px
   &-wrapper
+    margin-bottom: 40px
+    margin-top: 40px
     display: grid
     grid-template-columns: 70% 28%
     grid-gap: 20px
@@ -19,12 +20,13 @@
         display: flex
         align-items: center
         justify-content: space-between
-        flex-basis: 155px
+        cursor: pointer
         img
           width: 45px
           height: 45px
           border-radius: 100%
           object-fit: cover
+          margin-right: 20px
         &--info
           p
             &:first-child
@@ -168,6 +170,8 @@
     & .chat-message
       margin-bottom: 22px
 
+  &-loading
+    height: 100vh
 
 
 

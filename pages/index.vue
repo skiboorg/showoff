@@ -32,7 +32,7 @@
         </div>
       </a>
     </div>
-    <section class="banner" style="background: url(/banner.png) no-repeat center">
+    <section class="banner" style="background: url(/banner.jpg) no-repeat center">
       <div style="display: none" class="banner-inner">
         <h1 class="section-title text-white text-center">来自俄罗斯的美丽女孩在我们的网站上见面并交流！</h1>
         <div class="banner-checks">
@@ -166,16 +166,11 @@
           <swiper-slide v-for="stream in streams"
            :key="stream.id">
             <StreamCard :name="stream.name"
-                        :avatar="stream.avatar"
-                        :stream_img="stream.stream_img"
-                        :nickname="stream.nickname" :is_vip="stream.is_vip"/>
+                        :avatar="stream.streamer.avatar"
+                        :stream_img="stream.image"
+                        :nickname="stream.streamer.nickname"
+                        :is_vip="stream.is_vip" :url="stream.url"/>
           </swiper-slide>
-
-
-
-
-
-
         </swiper>
         <div class="swiper-pagination" slot="pagination"></div>
       </client-only>
@@ -276,15 +271,14 @@
               </div>
               <div class="faq-item__content">
                 <div class="faq-item__content--inner">
-                  <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！
-                    每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
+                  <p>在该网站上注册，填写您的个​​人资料，并放置头像。 然后，您可以充分利用我们的服务：与女孩见面并聊天，观看广播并参加小组讨论，提供礼物并从女孩那里购买商品！</p>
                 </div>
 
               </div>
             </div>
             <div class="faq-item" :class="{'faqItemActive':accordeon2Active}">
               <div class="faq-item__top" @click="accordeon2Active ? accordeon2Active=false : accordeon2Active=true">
-                <p>如何使用我们的平台？</p>
+                <p>为什么要付费访问？</p>
                 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
                   <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
@@ -292,15 +286,14 @@
               </div>
               <div class="faq-item__content">
                 <div class="faq-item__content--inner">
-                  <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！
-                    每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
+                  <p>与来自俄罗斯的女孩交流的经验是一个非常有趣的话题。 我们仅对真正感兴趣的交流对象提供对该网站的访问权限，因为否则，这些女孩将无法应付想要使用我们服务的大量人流！</p>
                 </div>
 
               </div>
             </div>
             <div class="faq-item" :class="{'faqItemActive':accordeon3Active}">
               <div class="faq-item__top" @click="accordeon3Active ? accordeon3Active=false : accordeon3Active=true">
-                <p>如何使用我们的平台？</p>
+                <p>什么是水晶，我该如何使用它们？</p>
                 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
                   <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
@@ -308,15 +301,16 @@
               </div>
               <div class="faq-item__content">
                 <div class="faq-item__content--inner">
-                  <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！
-                    每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
+                  <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！<br><br>
+
+每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
                 </div>
 
               </div>
             </div>
             <div class="faq-item" :class="{'faqItemActive':accordeon4Active}">
               <div class="faq-item__top" @click="accordeon4Active ? accordeon4Active=false : accordeon4Active=true">
-                <p>如何使用我们的平台？</p>
+                <p>我对您的平台有任何疑问或建议！ 我该如何联系您？</p>
                 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
                   <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
@@ -324,8 +318,7 @@
               </div>
               <div class="faq-item__content">
                 <div class="faq-item__content--inner">
-                  <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！
-                    每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
+                  <p>从网站的标题或网站的页脚转到“联系人”部分，并向您写下您的问题，对我们工作的反馈或对我们平台开发的希望！</p>
                 </div>
 
               </div>
@@ -398,11 +391,8 @@
         </div>
       </div>
     </el-dialog>
-
   </div>
-
 </template>
-
 <script>
   import GirlCard from '@/components/GirlCard'
   import StreamCard from '@/components/StreamCard'
@@ -415,19 +405,19 @@
       console.log(params)
       try{
         const get_streamers = await $axios.get(`/api/v1/user/get_streamers?at_home=true`)
+        const get_streams = await $axios.get(`/api/v1/stream/get_streams_for_home_page`)
         const streamers = get_streamers.data
-        return {streamers}
+        const streams = get_streams.data
+        return {streamers,streams}
       }catch (e) {
         const err = 404
         return {err}
-
       }
-
     },
     data(){
       return {
         aboutModal:false,
-        accordeon1Active:false,
+        accordeon1Active:true,
         accordeon2Active:false,
         accordeon3Active:false,
         accordeon4Active:false,
@@ -440,73 +430,7 @@
             dynamicBullets: true
           }
         },
-        streams:[
-          {
-          id:1,
-          name:'name1',
-          avatar:'http://185.51.246.40:8000/media/gifts/Frame2.png',
-          stream_img:'https://cdn.discordapp.com/attachments/525021707027873822/785534484107755570/4.png',
-          nickname:'nick1',
-          is_vip:true
-        },
-        {
-          id:2,
-          name:'name22',
-          avatar:'http://185.51.246.40:8000/media/gifts/Frame2.png',
-          stream_img:'https://cdn.discordapp.com/attachments/525021707027873822/785534485839478845/66.png',
-          nickname:'nick23',
-          is_vip:false
-        },
-          {
-          id:3,
-          name:'name2',
-          avatar:'http://185.51.246.40:8000/media/gifts/Frame2.png',
-          stream_img:'https://cdn.discordapp.com/attachments/525021707027873822/785534487030923274/71.png',
-          nickname:'nick233',
-          is_vip:true
-        },
-           {
-          id:4,
-          name:'name2',
-          avatar:'http://185.51.246.40:8000/media/gifts/Frame2.png',
-          stream_img:'https://cdn.discordapp.com/attachments/525021707027873822/785534587518451772/51.png',
-          nickname:'nick22',
-          is_vip:true
-        },
-          {
-          id:5,
-          name:'name1',
-          avatar:'http://185.51.246.40:8000/media/gifts/Frame2.png',
-          stream_img:'https://cdn.discordapp.com/attachments/525021707027873822/785534484107755570/4.png',
-          nickname:'nick1',
-          is_vip:true
-        },
-        {
-          id:6,
-          name:'name22',
-          avatar:'http://185.51.246.40:8000/media/gifts/Frame2.png',
-          stream_img:'https://cdn.discordapp.com/attachments/525021707027873822/785534485839478845/66.png',
-          nickname:'nick23',
-          is_vip:false
-        },
-          {
-          id:7,
-          name:'name2',
-          avatar:'http://185.51.246.40:8000/media/gifts/Frame2.png',
-          stream_img:'https://cdn.discordapp.com/attachments/525021707027873822/785534487030923274/71.png',
-          nickname:'nick233',
-          is_vip:true
-        },
-           {
-          id:8,
-          name:'name2',
-          avatar:'http://185.51.246.40:8000/media/gifts/Frame2.png',
-          stream_img:'https://cdn.discordapp.com/attachments/525021707027873822/785534587518451772/51.png',
-          nickname:'nick22',
-          is_vip:true
-        },
 
-        ]
 
       }
     },

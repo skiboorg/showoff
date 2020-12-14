@@ -2,14 +2,19 @@
   <header class="header" >
     <div class="header-wrapper">
       <div class="header-logo">
-        <nuxt-link to="/"><img src="/logo.png" alt=""></nuxt-link>
+        <nuxt-link to="/">
+          <img src="/logo.png" alt="">
+        </nuxt-link>
       </div>
       <div class="header-nav">
         <ul>
           <li><nuxt-link to="/">我们的女孩</nuxt-link></li>
-          <li><nuxt-link to="/">社会团体</nuxt-link></li>
-          <li><nuxt-link to="/">我们的广播</nuxt-link></li>
-          <li @click="logOut">EXIT</li>
+          <li><nuxt-link to="/lk">社会团体</nuxt-link></li>
+          <li><nuxt-link to="/stream">我们的广播</nuxt-link></li>
+          <li><nuxt-link to="/1">我们的女孩</nuxt-link></li>
+          <li><nuxt-link to="/2">社会团体</nuxt-link></li>
+          <li><nuxt-link to="/faq">我们的广播</nuxt-link></li>
+
         </ul>
       </div>
       <div v-if="this.$auth.loggedIn" class="header-btn">
@@ -23,22 +28,33 @@
           <div class="header-btn__notify--img">
             <div class="header-btn__notify--img--num"><p>2</p></div>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M13.7295 21C13.5537 21.3031 13.3014 21.5547 12.9978 21.7295C12.6941 21.9044 12.3499 21.9965 11.9995 21.9965C11.6492 21.9965 11.3049 21.9044 11.0013 21.7295C10.6977 21.5547 10.4453 21.3031 10.2695 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13.7295 21C13.5537 21.3031 13.3014 21.5547 12.9978 21.7295C12.6941 21.9044 12.3499 21.9965 11.9995 21.9965C11.6492 21.9965 11.3049 21.9044 11.0013 21.7295C10.6977 21.5547 10.4453 21.3031 10.2695 21" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
+
 
           </div>
         </div>
-        <div @click="$router.push('/lk')" class="header-btn__user">
+        <div   class="header-btn__user">
           <img :src="this.$auth.user.avatar" alt="">
-          <div class="header-btn__user--name">
+          <div @click="$router.push('/lk')" class="header-btn__user--name">
             <p>{{this.$auth.user.fio.length > 5 ? this.$auth.user.fio.slice(0,5) + '...' : this.$auth.user.fio }}</p>
             <p>@{{this.$auth.user.nickname}}</p>
           </div>
           <div class="header-btn__user--arrow">
             <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6L0.535898 6.52533e-07L7.4641 4.68497e-08L4 6Z" fill="white"/>
+              <path d="M4 6L0.535898 6.52533e-07L7.4641 4.68497e-08L4 6Z" fill="#B4B4B4"/>
             </svg>
+          </div>
+          <div @click="logOut"   class="header-btn__user--dropdown" :class="{'dropdownActive':hovered}">
+            <div class="header-btn__user--dropdown__inner">
+                     <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.92 6.62C15.8724 6.49725 15.801 6.3851 15.71 6.29L12.71 3.29C12.5217 3.1017 12.2663 2.99591 12 2.99591C11.7337 2.99591 11.4783 3.1017 11.29 3.29C11.1017 3.4783 10.9959 3.7337 10.9959 4C10.9959 4.2663 11.1017 4.5217 11.29 4.71L12.59 6H3C2.73478 6 2.48043 5.89464 2.29289 5.70711C2.10536 5.51957 2 5.26522 2 5V1C2 0.734784 1.89464 0.48043 1.70711 0.292893C1.51957 0.105357 1.26522 0 1 0C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1V5C0 5.79565 0.316071 6.55871 0.87868 7.12132C1.44129 7.68393 2.20435 8 3 8H12.59L11.29 9.29C11.1963 9.38296 11.1219 9.49356 11.0711 9.61542C11.0203 9.73728 10.9942 9.86799 10.9942 10C10.9942 10.132 11.0203 10.2627 11.0711 10.3846C11.1219 10.5064 11.1963 10.617 11.29 10.71C11.383 10.8037 11.4936 10.8781 11.6154 10.9289C11.7373 10.9797 11.868 11.0058 12 11.0058C12.132 11.0058 12.2627 10.9797 12.3846 10.9289C12.5064 10.8781 12.617 10.8037 12.71 10.71L15.71 7.71C15.801 7.6149 15.8724 7.50275 15.92 7.38C16.02 7.13654 16.02 6.86346 15.92 6.62Z" fill="#383845"/>
+</svg>
+            <p>登出帐户</p>
+
+            </div>
+
           </div>
         </div>
       </div>
@@ -105,6 +121,7 @@
   export default {
     data() {
       return {
+        hovered:false,
         authModal:false,
         activeTab:'loginTab',
         logInDialogVisible:false,
@@ -130,8 +147,10 @@
 
     },
     mounted() {
-      console.log('this.$auth.user',this.$auth.user)
-      if(this.$auth.user){
+      this.$auth.user ? this.ws_connect() : null
+    },
+    methods: {
+      ws_connect(){
         this.socket = new WebSocket(process.env.ws_url+'/ws/user/online/')
         this.socket.onopen = () => {
           console.log('ws connected')
@@ -141,9 +160,7 @@
           let data = JSON.parse(res.data)
           console.log('socket.onmessage', data)
         }
-      }
-    },
-    methods: {
+      },
       notify(title,message,type){
         this.$notify({
           title: title,
@@ -157,6 +174,7 @@
           let response = await this.$auth.loginWith('local', { data: this.userData })
           console.log(response)
           this.authModal=false
+          this.ws_connect()
         } catch (error) {
           this.notify('Ошибка','Проверьте введеные данные','error')
         }

@@ -1,12 +1,12 @@
 $color-text: #383845
 $color-text-grey: #AEADC6
-$color-text-d-blue: #615DFA
-$color-text-blue: #4E4AC8
+$color-text-d-blue: #F64953
+$color-text-blue: #F64953
 $color-text-pink: #EC75F6
 $color-scrollbar: #CECFDF
-$color-l-green: #23D2E2
+$color-l-green: #C1343D
 $footer-bg: #e2e2e2
-$bg-gradient-l-blue: linear-gradient(180deg, #23D2E2 0%, #23D2E2 100%)
+$bg-gradient-l-blue: linear-gradient(180deg, #C1343D 0%, #C1343D 100%)
 
 body
   font-family: 'Msyh',sans-serif
@@ -20,9 +20,11 @@ body
   position: relative
 
 .section-title
-  font-size: 60px
+  font-size: 48px
   font-weight: bold
-  line-height: 78px
+  line-height: 66px
+  a
+    color: inherit
 
 .mb-10
   margin-bottom: 10px
@@ -46,17 +48,19 @@ body
   border-radius: 27.5px
   color: #ffffff
   font-weight: bold
-  font-size: 22px
+  font-size: 14px
   cursor: pointer
   display: flex
   align-items: center
   justify-content: center
-  height: 55px
-  width: 225px
+  height: 40px
+  width: 180px
   margin: 0 auto
   &.btn-l-blue
     background: $bg-gradient-l-blue
-
+  &.btnDisabled
+    pointer-events: none
+    opacity: .7
 
 
 .el-input
@@ -135,30 +139,32 @@ body
   justify-content: center
   position: fixed
   z-index: 1000
-  right: 20px
-  bottom: 20px
+  right: 15px
+  bottom: 15px
   &__top-btn
     background: rgba(255, 255, 255, 0.8)
     border-radius: 8px
-    padding: 16px
+    padding: 11px
     display: inline-block
     cursor: pointer
   &__info-btn
     background: rgba(255, 255, 255, 0.8)
     border-radius: 8px
-    padding: 11px
+    padding: 5px
     display: inline-flex
     flex-direction: column
     align-items: center
     justify-content: space-between
-    height: 386px
+    height: 300px
     cursor: pointer
     margin-bottom: 15px
-    svg
-      margin-bottom: 10px
+    //svg
+    //  margin-bottom: 5px
     span
+      text-align: center
       display: block
       max-width: 35px
+      font-size: 14px
       margin: 0 auto
 
 .page-top

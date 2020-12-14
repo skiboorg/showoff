@@ -1,6 +1,12 @@
 .header
-  background: $color-text-d-blue
-  padding: 35px 0
+  background: #FFFFFF
+  height: fit-content
+
+
+
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10)
+
+  padding: 7px 0
   &-wrapper
     display: flex
     align-items: center
@@ -19,9 +25,22 @@
       align-items: center
       justify-content: space-between
       li
+        color: #F64953
         a
-          color: #ffffff
+          position: relative
+          display: inline-block
+          color: #F64953
           font-size: 14px
+          &.nuxt-link-exact-active
+            &::after
+              position: absolute
+              content: ''
+              right: 0
+              height: 2px
+              background-color: $color-text-d-blue
+              left: 0
+              bottom: -18px
+
   &-btn
     flex-grow: 5
     display: flex
@@ -47,7 +66,7 @@
       justify-content: space-evenly
       flex-basis: 100px
       &--img
-        background: $color-text-blue
+        background: #F9F9F9
         width: 45px
         height: 45px
         border-radius: 100%
@@ -61,7 +80,7 @@
       p
         font-family: inherit
         font-weight: bold
-        color: #ffffff
+        //color: #ffffff
         font-size: 14px
     &__notify
       flex-basis: 90px
@@ -71,7 +90,7 @@
 
       &--img
         position: relative
-        background: $color-text-blue
+        background: #F9F9F9
         width: 45px
         height: 45px
         border-radius: 100%
@@ -80,7 +99,7 @@
         justify-content: center
         &--num
           position: absolute
-          background: #FC5050
+          background: #832A2A
           width: 12px
           height: 12px
           border-radius: 100%
@@ -99,9 +118,8 @@
       display: flex
       align-items: center
       justify-content: center
-
       flex-basis: 170px
-      background: $color-text-blue
+      background: #F9F9F9
       border-radius: 22px
       height: 45px
       cursor: pointer
@@ -115,7 +133,7 @@
         top: 0
       &--name
         p
-          color: #ffffff
+
           &:first-child
             font-size: 14px
             font-weight: bold
@@ -125,4 +143,31 @@
         position: absolute
         right: 20px
         top: 9px
+      &:hover > div
+        bottom: -60px
+        opacity: 1
+        pointer-events: all
+      &--dropdown
+        position: absolute
+        left: 0
+        right: 0
+        bottom: -30px
+        padding-top: 60px
+        transition: all .2s linear
+        opacity: 0
+        pointer-events: none
+        &__inner
+          display: flex
+          align-items: center
+          justify-content: space-evenly
+          height: 45px
+          background: #FFFFFF
+          box-shadow: 5px 5px 15px rgba(46, 46, 106, 0.16)
+          border-radius: 22.5px
+        &.dropdownActive
+          bottom: -60px
+          opacity: 1
+          pointer-events: all
+
+
 

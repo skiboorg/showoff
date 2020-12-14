@@ -7,16 +7,17 @@
     &__img
       text-align: center
       margin-bottom: 15px
+      cursor: pointer
       img
         width: 150px
         height: 150px
         border-radius: 100%
         object-fit: cover
-
     &__info
       text-align: center
       &--name
         font-weight: bold
+        cursor: pointer
       &--link
         color: $color-text-grey
       &--yo
@@ -37,9 +38,9 @@
       transition: all .2s linear
       svg
         transition: all .2s linear
-        fill: #23D2E2
+        fill: $color-l-green
       &:hover
-        background: #23D2E2
+        background: $color-l-green
         svg
           fill: #ffffff
 

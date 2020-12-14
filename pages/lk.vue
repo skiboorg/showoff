@@ -38,7 +38,7 @@
                   <path d="M7 16C7.39782 16 7.77936 15.842 8.06066 15.5607C8.34196 15.2794 8.5 14.8978 8.5 14.5C8.50488 14.4501 8.50488 14.3999 8.5 14.35L11.29 11.56H11.52H11.75L13.36 13.17C13.36 13.17 13.36 13.22 13.36 13.25C13.36 13.6478 13.518 14.0294 13.7993 14.3107C14.0806 14.592 14.4622 14.75 14.86 14.75C15.2578 14.75 15.6394 14.592 15.9207 14.3107C16.202 14.0294 16.36 13.6478 16.36 13.25V13.17L20 9.5C20.2967 9.5 20.5867 9.41203 20.8334 9.2472C21.08 9.08238 21.2723 8.84811 21.3858 8.57403C21.4993 8.29994 21.5291 7.99834 21.4712 7.70736C21.4133 7.41639 21.2704 7.14912 21.0607 6.93934C20.8509 6.72956 20.5836 6.5867 20.2926 6.52882C20.0017 6.47094 19.7001 6.50065 19.426 6.61418C19.1519 6.72771 18.9176 6.91997 18.7528 7.16664C18.588 7.41332 18.5 7.70333 18.5 8C18.4951 8.04988 18.4951 8.10012 18.5 8.15L14.89 11.76H14.73L13 10C13 9.60218 12.842 9.22064 12.5607 8.93934C12.2794 8.65804 11.8978 8.5 11.5 8.5C11.1022 8.5 10.7206 8.65804 10.4393 8.93934C10.158 9.22064 10 9.60218 10 10L7 13C6.60218 13 6.22064 13.158 5.93934 13.4393C5.65804 13.7206 5.5 14.1022 5.5 14.5C5.5 14.8978 5.65804 15.2794 5.93934 15.5607C6.22064 15.842 6.60218 16 7 16ZM20.5 20H3.5V3C3.5 2.73478 3.39464 2.48043 3.20711 2.29289C3.01957 2.10536 2.76522 2 2.5 2C2.23478 2 1.98043 2.10536 1.79289 2.29289C1.60536 2.48043 1.5 2.73478 1.5 3V21C1.5 21.2652 1.60536 21.5196 1.79289 21.7071C1.98043 21.8946 2.23478 22 2.5 22H20.5C20.7652 22 21.0196 21.8946 21.2071 21.7071C21.3946 21.5196 21.5 21.2652 21.5 21C21.5 20.7348 21.3946 20.4804 21.2071 20.2929C21.0196 20.1054 20.7652 20 20.5 20Z" />
                 </svg>
 
-                <p>我的简历</p>
+                <p>我的评分</p>
               </div>
               <div class="user-profile-menu__item" @click="tabActive='friendsTab'" :class="{'profileMenuActive':tabActive==='friendsTab'}">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21.71 15.5799L17.19 11.0699C17.2846 10.6093 17.3315 10.1401 17.33 9.66988C17.3296 8.38054 17.0042 7.11208 16.3839 5.98177C15.7636 4.85145 14.8683 3.89576 13.7809 3.20303C12.6934 2.51029 11.4489 2.10287 10.1623 2.01842C8.87572 1.93398 7.58862 2.17523 6.41995 2.71988C6.27189 2.78752 6.14258 2.89028 6.04324 3.01924C5.94391 3.1482 5.87756 3.29946 5.84995 3.45988C5.82246 3.61827 5.83355 3.78095 5.88229 3.93414C5.93103 4.08733 6.01599 4.22651 6.12995 4.33988L10.48 8.67988L8.67995 10.4799L4.33995 6.12988C4.22562 6.01769 4.08601 5.9346 3.93287 5.88761C3.77972 5.84062 3.61754 5.83112 3.45995 5.85988C3.30053 5.88648 3.14994 5.95132 3.02106 6.04885C2.89218 6.14638 2.78886 6.27369 2.71995 6.41988C2.17348 7.59239 1.93243 8.88406 2.01924 10.1747C2.10606 11.4654 2.5179 12.7132 3.21647 13.802C3.91503 14.8907 4.87762 15.7851 6.0147 16.4019C7.15177 17.0188 8.42638 17.338 9.71995 17.3299C10.1902 17.3314 10.6593 17.2845 11.12 17.1899L15.63 21.7099C15.7229 21.8036 15.8335 21.878 15.9554 21.9288C16.0772 21.9795 16.2079 22.0057 16.34 22.0057C16.472 22.0057 16.6027 21.9795 16.7245 21.9288C16.8464 21.878 16.957 21.8036 17.05 21.7099C17.1437 21.6169 17.2181 21.5063 17.2688 21.3845C17.3196 21.2626 17.3458 21.1319 17.3458 20.9999C17.3458 20.8679 17.3196 20.7372 17.2688 20.6153C17.2181 20.4934 17.1437 20.3828 17.05 20.2899L12.15 15.3899C12.0275 15.2682 11.8757 15.1804 11.7092 15.1348C11.5427 15.0893 11.3673 15.0876 11.2 15.1299C10.7171 15.2592 10.2198 15.3264 9.71995 15.3299C8.972 15.3365 8.23014 15.195 7.53709 14.9137C6.84405 14.6323 6.21353 14.2166 5.68184 13.6905C5.15016 13.1644 4.72783 12.5383 4.43917 11.8482C4.15052 11.1582 4.00124 10.4179 3.99995 9.66988C3.99866 9.3349 4.02542 9.0004 4.07995 8.66988L7.99995 12.5999C8.09292 12.6936 8.20352 12.768 8.32538 12.8188C8.44724 12.8695 8.57794 12.8957 8.70995 12.8957C8.84197 12.8957 8.97267 12.8695 9.09453 12.8188C9.21639 12.768 9.32699 12.6936 9.41995 12.5999L12.6 9.38988C12.7802 9.20342 12.8809 8.95422 12.8809 8.69488C12.8809 8.43554 12.7802 8.18635 12.6 7.99988L8.70995 4.07988C9.04054 4.0259 9.37499 3.99914 9.70995 3.99988C11.212 4.00253 12.6516 4.60108 13.7128 5.66412C14.774 6.72716 15.37 8.16784 15.37 9.66988C15.3665 10.1697 15.2993 10.6671 15.17 11.1499C15.1276 11.3172 15.1293 11.4926 15.1749 11.6591C15.2204 11.8256 15.3083 11.9774 15.43 12.0999L20.33 16.9999C20.5183 17.1882 20.7737 17.294 21.04 17.294C21.3063 17.294 21.5616 17.1882 21.75 16.9999C21.9383 16.8116 22.044 16.5562 22.044 16.2899C22.044 16.0236 21.9383 15.7682 21.75 15.5799H21.71Z" />
                 </svg>
-                <p>我的设置和费率</p>
+                <p>我的设置</p>
               </div>
               <div v-if="!this.$auth.user.is_streamer" class="user-profile-menu__item menu-item-vip" @click="tabActive='vipTab'" :class="{'profileMenuActive':tabActive==='vipTab'}">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,7 +139,7 @@
                   </svg>
 
                 </div>
-                <h3 class="user-profile-block__title">简要信息</h3>
+                <h3 class="user-profile-block__title">有关我的信息</h3>
                 <div class="user-profile-block__info-grid">
                   <p>已加入</p>
                   <p>{{ new Date(this.$auth.user.date_joined).getFullYear()}}年
@@ -162,36 +162,26 @@
 
               </div>
               <div v-if="this.$auth.user.interests || this.$auth.user.interests_additional" class="user-profile-block">
-                 <div @click="accordeon2Active=true, tabActive='settingsTab'" class="user-profile-block__edit">
+                <div @click="accordeon2Active=true, tabActive='settingsTab'" class="user-profile-block__edit">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="30" height="30" rx="3" fill="#F8F8FB"/>
                     <path d="M8 20.9999H12.24C12.3716 21.0007 12.5021 20.9755 12.6239 20.9257C12.7457 20.8759 12.8566 20.8026 12.95 20.7099L19.87 13.7799L22.71 10.9999C22.8037 10.907 22.8781 10.7964 22.9289 10.6745C22.9797 10.5527 23.0058 10.422 23.0058 10.2899C23.0058 10.1579 22.9797 10.0272 22.9289 9.90536C22.8781 9.7835 22.8037 9.6729 22.71 9.57994L18.47 5.28994C18.377 5.19621 18.2664 5.12182 18.1446 5.07105C18.0227 5.02028 17.892 4.99414 17.76 4.99414C17.628 4.99414 17.4973 5.02028 17.3754 5.07105C17.2536 5.12182 17.143 5.19621 17.05 5.28994L14.23 8.11994L7.29 15.0499C7.19732 15.1434 7.12399 15.2542 7.07423 15.376C7.02446 15.4979 6.99924 15.6283 7 15.7599V19.9999C7 20.2652 7.10536 20.5195 7.29289 20.707C7.48043 20.8946 7.73478 20.9999 8 20.9999ZM17.76 7.40994L20.59 10.2399L19.17 11.6599L16.34 8.82994L17.76 7.40994ZM9 16.1699L14.93 10.2399L17.76 13.0699L11.83 18.9999H9V16.1699ZM24 22.9999H6C5.73478 22.9999 5.48043 23.1053 5.29289 23.2928C5.10536 23.4804 5 23.7347 5 23.9999C5 24.2652 5.10536 24.5195 5.29289 24.707C5.48043 24.8946 5.73478 24.9999 6 24.9999H24C24.2652 24.9999 24.5196 24.8946 24.7071 24.707C24.8946 24.5195 25 24.2652 25 23.9999C25 23.7347 24.8946 23.4804 24.7071 23.2928C24.5196 23.1053 24.2652 22.9999 24 22.9999Z" fill="#CECFDF"/>
                   </svg>
 
                 </div>
-                <h3 class="user-profile-block__title">TAB2</h3>
-                <p v-if="this.$auth.user.interests" class="user-profile-block__text">{{this.$auth.user.interests}}</p>
-                <p v-if="this.$auth.user.interests_additional" class="user-profile-block__text">{{this.$auth.user.interests_additional}}</p>
-              </div>
-              <div class="user-profile-block">
-                <div @click="accordeon2Active=true,tabActive='settingsTab'" class="user-profile-block__edit">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="30" height="30" rx="3" fill="#F8F8FB"/>
-                    <path d="M8 20.9999H12.24C12.3716 21.0007 12.5021 20.9755 12.6239 20.9257C12.7457 20.8759 12.8566 20.8026 12.95 20.7099L19.87 13.7799L22.71 10.9999C22.8037 10.907 22.8781 10.7964 22.9289 10.6745C22.9797 10.5527 23.0058 10.422 23.0058 10.2899C23.0058 10.1579 22.9797 10.0272 22.9289 9.90536C22.8781 9.7835 22.8037 9.6729 22.71 9.57994L18.47 5.28994C18.377 5.19621 18.2664 5.12182 18.1446 5.07105C18.0227 5.02028 17.892 4.99414 17.76 4.99414C17.628 4.99414 17.4973 5.02028 17.3754 5.07105C17.2536 5.12182 17.143 5.19621 17.05 5.28994L14.23 8.11994L7.29 15.0499C7.19732 15.1434 7.12399 15.2542 7.07423 15.376C7.02446 15.4979 6.99924 15.6283 7 15.7599V19.9999C7 20.2652 7.10536 20.5195 7.29289 20.707C7.48043 20.8946 7.73478 20.9999 8 20.9999ZM17.76 7.40994L20.59 10.2399L19.17 11.6599L16.34 8.82994L17.76 7.40994ZM9 16.1699L14.93 10.2399L17.76 13.0699L11.83 18.9999H9V16.1699ZM24 22.9999H6C5.73478 22.9999 5.48043 23.1053 5.29289 23.2928C5.10536 23.4804 5 23.7347 5 23.9999C5 24.2652 5.10536 24.5195 5.29289 24.707C5.48043 24.8946 5.73478 24.9999 6 24.9999H24C24.2652 24.9999 24.5196 24.8946 24.7071 24.707C24.8946 24.5195 25 24.2652 25 23.9999C25 23.7347 24.8946 23.4804 24.7071 23.2928C24.5196 23.1053 24.2652 22.9999 24 22.9999Z" fill="#CECFDF"/>
-                  </svg>
-
-                </div>
-                <h3 class="user-profile-block__title">简要信息</h3>
+                <h3 class="user-profile-block__title">我的兴趣爱好</h3>
+                <p v-if="this.$auth.user.interests" class="user-profile-block__text mb-20">{{this.$auth.user.interests}}</p>
+                <p v-if="this.$auth.user.interests_additional" class="user-profile-block__text mb-20">{{this.$auth.user.interests_additional}}</p>
                 <div class="user-profile-block__tags">
                   <p v-if="$auth.user.tags.includes(tag.id)" class="user-profile-block__tag" v-for="tag in tags" :key="tag.id">{{tag.name}}</p>
 
                 </div>
-
               </div>
-               <div class="user-profile-gifts">
 
-                <h3 class="user-profile-block__title">朋友们</h3>
-                <div class="gift-table-item" v-for="gift in sended_gift" :key="gift.id">
+              <div class="user-profile-block">
+
+                <h3 class="user-profile-block__title">礼物历史</h3>
+                <div v-if="!gift.gift.is_special_gift" class="gift-table-item" v-for="gift in sended_gift" :key="gift.id">
                   <p class="gift-table-item__date">{{gift.created_at}}</p>
                   <div class="gift-table-item__user">
                     <img :src="gift.user.avatar" alt="">
@@ -202,6 +192,29 @@
                   </div>
                   <div class="gift-table-item__img">
                     <img :src="gift.gift.image" alt="">
+                  </div>
+
+                  <div class="gift-table-item__price">
+                    <img src="/diamond.svg" alt="">
+                    <p>{{gift.gift.price}}</p>
+                  </div>
+
+                </div>
+              </div>
+               <div class="user-profile-block">
+
+                <h3 class="user-profile-block__title">女孩的服务</h3>
+                <div v-if="gift.gift.is_special_gift" class="gift-table-item" v-for="gift in sended_gift" :key="gift.id">
+                  <p class="gift-table-item__date">{{gift.created_at}}</p>
+                  <div class="gift-table-item__user">
+                    <img :src="gift.user.avatar" alt="">
+                    <div class="gift-table-item__user--name">
+                      <p>{{gift.user.fio}}</p>
+                      <p>@{{gift.user.nickname}}</p>
+                    </div>
+                  </div>
+                  <div class="gift-table-item__img">
+                   {{gift.message}}
                   </div>
 
                   <div class="gift-table-item__price">
@@ -222,8 +235,8 @@
                          :balance="this.$auth.user.balance"
                          :is_man="true"/>
               <div class="user-profile-block">
-                <h3 class="user-profile-block__title">个怎么运作</h3>
-                <p class="user-profile-block__text mb-30">坐下来，自私自利。 在分娩期产卵期相中麻醉。 原始证据 ，位于拉库斯的门，贵族坐着。 恩尼姆，对引信的重视。 在智慧世界中，智慧得到了满足。坐下来，自私自利。 在分娩期产卵期相中麻醉。 原始证据 ，位于拉库斯的门，贵族坐着。 恩尼姆，对引信的重视。 在智慧世界中，智慧得到了满足。坐下来，自私自利。 在分娩期产卵期相中麻醉。 原始证据 ，位于拉库斯的门，贵族坐着。 恩尼姆，对引信的重视。 在智慧世界中，智慧得到了满足。</p>
+                <h3 class="user-profile-block__title">我的个人资料评分</h3>
+                <p class="user-profile-block__text mb-30">个人资料评分是您在我们平台上的活动的量度！ 您采取的行动越多，您的评级就越高，您从我们这里获得的奖金和礼物就越多！</p>
                 <div class="user-profile-stats">
                   <div class="user-profile-stats__bar">
                     <div class="user-profile-stats__bar--step progress-step1 " :class="{'progressStepActive': this.$auth.user.level >= 1  }">
@@ -305,27 +318,27 @@
                 </div>
               </div>
               <div class="user-profile-block">
-                <h3 class="user-profile-block__title">如何赚取积分?</h3>
+                <h3 class="user-profile-block__title">评分如何变化?</h3>
                 <div class="user-profile-stats-info">
                   <div class="user-profile-stats-info__item">
-                    <p>在分娩期产卵期相中麻醉</p>
-                    <p>+20点</p>
+                    <p>每日注销</p>
+                    <p>-10</p>
                   </div>
                   <div class="user-profile-stats-info__item">
-                    <p>在分娩期产卵期相中麻醉</p>
-                    <p>+20点</p>
+                    <p>给女孩一个普通的礼物</p>
+                    <p>+25</p>
                   </div>
                   <div class="user-profile-stats-info__item">
-                    <p>在分娩期产卵期相中麻醉</p>
-                    <p>+20点</p>
+                    <p>给女孩大礼物</p>
+                    <p>+50</p>
                   </div>
                   <div class="user-profile-stats-info__item">
-                    <p>在分娩期产卵期相中麻醉</p>
-                    <p>+20点</p>
+                    <p>私人流与一个女孩</p>
+                    <p>+100</p>
                   </div>
                   <div class="user-profile-stats-info__item">
-                    <p>在分娩期产卵期相中麻醉</p>
-                    <p>+200点</p>
+                    <p>向女孩订购图纸</p>
+                    <p>+30</p>
                   </div>
                 </div>
 
@@ -350,9 +363,9 @@
                       <img :src="friend.avatar" alt="">
                     </div>
                     <div class="user-profile-friends-item__info">
-                      <p class="user-profile-friends-item__info--name">{{friend.fio}}</p>
-                      <p class="user-profile-friends-item__info--link">@{{friend.nickname}}</p>
-                      <p class="user-profile-friends-item__info--yo">{{friend.years}}岁</p>
+                      <p @click="$router.push(`/profile/${friend.nickname}`)" class="user-profile-friends-item__info--name">{{friend.fio}}</p>
+                      <p class="user-profile-friends-item__info--link mb-20">@{{friend.nickname}}</p>
+<!--                      <p class="user-profile-friends-item__info&#45;&#45;yo">{{friend.years}}岁</p>-->
                     </div>
                     <div class="user-profile-friends-item__buttons">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -399,7 +412,7 @@
                           </div>
                         </div>
                         <div v-else class="chat-user" :class="{'chatSelected':chat.chat_opened}">
-                          <div class="chat-user__img" :class="{'chatUserOnline':chat.starter.is_online}">
+                         <div class="chat-user__img" :class="{'chatUserOnline':chat.starter.is_online,'userVIP':chat.starter.is_vip}">
                             <img :src="chat.starter.avatar" alt="">
                           </div>
                           <div class="chat-user__user">
@@ -428,9 +441,18 @@
                     </div>
                     <div class="chat-new-message ">
                       <div class="chat-new-message__attach">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12.1101 15.39L8.23008 19.27C8.00059 19.5004 7.72787 19.6832 7.42756 19.8079C7.12725 19.9326 6.80527 19.9969 6.48008 19.9969C6.15489 19.9969 5.83291 19.9326 5.5326 19.8079C5.23229 19.6832 4.95957 19.5004 4.73008 19.27C4.49848 19.0412 4.3146 18.7686 4.1891 18.4682C4.0636 18.1678 3.99898 17.8455 3.99898 17.52C3.99898 17.1944 4.0636 16.8721 4.1891 16.5717C4.3146 16.2713 4.49848 15.9988 4.73008 15.77L8.61008 11.89C8.79838 11.7017 8.90417 11.4463 8.90417 11.18C8.90417 10.9137 8.79838 10.6583 8.61008 10.47C8.42178 10.2817 8.16638 10.1759 7.90008 10.1759C7.63378 10.1759 7.37838 10.2817 7.19008 10.47L3.31008 14.36C2.52844 15.2108 2.1057 16.3306 2.13016 17.4857C2.15461 18.6408 2.62436 19.7418 3.44131 20.5587C4.25826 21.3757 5.35924 21.8454 6.51433 21.8699C7.66941 21.8943 8.78929 21.4716 9.64008 20.69L13.5301 16.81C13.7184 16.6217 13.8242 16.3663 13.8242 16.1C13.8242 15.8337 13.7184 15.5783 13.5301 15.39C13.3418 15.2017 13.0864 15.0959 12.8201 15.0959C12.5538 15.0959 12.2984 15.2017 12.1101 15.39ZM8.83008 15.17C8.92352 15.2626 9.03434 15.336 9.15617 15.3857C9.27801 15.4355 9.40847 15.4607 9.54008 15.46C9.67169 15.4607 9.80215 15.4355 9.92399 15.3857C10.0458 15.336 10.1566 15.2626 10.2501 15.17L15.1701 10.25C15.3584 10.0617 15.4642 9.80626 15.4642 9.53996C15.4642 9.27366 15.3584 9.01826 15.1701 8.82996C14.9818 8.64165 14.7264 8.53587 14.4601 8.53587C14.1938 8.53587 13.9384 8.64165 13.7501 8.82996L8.83008 13.75C8.73635 13.8429 8.66196 13.9535 8.61119 14.0754C8.56042 14.1972 8.53428 14.3279 8.53428 14.46C8.53428 14.592 8.56042 14.7227 8.61119 14.8445C8.66196 14.9664 8.73635 15.077 8.83008 15.17ZM21.0001 18H20.0001V17C20.0001 16.7347 19.8947 16.4804 19.7072 16.2929C19.5197 16.1053 19.2653 16 19.0001 16C18.7349 16 18.4805 16.1053 18.293 16.2929C18.1054 16.4804 18.0001 16.7347 18.0001 17V18H17.0001C16.7349 18 16.4805 18.1053 16.293 18.2929C16.1054 18.4804 16.0001 18.7347 16.0001 19C16.0001 19.2652 16.1054 19.5195 16.293 19.7071C16.4805 19.8946 16.7349 20 17.0001 20H18.0001V21C18.0001 21.2652 18.1054 21.5195 18.293 21.7071C18.4805 21.8946 18.7349 22 19.0001 22C19.2653 22 19.5197 21.8946 19.7072 21.7071C19.8947 21.5195 20.0001 21.2652 20.0001 21V20H21.0001C21.2653 20 21.5197 19.8946 21.7072 19.7071C21.8947 19.5195 22.0001 19.2652 22.0001 19C22.0001 18.7347 21.8947 18.4804 21.7072 18.2929C21.5197 18.1053 21.2653 18 21.0001 18ZM16.8101 13.53L20.6901 9.63996C21.4717 8.78916 21.8945 7.66929 21.87 6.51421C21.8456 5.35912 21.3758 4.25814 20.5588 3.44119C19.7419 2.62424 18.6409 2.15449 17.4858 2.13003C16.3307 2.10558 15.2109 2.52831 14.3601 3.30996L10.4701 7.18996C10.3768 7.2832 10.3029 7.39389 10.2524 7.51571C10.202 7.63753 10.176 7.7681 10.176 7.89996C10.176 8.03182 10.202 8.16239 10.2524 8.28421C10.3029 8.40603 10.3768 8.51672 10.4701 8.60996C10.5633 8.7032 10.674 8.77716 10.7958 8.82762C10.9177 8.87808 11.0482 8.90405 11.1801 8.90405C11.3119 8.90405 11.4425 8.87808 11.5643 8.82762C11.6862 8.77716 11.7968 8.7032 11.8901 8.60996L15.7701 4.72996C15.9996 4.49956 16.2723 4.31675 16.5726 4.19201C16.8729 4.06727 17.1949 4.00306 17.5201 4.00306C17.8453 4.00306 18.1673 4.06727 18.4676 4.19201C18.7679 4.31675 19.0406 4.49956 19.2701 4.72996C19.5017 4.95877 19.6856 5.23127 19.8111 5.53167C19.9366 5.83207 20.0012 6.1544 20.0012 6.47996C20.0012 6.80552 19.9366 7.12785 19.8111 7.42825C19.6856 7.72865 19.5017 8.00115 19.2701 8.22996L15.3901 12.11C15.2964 12.2029 15.222 12.3135 15.1712 12.4354C15.1204 12.5572 15.0943 12.6879 15.0943 12.82C15.0943 12.952 15.1204 13.0827 15.1712 13.2045C15.222 13.3264 15.2964 13.437 15.3901 13.53C15.483 13.6237 15.5936 13.6981 15.7155 13.7489C15.8374 13.7996 15.9681 13.8258 16.1001 13.8258C16.2321 13.8258 16.3628 13.7996 16.4847 13.7489C16.6065 13.6981 16.7171 13.6237 16.8101 13.53Z" />
-                        </svg>
+                        <el-upload action="" :show-file-list="false" :on-success="handleChatImgSuccess">
+
+
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.1101 15.39L8.23008 19.27C8.00059 19.5004 7.72787 19.6832 7.42756 19.8079C7.12725 19.9326 6.80527 19.9969 6.48008 19.9969C6.15489 19.9969 5.83291 19.9326 5.5326 19.8079C5.23229 19.6832 4.95957 19.5004 4.73008 19.27C4.49848 19.0412 4.3146 18.7686 4.1891 18.4682C4.0636 18.1678 3.99898 17.8455 3.99898 17.52C3.99898 17.1944 4.0636 16.8721 4.1891 16.5717C4.3146 16.2713 4.49848 15.9988 4.73008 15.77L8.61008 11.89C8.79838 11.7017 8.90417 11.4463 8.90417 11.18C8.90417 10.9137 8.79838 10.6583 8.61008 10.47C8.42178 10.2817 8.16638 10.1759 7.90008 10.1759C7.63378 10.1759 7.37838 10.2817 7.19008 10.47L3.31008 14.36C2.52844 15.2108 2.1057 16.3306 2.13016 17.4857C2.15461 18.6408 2.62436 19.7418 3.44131 20.5587C4.25826 21.3757 5.35924 21.8454 6.51433 21.8699C7.66941 21.8943 8.78929 21.4716 9.64008 20.69L13.5301 16.81C13.7184 16.6217 13.8242 16.3663 13.8242 16.1C13.8242 15.8337 13.7184 15.5783 13.5301 15.39C13.3418 15.2017 13.0864 15.0959 12.8201 15.0959C12.5538 15.0959 12.2984 15.2017 12.1101 15.39ZM8.83008 15.17C8.92352 15.2626 9.03434 15.336 9.15617 15.3857C9.27801 15.4355 9.40847 15.4607 9.54008 15.46C9.67169 15.4607 9.80215 15.4355 9.92399 15.3857C10.0458 15.336 10.1566 15.2626 10.2501 15.17L15.1701 10.25C15.3584 10.0617 15.4642 9.80626 15.4642 9.53996C15.4642 9.27366 15.3584 9.01826 15.1701 8.82996C14.9818 8.64165 14.7264 8.53587 14.4601 8.53587C14.1938 8.53587 13.9384 8.64165 13.7501 8.82996L8.83008 13.75C8.73635 13.8429 8.66196 13.9535 8.61119 14.0754C8.56042 14.1972 8.53428 14.3279 8.53428 14.46C8.53428 14.592 8.56042 14.7227 8.61119 14.8445C8.66196 14.9664 8.73635 15.077 8.83008 15.17ZM21.0001 18H20.0001V17C20.0001 16.7347 19.8947 16.4804 19.7072 16.2929C19.5197 16.1053 19.2653 16 19.0001 16C18.7349 16 18.4805 16.1053 18.293 16.2929C18.1054 16.4804 18.0001 16.7347 18.0001 17V18H17.0001C16.7349 18 16.4805 18.1053 16.293 18.2929C16.1054 18.4804 16.0001 18.7347 16.0001 19C16.0001 19.2652 16.1054 19.5195 16.293 19.7071C16.4805 19.8946 16.7349 20 17.0001 20H18.0001V21C18.0001 21.2652 18.1054 21.5195 18.293 21.7071C18.4805 21.8946 18.7349 22 19.0001 22C19.2653 22 19.5197 21.8946 19.7072 21.7071C19.8947 21.5195 20.0001 21.2652 20.0001 21V20H21.0001C21.2653 20 21.5197 19.8946 21.7072 19.7071C21.8947 19.5195 22.0001 19.2652 22.0001 19C22.0001 18.7347 21.8947 18.4804 21.7072 18.2929C21.5197 18.1053 21.2653 18 21.0001 18ZM16.8101 13.53L20.6901 9.63996C21.4717 8.78916 21.8945 7.66929 21.87 6.51421C21.8456 5.35912 21.3758 4.25814 20.5588 3.44119C19.7419 2.62424 18.6409 2.15449 17.4858 2.13003C16.3307 2.10558 15.2109 2.52831 14.3601 3.30996L10.4701 7.18996C10.3768 7.2832 10.3029 7.39389 10.2524 7.51571C10.202 7.63753 10.176 7.7681 10.176 7.89996C10.176 8.03182 10.202 8.16239 10.2524 8.28421C10.3029 8.40603 10.3768 8.51672 10.4701 8.60996C10.5633 8.7032 10.674 8.77716 10.7958 8.82762C10.9177 8.87808 11.0482 8.90405 11.1801 8.90405C11.3119 8.90405 11.4425 8.87808 11.5643 8.82762C11.6862 8.77716 11.7968 8.7032 11.8901 8.60996L15.7701 4.72996C15.9996 4.49956 16.2723 4.31675 16.5726 4.19201C16.8729 4.06727 17.1949 4.00306 17.5201 4.00306C17.8453 4.00306 18.1673 4.06727 18.4676 4.19201C18.7679 4.31675 19.0406 4.49956 19.2701 4.72996C19.5017 4.95877 19.6856 5.23127 19.8111 5.53167C19.9366 5.83207 20.0012 6.1544 20.0012 6.47996C20.0012 6.80552 19.9366 7.12785 19.8111 7.42825C19.6856 7.72865 19.5017 8.00115 19.2701 8.22996L15.3901 12.11C15.2964 12.2029 15.222 12.3135 15.1712 12.4354C15.1204 12.5572 15.0943 12.6879 15.0943 12.82C15.0943 12.952 15.1204 13.0827 15.1712 13.2045C15.222 13.3264 15.2964 13.437 15.3901 13.53C15.483 13.6237 15.5936 13.6981 15.7155 13.7489C15.8374 13.7996 15.9681 13.8258 16.1001 13.8258C16.2321 13.8258 16.3628 13.7996 16.4847 13.7489C16.6065 13.6981 16.7171 13.6237 16.8101 13.53Z" />
+                          </svg>
+                        </el-upload>
+                      </div>
+
+
+                      <div v-if="chatImgPreview" class="chat-new-message__img-preview">
+                        <img :src="chatImgPreview" alt="">
                       </div>
 
                       <el-input ref="newMessage" class="chat-new-message__input"
@@ -481,7 +503,7 @@
               <div class="faq-items">
                 <div class="faq-item" :class="{'faqItemActive':accordeon1Active}">
                   <div class="faq-item__top" @click="accordeon1Active ? accordeon1Active=false : accordeon1Active=true">
-                    <p>如何使用我们的平台？</p>
+                    <p>通用设置</p>
                     <svg  width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
                       <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
@@ -490,34 +512,34 @@
                   <div class="faq-item__content">
                     <div class="faq-item__content--inner">
                       <el-form ref="form" :model="userData" label-width="120px" label-position="left">
-                        <el-form-item label="city">
+                        <el-form-item label="居住地">
                           <el-input v-model="userData.city"></el-input>
                         </el-form-item>
-                        <el-form-item label="education">
+                        <el-form-item label="教育">
                           <el-input v-model="userData.education" placeholder="education"></el-input>
                         </el-form-item>
-                        <el-form-item label="work_place">
+                        <el-form-item label="我的专业">
                           <el-input v-model="userData.work_place" placeholder="work_place"></el-input>
                         </el-form-item>
-                        <el-form-item label="birthday">
+                        <el-form-item label="出生日期">
                           <el-date-picker v-model="userData.birthday" type="date" placeholder="birthday"
                                           format="yyyy/MM/dd" value-format="yyyy-MM-dd">
                           </el-date-picker>
                         </el-form-item>
-                        <el-form-item label="about">
-                           <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.about"></el-input>
+                        <el-form-item label="个人信息">
+                          <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.about"></el-input>
                         </el-form-item>
 
 
                       </el-form>
-                      <el-button type="primary" @click="updateUser">save</el-button>
+                      <div style="margin:unset" class="btn btn-l-blue" @click="updateUser">救</div>
                     </div>
 
                   </div>
                 </div>
                 <div class="faq-item" :class="{'faqItemActive':accordeon2Active}">
                   <div class="faq-item__top" @click="accordeon2Active ? accordeon2Active=false : accordeon2Active=true">
-                    <p>如何使用我们的平台？</p>
+                    <p>我的兴趣</p>
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="17" cy="17" r="16.5" fill="white" />
                       <path d="M17 21L13.5359 15L20.4641 15L17 21Z" />
@@ -527,7 +549,7 @@
                     <div class="faq-item__content--inner" >
 
                       <el-form ref="form" :model="userData" label-width="120px" label-position="left">
-                        <el-form-item label="interests">
+                        <el-form-item label="兴趣标签">
                           <el-select v-model="userData.tags" multiple placeholder="tags">
                             <el-option
                               v-for="item in tags"
@@ -540,15 +562,15 @@
 
 
 
-                        <el-form-item label="interests">
-                         <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests"></el-input>
+                        <el-form-item label="我的兴趣">
+                          <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests"></el-input>
                         </el-form-item>
-                        <el-form-item label="interests_additional">
-                        <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests_additional"></el-input>
+                        <el-form-item label="我对艺术的兴趣">
+                          <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests_additional"></el-input>
                         </el-form-item>
 
                       </el-form>
-                      <el-button type="primary" @click="updateUser">save</el-button>
+                      <div style="margin:unset" class="btn btn-l-blue" @click="updateUser">救</div>
 
                     </div>
 
@@ -556,7 +578,7 @@
                 </div>
                 <div class="faq-item" :class="{'faqItemActive':accordeon3Active}">
                   <div class="faq-item__top" @click="accordeon3Active ? accordeon3Active=false : accordeon3Active=true">
-                    <p>如何使用我们的平台？</p>
+                    <p>安全设定</p>
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
                       <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
@@ -564,7 +586,7 @@
                   </div>
                   <div class="faq-item__content">
                     <div class="faq-item__content--inner">
-                          <el-form ref="form" :model="userData" label-width="120px" label-position="left">
+                      <el-form ref="form" :model="userData" label-width="120px" label-position="left">
                         <el-form-item label="旧密码">
                           <el-input v-model="userData.email"></el-input>
                         </el-form-item>
@@ -579,40 +601,40 @@
 
 
                       </el-form>
-                      <el-button type="primary" @click="updateUser">save</el-button>
+                      <div style="margin:unset" class="btn btn-l-blue" @click="updateUser">救</div>
                     </div>
 
                   </div>
                 </div>
-<!--                <div class="faq-item" :class="{'faqItemActive':accordeon4Active}">-->
-<!--                  <div class="faq-item__top" @click="accordeon4Active ? accordeon4Active=false : accordeon4Active=true">-->
-<!--                    <p>如何使用我们的平台？</p>-->
-<!--                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--                      <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>-->
-<!--                      <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>-->
-<!--                    </svg>-->
-<!--                  </div>-->
-<!--                  <div class="faq-item__content">-->
-<!--                    <div class="faq-item__content&#45;&#45;inner">-->
-<!--                      <el-form ref="form" :model="userData" label-width="120px" label-position="left">-->
-<!--                        <el-form-item label="旧密码">-->
-<!--                          <el-input v-model="userData.email"></el-input>-->
-<!--                        </el-form-item>-->
+                <!--                <div class="faq-item" :class="{'faqItemActive':accordeon4Active}">-->
+                <!--                  <div class="faq-item__top" @click="accordeon4Active ? accordeon4Active=false : accordeon4Active=true">-->
+                <!--                    <p>如何使用我们的平台？</p>-->
+                <!--                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                <!--                      <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>-->
+                <!--                      <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>-->
+                <!--                    </svg>-->
+                <!--                  </div>-->
+                <!--                  <div class="faq-item__content">-->
+                <!--                    <div class="faq-item__content&#45;&#45;inner">-->
+                <!--                      <el-form ref="form" :model="userData" label-width="120px" label-position="left">-->
+                <!--                        <el-form-item label="旧密码">-->
+                <!--                          <el-input v-model="userData.email"></el-input>-->
+                <!--                        </el-form-item>-->
 
-<!--                        <el-form-item label="新密码">-->
+                <!--                        <el-form-item label="新密码">-->
 
-<!--                          <el-input v-model="userData.password1" placeholder="new pass"></el-input>-->
-<!--                        </el-form-item>-->
-<!--                        <el-form-item label="重复新密码">-->
-<!--                          <el-input v-model="userData.password2" placeholder="repeat pass"></el-input>-->
-<!--                        </el-form-item>-->
+                <!--                          <el-input v-model="userData.password1" placeholder="new pass"></el-input>-->
+                <!--                        </el-form-item>-->
+                <!--                        <el-form-item label="重复新密码">-->
+                <!--                          <el-input v-model="userData.password2" placeholder="repeat pass"></el-input>-->
+                <!--                        </el-form-item>-->
 
-<!--                      </el-form>-->
-<!--                      <el-button type="primary" @click="updateUser">save</el-button>-->
-<!--                    </div>-->
+                <!--                      </el-form>-->
+                <!--                      <el-button type="primary" @click="updateUser">save</el-button>-->
+                <!--                    </div>-->
 
-<!--                  </div>-->
-<!--                </div>-->
+                <!--                  </div>-->
+                <!--                </div>-->
               </div>
             </div>
             <div v-if="tabActive==='vipTab'" class="user-profile-tab">
@@ -668,28 +690,28 @@
                     <el-input v-model="userData.nickname"></el-input>
                   </el-form-item>
                   <el-form-item label="city">
-                          <el-input v-model="userData.city"></el-input>
-                        </el-form-item>
-                        <el-form-item label="education">
-                          <el-input v-model="userData.education" placeholder="education"></el-input>
-                        </el-form-item>
-                        <el-form-item label="work_place">
-                          <el-input v-model="userData.work_place" placeholder="work_place"></el-input>
-                        </el-form-item>
-                        <el-form-item label="birthday">
-                          <el-date-picker v-model="userData.birthday" type="date" placeholder="birthday"
-                                          format="yyyy/MM/dd" value-format="yyyy-MM-dd">
-                          </el-date-picker>
-                        </el-form-item>
-                        <el-form-item label="about">
-                           <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.about"></el-input>
-                        </el-form-item>
+                    <el-input v-model="userData.city"></el-input>
+                  </el-form-item>
+                  <el-form-item label="education">
+                    <el-input v-model="userData.education" placeholder="education"></el-input>
+                  </el-form-item>
+                  <el-form-item label="work_place">
+                    <el-input v-model="userData.work_place" placeholder="work_place"></el-input>
+                  </el-form-item>
+                  <el-form-item label="birthday">
+                    <el-date-picker v-model="userData.birthday" type="date" placeholder="birthday"
+                                    format="yyyy/MM/dd" value-format="yyyy-MM-dd">
+                    </el-date-picker>
+                  </el-form-item>
+                  <el-form-item label="about">
+                    <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.about"></el-input>
+                  </el-form-item>
                   <el-form-item label="interests">
-                         <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests"></el-input>
-                        </el-form-item>
-                        <el-form-item label="interests_additional">
-                        <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests_additional"></el-input>
-                        </el-form-item>
+                    <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests"></el-input>
+                  </el-form-item>
+                  <el-form-item label="interests_additional">
+                    <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests_additional"></el-input>
+                  </el-form-item>
                 </el-form>
                 <p class="btn btn-l-blue" @click="updateUser">Сохранить</p>
 
@@ -698,9 +720,7 @@
 
             </div>
             <div v-if="tabActive==='streamerGiftsTab'" class="user-profile-tab">
-
-              <div class="user-profile-gifts">
-
+              <div class="user-profile-block">
                 <h3 class="user-profile-block__title">Подарки</h3>
                 <div class="gift-table-item" v-for="gift in user_gifts" :key="gift.id">
                   <p class="gift-table-item__date">{{gift.created_at}}</p>
@@ -724,7 +744,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
             <div v-if="tabActive==='streamerFriendsTab'" class="user-profile-tab">
 
@@ -770,9 +789,10 @@
                       <div
                         @click="openChat(chat.id)"
                         v-for="chat in chats" :key="chat.id" >
+
                         <div v-if="$auth.user.nickname === chat.starter.nickname" class="chat-user"
                              :class="{'chatSelected':chat.chat_opened}">
-                          <div class="chat-user__img" :class="{'chatUserOnline':chat.opponent.is_online}">
+                          <div class="chat-user__img" :class="{'chatUserOnline':chat.opponent.is_online,'userVIP':chat.opponent.is_vip}">
                             <img :src="chat.opponent.avatar" alt="">
                           </div>
                           <div class="chat-user__user">
@@ -781,7 +801,7 @@
                           </div>
                         </div>
                         <div v-else class="chat-user" :class="{'chatSelected':chat.chat_opened}">
-                          <div class="chat-user__img" :class="{'chatUserOnline':chat.starter.is_online}">
+                          <div class="chat-user__img" :class="{'chatUserOnline':chat.starter.is_online,'userVIP':chat.starter.is_vip}">
                             <img :src="chat.starter.avatar" alt="">
                           </div>
                           <div class="chat-user__user">
@@ -855,8 +875,61 @@
 
               <div class="user-profile-block">
 
-                <h3 class="user-profile-block__title">Стримы</h3>
-                ждэ
+                <h3 class="user-profile-block__title">Запланированные стримы</h3>
+                <el-table :data="streams" style="width: 100%">
+                  <el-table-column type="expand">
+                    <template slot-scope="props">
+                      <p class="mb-20">Описание: {{ props.row.description }}</p>
+                      <img :src="props.row.image" alt="">
+                    </template>
+                  </el-table-column>
+                  <el-table-column prop="name" label="Название" ></el-table-column>
+                  <el-table-column label="Дата" width="180">
+                    <template slot-scope="scope">
+                      <p>{{new Date(scope.row.date).toLocaleString()}}</p>
+                    </template>
+                  </el-table-column>
+                  <el-table-column  label="VIP?" >
+                    <template slot-scope="scope">
+                      <p>{{scope.row.is_vip? 'Да' : 'Нет'}}</p>
+                    </template>
+                  </el-table-column>
+                  <el-table-column  label="Приватный?" >
+                    <template slot-scope="scope">
+                      <p>{{scope.row.is_private? 'Да' : 'Нет'}}</p>
+                    </template>
+                  </el-table-column>
+                  <el-table-column  label="Действие" >
+                    <template slot-scope="scope">
+                      <el-button type="danger" size="mini" @click="deleteStream(scope.row.id)"><i class="el-icon-delete"></i></el-button>
+                      <el-button type="info" size="mini" @click="copyToClipboard(scope.row.url)"><i class="el-icon-link"></i></el-button>
+                    </template>
+                  </el-table-column>
+                </el-table>
+              </div>
+              <div class="user-profile-block">
+
+                <h3 class="user-profile-block__title">Новый стрим</h3>
+                <el-input class="mb-10" v-model="newStreamData.name" placeholder="Название стрима"></el-input>
+                <el-input class="mb-10" type="textarea"  :rows="4" v-model="newStreamData.description" placeholder="Описание стрима"></el-input>
+                <div style="display: flex;align-items: center;justify-content: space-between" class="mb-10">
+                   <el-date-picker  v-model="newStreamData.date" type="datetime" placeholder="Дата и время начала"></el-date-picker>
+                  <div class="">
+                    <el-checkbox v-model="newStreamData.is_vip">Для вип</el-checkbox>
+                  <el-checkbox v-model="newStreamData.is_private">Приватный</el-checkbox>
+                  </div>
+                </div>
+                <div class="mb-30">
+                  <p class="mb-20">Изображение</p>
+                <el-upload class="avatar-uploader" action="" :show-file-list="false" :on-success="handleStreamImage">
+                  <div style="padding:5px; display: flex; align-items: center;justify-content: center;width: 300px;height: 200px;border: 1px dashed #cecece">
+                    <img style="object-fit: cover; height: 200px; width: 300px;" v-if="newStreamImgPreview" :src="newStreamImgPreview" alt="" class="avatar">
+                    <p v-else style="font-size: 30px">+</p>
+                  </div>
+                </el-upload>
+                </div>
+
+                <el-button type="success" @click="addStream">Добавить</el-button>
 
               </div>
 
@@ -874,7 +947,8 @@
             <div v-if="tabActive==='streamerPostsTab'" class="user-profile-tab">
 
               <div class="user-profile-block">
-                <h3 class="user-profile-block__title">Опубликованные посты <el-button type="primary" @click="newPostDialogVisible=true">Добавить новый</el-button></h3>
+                <h3 class="user-profile-block__title">Опубликованные посты
+                  <el-button type="primary" @click="newPostDialogVisible=true">Добавить новый</el-button></h3>
                 <div class="user-profile-post"
                      v-for="(post,index) in posts"
                      :key="post.id">
@@ -892,17 +966,9 @@
                   <div v-show="post.image" class="user-profile-post__image">
                     <img :src="post.image" alt="">
                   </div>
-
-
-                    <el-button type="danger" >Удалить</el-button>
-
-
-
-
+                  <el-button type="danger" >Удалить</el-button>
                 </div>
-
               </div>
-
             </div>
           </div>
         </div>
@@ -921,26 +987,26 @@
     <el-button type="primary" @click="addToBalance">Пополнить</el-button>
   </span>
     </el-dialog>
-       <el-dialog  title="Создание нового поста" :visible.sync="newPostDialogVisible"  >
-         <el-input
-           class="mb-20"
-          type="textarea"
-          :rows="4"
-          placeholder="Содержание"
-          v-model="newPost.text">
-        </el-input>
-         <p class="mb-20">Изображение к посту</p>
-         <el-upload class="avatar-uploader mb-25" action="" :show-file-list="false" :on-success="handlePostImage">
-           <div style="padding:5px; display: flex; align-items: center;justify-content: center;width: 300px;height: 200px;border: 1px dashed #cecece">
-              <img v-if="newPost.image" :src="newPost.image" alt="" class="avatar">
-             <p v-else style="font-size: 30px">+</p>
-           </div>
-         </el-upload>
-  <span slot="footer" class="dialog-footer">
+    <el-dialog  title="Создание нового поста" :visible.sync="newPostDialogVisible"  >
+      <el-input
+        class="mb-20"
+        type="textarea"
+        :rows="4"
+        placeholder="Содержание"
+        v-model="newPost.text">
+      </el-input>
+      <p class="mb-20">Изображение к посту</p>
+      <el-upload class="avatar-uploader mb-25" action="" :show-file-list="false" :on-success="handlePostImage">
+        <div style="padding:5px; display: flex; align-items: center;justify-content: center;width: 300px;height: 200px;border: 1px dashed #cecece">
+          <img v-if="newPost.image" :src="newPost.image" alt="" class="avatar">
+          <p v-else style="font-size: 30px">+</p>
+        </div>
+      </el-upload>
+      <span slot="footer" class="dialog-footer">
     <el-button @click="newPostDialogVisible = false">Отмена</el-button>
     <el-button type="primary" @click="addNewPost">Добавить</el-button>
   </span>
-</el-dialog>
+    </el-dialog>
 
   </div>
 </template>
@@ -985,7 +1051,7 @@
         tabActive: this.$auth.user.is_streamer ? 'streamerInfoTab' : 'infoTab',//'infoTab',
         user_from_url:null,
         current_chat_id:null,
-        accordeon1Active:false,
+        accordeon1Active:true,
         accordeon2Active:false,
         accordeon3Active:false,
         accordeon4Active:false,
@@ -1018,15 +1084,27 @@
           tags:this.$auth.user.tags,
         },
         newMessage:null,
+        chatImg:null,
+        chatImgPreview:null,
         chats:[],
         socket:null,
         messages:[],
         posts:[],
+        streams:[],
         newPost:{
           text:null,
           image:null
         },
-        newPostImage:null
+        newPostImage:null,
+        newStreamData:{
+          name:null,
+          description:null,
+          is_vip:false,
+          is_private:false,
+          date:null
+        },
+        newStreamImg:null,
+        newStreamImgPreview:null,
       }
     },
     watch:{
@@ -1037,6 +1115,9 @@
         }
         if (val === 'streamerPostsTab'){
           this.getPosts()
+        }
+        if (val === 'streamerStreamsTab'){
+          this.getStreams()
         }
 
       }
@@ -1063,16 +1144,22 @@
       })
     },
     updated() {
-      if( this.tabActive === 'chatsTab'){
+      if( this.tabActive === 'chatsTab' || this.tabActive === 'streamerChatsTab'){
         this.$nextTick(() => this.scrollToEnd());
       }
 
     },
     methods:{
+      copyToClipboard(text){
+        navigator.clipboard.writeText(`${window.location.origin}/stream/${text}`).then(function() {
+          console.log('Async: Copying to clipboard was successful!');
+        }, function(err) {
+          console.error('Async: Could not copy text: ', err);
+        });
+      },
       scrollToEnd: function () {
-        var content = this.$refs.messagesContainer;
+        let content = this.$refs.messagesContainer;
         content.scrollTop = content.scrollHeight
-
       },
       pasteSmiley(code){
         this.newMessage ? this.newMessage += ` ${code} ` : this.newMessage = `${code} `
@@ -1083,6 +1170,43 @@
           message: message,
           type: type
         });
+      },
+      async deleteStream(stream_id){
+        await this.$axios.delete(`/api/v1/stream/delete_stream/${stream_id}`)
+        this.notify('Успешно','Стрим удален','success')
+        this.getStreams()
+
+      },
+      async addStream(){
+        if (!this.newStreamData.name || !this.newStreamData.date || !this.newStreamImg  ){
+          this.notify('Ошибка','Название,дата и изображение обязательные поля','error')
+          return
+        }
+        let formData = new FormData()
+        formData.set('data', JSON.stringify(this.newStreamData))
+        //formData.set('description', JSON.stringify(this.newStreamData.description))
+        formData.set('image',this.newStreamImg)
+        await this.$axios({
+          method: 'post',
+          headers:{
+            'content-type': 'multipart/form-data'
+          },
+          url: '/api/v1/stream/add_stream',
+          data: formData
+        }).then((response) => {
+          this.notify('Успешно','Стрим добавлен','success')
+          this.getStreams()
+        })
+          .catch(function (error) {
+            // handle error
+          })
+          .then(function () {
+            // always executed
+          });
+      },
+      async getStreams(){
+        const response = await this.$axios.get(`/api/v1/stream/get_streams_by_user_nickname?nickname=${this.$auth.user.nickname}`)
+        this.streams = response.data
       },
       async getPosts(){
         const response = await this.$axios.get(`/api/v1/post/get_posts_by_user_nickname?nickname=${this.$auth.user.nickname}`)
@@ -1136,6 +1260,7 @@
               {
                 id:data.id,
                 message: updated,//data.message,
+                image: data.image ? process.env.img_url+data.image : null,//data.message,
                 createdAt: Date.now(),
                 user:{
                   id:data.user.id,
@@ -1172,7 +1297,30 @@
         const rex = /[\u{1f300}-\u{1f5ff}\u{1f900}-\u{1f9ff}\u{1f600}-\u{1f64f}\u{1f680}-\u{1f6ff}\u{2600}-\u{26ff}\u{2700}-\u{27bf}\u{1f1e6}-\u{1f1ff}\u{1f191}-\u{1f251}\u{1f004}\u{1f0cf}\u{1f170}-\u{1f171}\u{1f17e}-\u{1f17f}\u{1f18e}\u{3030}\u{2b50}\u{2b55}\u{2934}-\u{2935}\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{3297}\u{3299}\u{303d}\u{00a9}\u{00ae}\u{2122}\u{23f3}\u{24c2}\u{23e9}-\u{23ef}\u{25b6}\u{23f8}-\u{23fa}]/ug;
         const updated = this.newMessage.replace(rex, match => `<span class="chat-emoji">&#x${match.codePointAt(0).toString(16)};</span>`);
 
-        await this.$axios.post(`/api/v1/chat/add/${this.current_chat_id}`,{message:updated})
+        //await this.$axios.post(`/api/v1/chat/add/${this.current_chat_id}`,{message:updated})
+
+        let formData = new FormData()
+        formData.set('message', JSON.stringify(this.newMessage))
+        formData.set('image',this.chatImg)
+
+        await this.$axios({
+          method: 'post',
+          headers:{
+            'content-type': 'multipart/form-data'
+          },
+          url: `/api/v1/chat/add/${this.current_chat_id}`,
+          data: formData
+        }).then((response) => {
+          console.log('chat message response',response)
+        })
+          .catch(function (error) {
+            // handle error
+          })
+          .then(function () {
+            // always executed
+          });
+
+
         //console.log(this.messages)
         // this.messages.push(
         //   {
@@ -1184,16 +1332,27 @@
         //   }
         // )
         this.newMessage = null
+        this.chatImgPreview = null
+        this.chatImg = null
       },
       handlePostImage(res, file) {
         this.newPost.image = URL.createObjectURL(file.raw);
         this.newPostImage = file.raw
 
       },
+      handleStreamImage(res, file) {
+        this.newStreamImgPreview = URL.createObjectURL(file.raw);
+        this.newStreamImg = file.raw
+
+      },
       handleAvatarSuccess(res, file) {
         this.userData.avatar = URL.createObjectURL(file.raw);
         this.avatar = file.raw
         this.updateUser()
+      },
+      handleChatImgSuccess(res, file) {
+        this.chatImgPreview = URL.createObjectURL(file.raw);
+        this.chatImg = file.raw
       },
       handleBgSuccess(res, file) {
         this.userData.bg_image = URL.createObjectURL(file.raw);

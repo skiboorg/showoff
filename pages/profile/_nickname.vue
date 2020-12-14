@@ -129,7 +129,7 @@
               </div>
             </div>
             <div v-show="tabActive==='infoTab'" class="user-profile-tab">
-             <div class="user-profile-block">
+              <div class="user-profile-block">
 
                 <h3 class="user-profile-block__title">简要信息</h3>
                 <div class="user-profile-block__info-grid">
@@ -155,7 +155,7 @@
               </div>
               <div v-if="user.interests || user.interests_additional" class="user-profile-block">
 
-                <h3 class="user-profile-block__title">TAB2</h3>
+                <h3 class="user-profile-block__title">我的兴趣</h3>
                 <p v-if="user.interests" class="user-profile-block__text">{{user.interests}}</p>
                 <p v-if="user.interests_additional" class="user-profile-block__text">{{user.interests_additional}}</p>
               </div>
@@ -420,30 +420,78 @@
 
             </div>
             <div v-show="tabActive==='giftsTab'" class="user-profile-tab">
-              <div class="user-profile-block">
-                <h3 class="user-profile-block__title">Полученные подарки</h3>
-                <div class="user-profile-gifts">
-                  <div class="gift" v-for="gift in user_gifts" :key="gift.id">
-                    <img style="width: 100px;height: 50px; object-fit: cover" :src="gift.gift.image" alt="">
-                    <p>Сообщение :{{gift.message}}</p>
-                    <p>Дата :{{gift.created_at}}</p>
-                  </div>
-                </div>
+<!--              <div class="user-profile-block">-->
+<!--                <h3 class="user-profile-block__title">Полученные подарки</h3>-->
+<!--                <div class="user-profile-gifts">-->
+<!--                  <div class="user-profile-gift" v-for="gift in user_gifts" :key="gift.id">-->
+<!--&lt;!&ndash;                    <img :src="gift.gift.image" alt="">&ndash;&gt;-->
+<!--                    <p>Сообщение :{{gift.message}}</p>-->
+<!--                    <p>Дата :{{gift.created_at}}</p>-->
+<!--                  </div>-->
+<!--                </div>-->
 
+<!--              </div>-->
+              <div class="user-profile-block">
+                <h3 class="user-profile-block__title">给予关注</h3>
+                <p class="user-profile-block__text mb-20">我们可以给女孩更多的关注：如果您有任何祝贺或疑问，请送礼物！收到礼物后，女孩肯定会通过私人聊天给您写信并开始对话！</p>
+
+                <el-radio-group class="user-profile-gifts mb-20" v-model="selected_gift_id">
+                  <el-radio-button v-if="!gift.is_special_gift" v-for="gift in all_gifts" :key="gift.id" :label="gift.id">
+                    <div  class="user-profile-gift" @click="selected_gift_price=gift.price" >
+                      <img class="user-profile-gift__img" :src="gift.image" alt="">
+                      <p class="user-profile-gift__name">{{gift.name}}</p>
+                      <p class="user-profile-gift__price"><img src="/diamond.svg" alt=""> {{gift.price}}</p>
+
+                    </div>
+                  </el-radio-button>
+                </el-radio-group>
+                <div class="user-profile-gifts__message">
+                  <el-input v-model="gift_message" placeholder="输入女孩的愿望或信息"></el-input>
+                  <a href="#" class="btn btn-l-blue" :class="{'btnDisabled':!selected_gift_id}" @click.prevent="sendGift">选择礼物</a>
+                </div>
               </div>
               <div class="user-profile-block">
-                <h3 class="user-profile-block__title">Доступные подарки</h3>
-                <div class="user-profile-gifts">
-                  <div @click="selected_gift_img=gift.image,selected_gift_price=gift.price,
-                      giftDialogVisible=true, selected_gift_id=gift.id"
-                       class="gift" v-for="gift in all_gifts" :key="gift.id">
-                    <img style="width: 100px;height: 50px; object-fit: cover" :src="gift.image" alt="">
-                    <p>Название :{{gift.name}}</p>
-                    <p>Цена :{{gift.price}}</p>
+                <h3 class="user-profile-block__title">给予关注</h3>
+                <p class="user-profile-block__text mb-20">我们可以给女孩更多的关注：如果您有任何祝贺或疑问，请送礼物！收到礼物后，女孩肯定会通过私人聊天给您写信并始对话！</p>
+                  <el-radio-group class="user-profile-special-gifts mb-20" v-model="selected_gift_id">
+                    <el-radio class="user-profile-special-gift"
+                              v-if="gift.is_special_gift"
+                              v-for="gift in all_gifts"
+                              :key="gift.id"
+                              :label="gift.id">
+                    <div class="user-profile-special-gift__inner" >
+                      <p class="user-profile-gift__name">{{gift.name}}</p>
+                      <p class="user-profile-gift__price"><img src="/diamond.svg" alt=""> {{gift.price}}</p>
+                    </div>
+                  </el-radio>
 
-                  </div>
+
+
+</el-radio-group>
+                   <div class="user-profile-gifts__message">
+                  <el-input v-model="gift_message" placeholder="输入女孩的愿望或信息"></el-input>
+                  <a href="#" class="btn btn-l-blue" :class="{'btnDisabled':!gift_message}" @click.prevent="sendGift">选择礼物</a>
                 </div>
+              </div>
+              <div class="stream-best-donaters">
+                <h3>捐款</h3>
+                <div class="stream-best-donaters__top"></div>
+                <div class="stream-best-donaters__top3">
+                  <div v-for="(donater,index) in top_donaters" :key="donater.id" class="stream-best-donaters__top3--item">
+                    <p class="stream-best-donaters__top3--item--place">1</p>
+                    <img :src="'/crown_'+index+'.png'" alt="">
+                    <div class="stream-best-donaters__top3--item--user">
+                      <img :src="donater.from_user.avatar" alt="">
+                      <p>{{donater.from_user.fio}}</p>
+                    </div>
+                    <p class="stream-best-donaters__top3--item--nickname"> <nuxt-link :to="`/profile/${donater.from_user.nickname}`">@{{donater.from_user.nickname}}</nuxt-link> </p>
+                    <div class="stream-best-donaters__top3--item--donate">
+                      <img src="/diamond.svg" alt="">
+                      <p>捐赠了{{donater.summ}}颗水晶</p>
+                    </div>
+                  </div>
 
+                </div>
               </div>
 
             </div>
@@ -451,19 +499,7 @@
         </div>
       </div>
     </section>
-    <el-dialog
-      title="Сделать подарок"
-      :visible.sync="giftDialogVisible"
-      width="30%">
-      <img :src="selected_gift_img" alt="">
-      <p>Цена: {{selected_gift_price}}</p>
-      {{selected_gift_id}}
-      <el-input v-model="gift_message" placeholder="Сообщение получателю"></el-input>
-      <span slot="footer" class="dialog-footer">
-    <el-button @click="giftDialogVisible = false">Отмена</el-button>
-    <el-button type="primary" @click="sendGift">Подарить</el-button>
-  </span>
-    </el-dialog>
+
 
   </div>
 </template>
@@ -478,17 +514,20 @@
     async asyncData({$axios,params}){
       console.log(params)
       try{
-        const user_gift = await $axios.get(`/api/v1/gift/get_user_gifts?nickname=${params.nickname}`)
-        const gifts = await $axios.get(`/api/v1/gift/get_all`)
+        // const user_gift = await $axios.get(`/api/v1/gift/get_user_gifts?nickname=${params.nickname}`)
+        // const top3_donaters = await $axios.get(`/api/v1/gift/get_user_top3_donaters?nickname=${params.nickname}`)
+        // const gifts = await $axios.get(`/api/v1/gift/get_all`)
         const user_info = await $axios.get(`/api/v1/user/get_user_info_by_nickname?nickname=${params.nickname}`)
-        const user_posts = await $axios.get(`/api/v1/post/get_posts_by_user_nickname?nickname=${params.nickname}`)
-        const user_galleries = await $axios.get(`/api/v1/gallery/get_galleries_by_user_nickname?nickname=${params.nickname}`)
-        const posts = user_posts.data
+        //const user_posts = await $axios.get(`/api/v1/post/get_posts_by_user_nickname?nickname=${params.nickname}`)
+        //const user_galleries = await $axios.get(`/api/v1/gallery/get_galleries_by_user_nickname?nickname=${params.nickname}`)
+        //const posts = user_posts.data
         const user = user_info.data
-        const galleries = user_galleries.data
-        const user_gifts = user_gift.data
-        const all_gifts = gifts.data
-        return {posts,user,galleries,user_gifts,all_gifts}
+        //const galleries = user_galleries.data
+        // const user_gifts = user_gift.data
+        // const all_gifts = gifts.data
+        // const top_donaters = top3_donaters.data
+
+        return {user}//,posts,galleries,all_gifts,user_gifts,top_donaters
       }catch (e) {
         const err = 404
         return {err}
@@ -498,7 +537,7 @@
     },
     data(){
       return {
-        tabActive: 'galleryTab',//'infoTab',
+        tabActive: 'infoTab',//'infoTab',
         comment_text: null,
         giftDialogVisible:false,
         galleryShow:false,
@@ -507,6 +546,10 @@
         selected_gift_price:null,
         selected_gift_id:null,
         user_gifts:[],
+        top_donaters:[],
+        all_gifts:[],
+        posts:[],
+        galleries:[],
         galleryTitle:null,
         imgList:[]
 
@@ -530,9 +573,28 @@
     mounted() {
 
     },
+    watch:{
+      async tabActive(val){
+        if (val === 'giftsTab' ){
+         await this.getAllGifts()
+         await this.getGifts()
+         await this.getDonaters()
+        }
+        if (val === 'postsTab' ){
+         await this.getAllPosts()
+        }
+        if (val === 'galleryTab' ){
+          this.galleryShow= false
+         await this.getAllGallery()
+        }
+
+
+      }
+    },
 
     methods:{
       notify(title,message,type){
+        //показать уведомление пользователю
         this.$notify({
           title: title,
           message: message,
@@ -540,6 +602,7 @@
         });
       },
       showGallery(images,title){
+        //показать все изображения в галерее из переданного массива images
         this.imgList =[]
         this.galleryTitle = title
         for (let i of images){
@@ -548,29 +611,57 @@
         this.galleryShow = true
 
       },
+      async getAllGallery(){
+        //получаем все альбомы
+        const response = await this.$axios.get(`/api/v1/gallery/get_galleries_by_user_nickname?nickname=${this.$route.params.nickname}`)
+        console.log('galleries',response.data)
+        this.galleries = response.data
+      },
+
       async getGifts(){
+        //получаем все подарки пользователя по nickname
         const response = await this.$axios.get(`/api/v1/gift/get_user_gifts?nickname=${this.$route.params.nickname}`)
         this.user_gifts = response.data
-
       },
-      async sendGift(post_id){
+      async getDonaters(){
+        //получаем топ3 донатера для пользователя по его nickname
+       const response = await this.$axios.get(`/api/v1/gift/get_user_top3_donaters?nickname=${this.$route.params.nickname}`)
+        this.top_donaters = response.data
+      },
+      async getAllGifts(){
+        //получаем все подарки
+       const response = await this.$axios.get(`/api/v1/gift/get_all`)
+        this.all_gifts = response.data
+      },
+      async sendGift(){
+        //отправляем подарок пользователю по nickname
         if(this.$auth.user.balance < this.selected_gift_price){
           this.notify('Ошибка','Не хватает средств','error')
-          this.giftDialogVisible = false
-          this.$auth.fetchUser()
+          this.selected_gift_id = null
+          this.gift_message = null
           return
         }
-
-        const response = await this.$axios.post(`/api/v1/gift/send_gift_to_user`,{
+        await this.$axios.post(`/api/v1/gift/send_gift_to_user`,{
           gift_id:this.selected_gift_id,
           nickname:this.$route.params.nickname,
           message:this.gift_message
         })
         this.notify('Успешно','Подарок отправлен','success')
+        await this.$auth.fetchUser()
+        this.selected_gift_id = null
+        this.gift_message = null
         this.getGifts()
-        this.giftDialogVisible = false
+
       },
+
+      async getAllPosts(){
+        //получаем все посты пользователя по nickname
+        const response = await this.$axios.get(`/api/v1/post/get_posts_by_user_nickname?nickname=${this.$route.params.nickname}`)
+        this.posts = response.data
+      },
+
       async getPosts(post_id){
+        //получаем все посты пользователя по nickname, post_id указывает к какому посту нужно открыть комменты
         let current_post_open_status = this.posts[post_id].comments_show
         const response = await this.$axios.get(`/api/v1/post/get_posts_by_user_nickname?nickname=${this.$route.params.nickname}`)
         this.posts = response.data
@@ -580,10 +671,12 @@
 
       },
       showComments(index){
+        //показать все комменты к посту по его index
         this.comment_text = null
         this.posts[index].comments_show ? this.posts[index].comments_show = false : this.posts[index].comments_show = true
       },
       async addComment(post_id,index){
+        //добавляем коммент к посту по его post_id
         await this.$axios.post('/api/v1/post/add_comment',
           {
             post_id:post_id,
@@ -591,7 +684,7 @@
           }
         )
         this.comment_text = null
-        this.getPosts(index)
+        await this.getPosts(index)
 
       },
       async likeAction(post_id,index){
@@ -606,7 +699,7 @@
           await this.$axios.post('/api/v1/post/add_remove_like_to_post',{post_id:post_id,action:'add'})
         }
 
-        this.getPosts(index)
+        await this.getPosts(index)
       },
       async friendAction(){
         let nickname = this.$route.params.nickname
@@ -621,7 +714,7 @@
 
           this.notify('Успешно','Пользователь добавлен в избранное','success')
         }
-        this.$auth.fetchUser()
+        await this.$auth.fetchUser()
       }
 
 

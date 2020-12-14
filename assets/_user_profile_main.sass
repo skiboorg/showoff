@@ -88,12 +88,79 @@
       &:last-child
         margin-right: 0
   &-gifts
-    background: #FFFFFF
-    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
-    border-radius: 3px
-    padding: 30px 0
-    & .user-profile-block__title
-      padding-left: 30px
+    display: grid
+    grid-template-columns: repeat(auto-fill,minmax(130px,1fr))
+    grid-gap: 20px
+    &__message
+      display: flex
+      align-items: center
+      justify-content: space-between
+      & .btn
+        height: 45px
+      & .el-input
+        margin-right: 25px
+    & .el-radio-button__inner
+      border: none
+      border-radius: unset !important
+    & .el-radio-button:first-child .el-radio-button__inner
+      border-left: none
+      box-shadow: inherit !important
+    & .el-radio-button__orig-radio:checked+.el-radio-button__inner
+      background-color: #FFFFFF
+      box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0 !important
+      color: unset
+      border-color: unset
+  &-gift
+    &__img
+      width: 100px
+      height: 100px
+      object-fit: cover
+      margin-bottom: 20px
+    &__name
+      color: #4D94FF
+      font-size: 14px
+      margin-bottom: 10px
+    &__price
+      display: flex
+      align-items: center
+      justify-content: center
+      img
+        width: 12px
+        height: 10px
+        object-fit: contain
+        margin-right: 5px
+      p
+        font-family: 'Inter', sans-serif
+        font-size: 9px
+  &-special-gifts
+    width: 100%
+  &-special-gift
+    position: relative
+    margin-right: 0
+    margin-bottom: 20px
+    display: block
+    padding-right: 60px
+    & .el-radio__inner
+      border: 2px solid #CECFDF
+      &:hover
+        border-color: $color-l-green
+
+    & .el-radio__input.is-checked .el-radio__inner
+      border-color: $color-l-green
+      background: $color-l-green
+    & .el-radio__input
+      position: absolute
+      right: 0
+    & .el-radio__label
+      padding-left: 0
+    &__inner
+      display: flex
+      align-items: center
+      justify-content: space-between
+      & .user-profile-gift__name
+        margin-bottom: 0
+
+
 
 
 
