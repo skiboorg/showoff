@@ -1,20 +1,52 @@
 .footer
-  background: $footer-bg
-  padding: 80px 0
+
+  &-btn
+    border: 1px solid #FFFFFF
+    box-sizing: border-box
+    border-radius: 10px
+    color: #FFFFFF
+    padding: 3px 0px
+    width: 90px
+    text-align: center
+    cursor: pointer
+    font-size: 10px
+    a
+      color: inherit
   &-top
-    margin-bottom: 40px
+    background: $footer-top-bg
+    padding: 40px 0
+    p
+      color: #FFFFFF
+      &:first-child
+        font-size: 16px
+        margin-bottom: 10px
+    &__wrapper
+      display: flex
+      align-items: center
+      justify-content: space-between
+    &__item
+      display: flex
+      align-items: center
+      justify-content: center
+      svg
+        margin-right: 35px
+
+  &-bottom
+    padding: 80px 0
+    background: $footer-bg
     ul
       display: flex
       align-items: center
       justify-content: center
+      margin-bottom: 40px
       li
         margin-right: 60px
         &:last-child
           margin-right: 0
         a
-          color: inherit
+          color: #ffffff
           font-size: 14px
-  &-bottom
     p
+      color: #ffffff
       text-align: center
       font-size: 14px

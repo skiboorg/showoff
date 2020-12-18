@@ -1,5 +1,5 @@
 <template>
-  <div id="top">
+  <div id="1top">
     <div class="page-fixed">
       <div class="page-fixed__info-btn">
         <p @click="aboutModal=true">
@@ -26,9 +26,10 @@
       </div>
       <a href="#top">
         <div  class="page-fixed__top-btn">
-          <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M26.3633 14.7104L14.3708 0.889623C14.2624 0.764563 14.1284 0.664265 13.9778 0.595526C13.8273 0.526786 13.6637 0.491211 13.4982 0.491211C13.3327 0.491211 13.1691 0.526786 13.0186 0.595526C12.868 0.664265 12.734 0.764563 12.6256 0.889623L0.636717 14.7104C0.600489 14.7521 0.576999 14.8033 0.569045 14.8579C0.561091 14.9125 0.569008 14.9683 0.591853 15.0186C0.614698 15.0688 0.651508 15.1115 0.697899 15.1414C0.74429 15.1713 0.798307 15.1873 0.853514 15.1874H3.78027C3.94648 15.1874 4.10547 15.1151 4.21748 14.9886L12.127 5.87234V26.2187C12.127 26.3777 12.257 26.5078 12.416 26.5078H14.584C14.743 26.5078 14.873 26.3777 14.873 26.2187V5.87234L22.7825 14.9886C22.8909 15.1151 23.0499 15.1874 23.2197 15.1874H26.1465C26.3922 15.1874 26.5259 14.8983 26.3633 14.7104Z" fill="#3E3F5E"/>
+          <svg width="26" height="36" viewBox="0 0 156 188" fill="#888888" xmlns="http://www.w3.org/2000/svg">
+            <path d="M154.244 82.2421C153.687 82.7995 153.025 83.2417 152.297 83.5433C151.569 83.845 150.789 84.0003 150.001 84.0003C149.213 84.0003 148.432 83.845 147.704 83.5433C146.976 83.2417 146.315 82.7995 145.758 82.2421L84.0006 20.4851V182C84.0006 183.591 83.3685 185.118 82.2433 186.243C81.118 187.368 79.5919 188 78.0006 188C76.4093 188 74.8832 187.368 73.758 186.243C72.6328 185.118 72.0006 183.591 72.0006 182V20.4851L10.2436 82.2421C9.11543 83.3523 7.59426 83.9718 6.01144 83.9655C4.42861 83.9593 2.91238 83.3278 1.79302 82.2087C0.673652 81.0896 0.0418399 79.5735 0.035209 77.9907C0.028578 76.4079 0.647663 74.8866 1.75761 73.7581L73.7576 1.75813C74.3147 1.20075 74.9762 0.758603 75.7042 0.456936C76.4322 0.155269 77.2126 0 78.0006 0C78.7887 0 79.569 0.155269 80.297 0.456936C81.0251 0.758603 81.6865 1.20075 82.2436 1.75813L154.244 73.7581C154.801 74.3152 155.243 74.9765 155.544 75.7044C155.846 76.4322 156.001 77.2123 156.001 78.0001C156.001 78.788 155.846 79.5681 155.544 80.2959C155.243 81.0237 154.801 81.6851 154.244 82.2421V82.2421Z" fill="#888888"/>
           </svg>
+
         </div>
       </a>
     </div>
@@ -156,6 +157,41 @@
         </div>
       </div>
     </section>
+    <section>
+      <div class="container">
+        <h3 class="section-title mb-30"><nuxt-link to="/streams">与女孩预定的广播</nuxt-link> </h3>
+        <p class="mb-30">培训，如果您真的有兴趣的话，您将会成功。例如，经常在视频流的前半小时或一个小时，我一直在讲话直到订阅者赶上。如果您对我的操作方式感兴趣-签名中有一个链接，则可以执行相同的操作。只是在您玩游戏和思考某件事时，如果它不会干扰游戏玩法，请大声说出来（例如，在两个角色之间的情节对话中）。</p>
+        <div class="stream-video bg-none">
+          <div class="stream-video__top">
+            <div  class="stream-video__top--user">
+              <img src="http://placehold.it/200" alt="">
+              <div class="stream-video__top--user--info">
+                <p>Anna Markina</p>
+                <p>@annamarkina</p>
+              </div>
+            </div>
+            <p style="font-size: 24px;font-weight: bold">烹饪您最喜欢的食物</p>
+            <div class="stream-video__top--stats">
+              <img src="/girl_rating_icon.png" alt="">
+              <div class="user-profile-about__girl-stats--item--info">
+                <p>712</p>
+                <p>广播评级</p>
+              </div>
+            </div>
+          </div>
+          <div class="stream-video__content mb-40 ">
+
+            <video style="width: 100%;height: 100%" controls>
+              <source src="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4" type="video/mp4">
+
+              Your browser does not support HTML video.
+            </video>
+
+          </div>
+          <p>培训，如果您真的有兴趣的话，您将会成功。例如，经常在视频流的前半小时或一个小时，我一直在讲话直到订阅者赶上。如果您对我的操作方式感兴趣-签名中有一个链接，则可以执行相同的操作。只是在您玩游戏和思考某件事时，如果它不会干扰游戏玩法，请大声说出来（例如，在两个角色之间的情节对话中）。</p>
+        </div>
+      </div>
+    </section>
     <section class="slider-streams">
       <div class="container">
         <h3 class="section-title"><nuxt-link to="/streams">与女孩预定的广播</nuxt-link> </h3>
@@ -164,7 +200,7 @@
         <swiper class="slider-streams__wrapper"  :options="swiperOption">
           <div class="swiper-pagination" slot="pagination"></div>
           <swiper-slide v-for="stream in streams"
-           :key="stream.id">
+                        :key="stream.id">
             <StreamCard :name="stream.name"
                         :avatar="stream.streamer.avatar"
                         :stream_img="stream.image"
@@ -183,8 +219,8 @@
           <div class="pricing-item">
             <div class="pricing-item__decor decor-one">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.59 13.41L13.42 20.58C13.2343 20.766 13.0137 20.9135 12.7709 21.0141C12.5281 21.1148 12.2678 21.1666 12.005 21.1666C11.7422 21.1666 11.4819 21.1148 11.2391 21.0141C10.9963 20.9135 10.7757 20.766 10.59 20.58L2 12V2H12L20.59 10.59C20.9625 10.9647 21.1716 11.4716 21.1716 12C21.1716 12.5284 20.9625 13.0353 20.59 13.41V13.41Z" stroke="#23D2E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7 7H7.01" stroke="#23D2E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20.59 13.41L13.42 20.58C13.2343 20.766 13.0137 20.9135 12.7709 21.0141C12.5281 21.1148 12.2678 21.1666 12.005 21.1666C11.7422 21.1666 11.4819 21.1148 11.2391 21.0141C10.9963 20.9135 10.7757 20.766 10.59 20.58L2 12V2H12L20.59 10.59C20.9625 10.9647 21.1716 11.4716 21.1716 12C21.1716 12.5284 20.9625 13.0353 20.59 13.41V13.41Z" stroke="#f64953" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 7H7.01" stroke="#f64953" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <p class="pricing-item__name price-one">每月固定费用</p>
@@ -198,9 +234,17 @@
           </div>
           <div class="pricing-item">
             <div class="pricing-item__decor decor-two">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 4H18V3C18 2.73478 17.8946 2.48043 17.7071 2.29289C17.5196 2.10536 17.2652 2 17 2H7C6.73478 2 6.48043 2.10536 6.29289 2.29289C6.10536 2.48043 6 2.73478 6 3V4H3C2.73478 4 2.48043 4.10536 2.29289 4.29289C2.10536 4.48043 2 4.73478 2 5V8C2 9.06087 2.42143 10.0783 3.17157 10.8284C3.92172 11.5786 4.93913 12 6 12H7.54C8.44453 13.0091 9.66406 13.6824 11 13.91V16H10C9.20435 16 8.44129 16.3161 7.87868 16.8787C7.31607 17.4413 7 18.2044 7 19V21C7 21.2652 7.10536 21.5196 7.29289 21.7071C7.48043 21.8946 7.73478 22 8 22H16C16.2652 22 16.5196 21.8946 16.7071 21.7071C16.8946 21.5196 17 21.2652 17 21V19C17 18.2044 16.6839 17.4413 16.1213 16.8787C15.5587 16.3161 14.7956 16 14 16H13V13.91C14.3359 13.6824 15.5555 13.0091 16.46 12H18C19.0609 12 20.0783 11.5786 20.8284 10.8284C21.5786 10.0783 22 9.06087 22 8V5C22 4.73478 21.8946 4.48043 21.7071 4.29289C21.5196 4.10536 21.2652 4 21 4ZM6 10C5.46957 10 4.96086 9.78929 4.58579 9.41421C4.21071 9.03914 4 8.53043 4 8V6H6V8C6.0022 8.68171 6.12056 9.35806 6.35 10H6ZM14 18C14.2652 18 14.5196 18.1054 14.7071 18.2929C14.8946 18.4804 15 18.7348 15 19V20H9V19C9 18.7348 9.10536 18.4804 9.29289 18.2929C9.48043 18.1054 9.73478 18 10 18H14ZM16 8C16 9.06087 15.5786 10.0783 14.8284 10.8284C14.0783 11.5786 13.0609 12 12 12C10.9391 12 9.92172 11.5786 9.17157 10.8284C8.42143 10.0783 8 9.06087 8 8V4H16V8ZM20 8C20 8.53043 19.7893 9.03914 19.4142 9.41421C19.0391 9.78929 18.5304 10 18 10H17.65C17.8794 9.35806 17.9978 8.68171 18 8V6H20V8Z" fill="white"/>
+              <div class="crown">
+                <svg  width="44" height="31" viewBox="0 0 44 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.62891 9.28153C1.62891 10.6181 2.68545 11.7191 3.99736 11.7339L9.64951 28.9924L9.80662 29.4721L10.2848 29.3104C13.9659 28.0658 17.9097 27.3842 21.9999 27.3842C26.09 27.3842 30.0339 28.0658 33.7149 29.3104L34.1939 29.4724L34.3505 28.9917L39.9734 11.7339C41.314 11.719 42.3412 10.6183 42.3412 9.31157C42.3412 7.95565 41.2602 6.88909 39.9459 6.88909C38.592 6.88909 37.5506 7.99595 37.5506 9.31157C37.5506 10.0461 37.8664 10.7022 38.3755 11.1448C37.3876 12.1879 35.9111 13.6753 34.3919 14.9643C33.5193 15.7047 32.644 16.3698 31.8473 16.8471C31.0324 17.3353 30.3708 17.5829 29.9068 17.5829C29.0076 17.5829 28.1738 17.1536 27.3926 16.3778C26.6085 15.599 25.9112 14.5025 25.3033 13.2565C24.1791 10.952 23.4065 8.23278 22.9472 6.33608C23.7848 5.95499 24.3656 5.09883 24.3656 4.11486C24.3656 2.75894 23.2845 1.69238 21.9703 1.69238C20.6163 1.69238 19.575 2.79925 19.575 4.11486C19.575 5.09883 20.1558 5.95499 20.9933 6.33608C20.5341 8.23278 19.7614 10.952 18.6372 13.2565C18.0294 14.5025 17.3321 15.599 16.5479 16.3778C15.7667 17.1536 14.9329 17.5829 14.0337 17.5829C13.5697 17.5829 12.9081 17.3353 12.0932 16.8471C11.2965 16.3698 10.4212 15.7047 9.54864 14.9643C8.02938 13.6753 6.55293 12.1879 5.56506 11.1448C6.07411 10.7022 6.38988 10.0461 6.38988 9.31157C6.38988 7.95565 5.30883 6.88909 3.99459 6.88909C2.67526 6.88909 1.62891 7.96077 1.62891 9.28153Z" fill="#FFB800" stroke="#FF7A00"/>
+                </svg>
+              </div>
+
+
+              <svg width="41" height="19" viewBox="0 0 41 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.0312 0.847656L10.7266 19H6.35547L0.132812 0.847656H4.30469L8.23047 13.6797C8.42578 14.3125 8.54688 14.9102 8.59375 15.4727H8.66406C8.72656 14.8945 8.85938 14.2812 9.0625 13.6328L12.9883 0.847656H17.0312ZM23.1133 0.847656V19H19.2461V0.847656H23.1133ZM31.1875 12.6719V19H27.3203V0.847656H33.5664C38.082 0.847656 40.3398 2.76172 40.3398 6.58984C40.3398 8.44922 39.6562 9.94141 38.2891 11.0664C36.9297 12.1836 35.2266 12.7188 33.1797 12.6719H31.1875ZM31.1875 3.84766V9.70703H32.8633C35.1367 9.70703 36.2734 8.71875 36.2734 6.74219C36.2734 4.8125 35.1484 3.84766 32.8984 3.84766H31.1875Z" fill="white"/>
               </svg>
+
 
             </div>
             <p class="pricing-item__name price-two">VIP费是最好的</p>
@@ -215,7 +259,7 @@
           <div class="pricing-item">
             <div class="pricing-item__decor decor-one">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 2L19 4M19 4L22 7L18.5 10.5L15.5 7.5M19 4L15.5 7.5M11.39 11.61C11.9064 12.1195 12.3168 12.726 12.5978 13.3948C12.8787 14.0635 13.0246 14.7813 13.0271 15.5066C13.0295 16.232 12.8884 16.9507 12.6119 17.6213C12.3355 18.2919 11.9291 18.9012 11.4162 19.4141C10.9033 19.9271 10.294 20.3334 9.62333 20.6099C8.95271 20.8864 8.23403 21.0275 7.50866 21.025C6.7833 21.0226 6.06557 20.8767 5.39682 20.5958C4.72807 20.3148 4.1215 19.9043 3.61203 19.388C2.61016 18.3507 2.05579 16.9614 2.06832 15.5193C2.08085 14.0772 2.65928 12.6977 3.67903 11.678C4.69877 10.6583 6.07824 10.0798 7.52032 10.0673C8.96241 10.0548 10.3517 10.6091 11.389 11.611L11.39 11.61ZM11.39 11.61L15.5 7.5" stroke="#EC75F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 2L19 4M19 4L22 7L18.5 10.5L15.5 7.5M19 4L15.5 7.5M11.39 11.61C11.9064 12.1195 12.3168 12.726 12.5978 13.3948C12.8787 14.0635 13.0246 14.7813 13.0271 15.5066C13.0295 16.232 12.8884 16.9507 12.6119 17.6213C12.3355 18.2919 11.9291 18.9012 11.4162 19.4141C10.9033 19.9271 10.294 20.3334 9.62333 20.6099C8.95271 20.8864 8.23403 21.0275 7.50866 21.025C6.7833 21.0226 6.06557 20.8767 5.39682 20.5958C4.72807 20.3148 4.1215 19.9043 3.61203 19.388C2.61016 18.3507 2.05579 16.9614 2.06832 15.5193C2.08085 14.0772 2.65928 12.6977 3.67903 11.678C4.69877 10.6583 6.07824 10.0798 7.52032 10.0673C8.96241 10.0548 10.3517 10.6091 11.389 11.611L11.39 11.61ZM11.39 11.61L15.5 7.5" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
 
             </div>
@@ -303,7 +347,7 @@
                 <div class="faq-item__content--inner">
                   <p>水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！<br><br>
 
-每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
+                    每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！</p>
                 </div>
 
               </div>
@@ -332,36 +376,17 @@
       <div class="container">
         <h3 class="section-title">有关我们平台的问题的答案</h3>
         <div class="best-girls-wrapper">
-          <div class="best-girls-item">
-            <div class="best-girls-item__num">1</div>
+          <div @click="$router.push(`/profile/${girl.nickname}`)" class="best-girls-item" v-for="(girl,index) in top_streamers" :key="girl.id">
+            <div class="best-girls-item__num">{{index+1}}</div>
             <div class="best-girls-item__img">
-              <img src="http://placehold.it/300" alt="">
+              <img :src="girl.avatar" alt="">
             </div>
-            <div class="best-girls-item__score">#4858</div>
-            <div class="best-girls-item__name">Liza Markina</div>
-            <div class="best-girls-item__link">@markina</div>
+            <div class="best-girls-item__score">#{{girl.streamer_rating}}</div>
+            <div class="best-girls-item__name">{{girl.fio}}</div>
+            <div class="best-girls-item__link">@{{girl.nickname}}</div>
 
           </div>
-          <div class="best-girls-item">
-            <div class="best-girls-item__num">1</div>
-            <div class="best-girls-item__img">
-              <img src="http://placehold.it/300" alt="">
-            </div>
-            <div class="best-girls-item__score">#4858</div>
-            <div class="best-girls-item__name">Liwerza Markina</div>
-            <div class="best-girls-item__link">@markina</div>
 
-          </div>
-          <div class="best-girls-item">
-            <div class="best-girls-item__num">1</div>
-            <div class="best-girls-item__img">
-              <img src="http://placehold.it/300" alt="">
-            </div>
-            <div class="best-girls-item__score">#4858</div>
-            <div class="best-girls-item__name">Lirrrrza Markina</div>
-            <div class="best-girls-item__link">@maghjhgjrkina</div>
-
-          </div>
         </div>
       </div>
     </section>
@@ -405,10 +430,12 @@
       console.log(params)
       try{
         const get_streamers = await $axios.get(`/api/v1/user/get_streamers?at_home=true`)
+        const get_top_streamers = await $axios.get(`/api/v1/user/get_streamers?top5=true`)
         const get_streams = await $axios.get(`/api/v1/stream/get_streams_for_home_page`)
         const streamers = get_streamers.data
+        const top_streamers = get_top_streamers.data
         const streams = get_streams.data
-        return {streamers,streams}
+        return {streamers,streams,top_streamers}
       }catch (e) {
         const err = 404
         return {err}

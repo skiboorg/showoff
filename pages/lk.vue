@@ -27,6 +27,7 @@
         <div class="user-profile-wrapper">
           <div class="user-profile-right">
             <div v-if="!this.$auth.user.is_streamer" class="user-profile-menu">
+
               <div class="user-profile-menu__item" @click="tabActive='infoTab'" :class="{'profileMenuActive':tabActive==='infoTab'}">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15.71 12.7099C16.6904 11.9385 17.406 10.8808 17.7572 9.68382C18.1085 8.48684 18.0779 7.21015 17.6698 6.03135C17.2617 4.85255 16.4963 3.83027 15.4801 3.10674C14.4639 2.3832 13.2474 1.99438 12 1.99438C10.7525 1.99438 9.53611 2.3832 8.51993 3.10674C7.50374 3.83027 6.73834 4.85255 6.33021 6.03135C5.92208 7.21015 5.89151 8.48684 6.24276 9.68382C6.59401 10.8808 7.3096 11.9385 8.29 12.7099C6.61007 13.3829 5.14428 14.4992 4.04889 15.9398C2.95349 17.3804 2.26956 19.0912 2.07 20.8899C2.05555 21.0212 2.06711 21.1541 2.10402 21.2809C2.14093 21.4078 2.20246 21.5261 2.28511 21.6292C2.45202 21.8374 2.69478 21.9707 2.96 21.9999C3.22521 22.0291 3.49116 21.9517 3.69932 21.7848C3.90749 21.6179 4.04082 21.3751 4.07 21.1099C4.28958 19.1551 5.22168 17.3497 6.68822 16.0387C8.15475 14.7277 10.0529 14.0029 12.02 14.0029C13.9871 14.0029 15.8852 14.7277 17.3518 16.0387C18.8183 17.3497 19.7504 19.1551 19.97 21.1099C19.9972 21.3556 20.1144 21.5825 20.2991 21.7469C20.4838 21.9113 20.7228 22.0014 20.97 21.9999H21.08C21.3421 21.9697 21.5817 21.8372 21.7466 21.6311C21.9114 21.4251 21.9881 21.1622 21.96 20.8999C21.7595 19.0961 21.0719 17.3809 19.9708 15.9381C18.8698 14.4953 17.3969 13.3794 15.71 12.7099ZM12 11.9999C11.2089 11.9999 10.4355 11.7653 9.77772 11.3258C9.11992 10.8862 8.60723 10.2615 8.30448 9.53061C8.00173 8.79971 7.92251 7.99544 8.07686 7.21952C8.2312 6.4436 8.61216 5.73086 9.17157 5.17145C9.73098 4.61204 10.4437 4.23108 11.2196 4.07674C11.9956 3.9224 12.7998 4.00161 13.5307 4.30436C14.2616 4.60711 14.8863 5.1198 15.3259 5.7776C15.7654 6.4354 16 7.20876 16 7.99988C16 9.06075 15.5786 10.0782 14.8284 10.8283C14.0783 11.5785 13.0609 11.9999 12 11.9999Z" />
@@ -39,6 +40,14 @@
                 </svg>
 
                 <p>我的评分</p>
+              </div>
+              <div class="user-profile-menu__item" @click="tabActive='balanceTab'" :class="{'profileMenuActive':tabActive==='balanceTab'}">
+                <svg width="24" height="24" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 0H3L0 3.5L8 13L16 3.5L13 0ZM4.64 3H1.75L3.27 1.22L4.64 3ZM6.42 3L8 1.16L9.58 3H6.42ZM10 4L8 10.68L6 4H10ZM5.26 4L7.15 10.44L1.73 4H5.26ZM10.75 4H14.28L8.85 10.44L10.75 4ZM11.37 3L12.74 1.22L14.25 3H11.35H11.37ZM12 1L10.56 2.81L9.1 1H12ZM5.43 2.83L4 1H6.9L5.43 2.83Z" />
+                </svg>
+
+
+                <p>我的余额</p>
               </div>
               <div class="user-profile-menu__item" @click="tabActive='friendsTab'" :class="{'profileMenuActive':tabActive==='friendsTab'}">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,6 +133,7 @@
             </div>
           </div>
           <div v-if="!this.$auth.user.is_streamer" class="user-profile-left">
+
             <div v-if="tabActive==='infoTab'" class="user-profile-tab">
               <UserAbout :avatar="this.$auth.user.avatar"
                          :level="this.$auth.user.level"
@@ -201,7 +211,7 @@
 
                 </div>
               </div>
-               <div class="user-profile-block">
+              <div class="user-profile-block">
 
                 <h3 class="user-profile-block__title">女孩的服务</h3>
                 <div v-if="gift.gift.is_special_gift" class="gift-table-item" v-for="gift in sended_gift" :key="gift.id">
@@ -214,7 +224,7 @@
                     </div>
                   </div>
                   <div class="gift-table-item__img">
-                   {{gift.message}}
+                    {{gift.message}}
                   </div>
 
                   <div class="gift-table-item__price">
@@ -347,6 +357,25 @@
               </div>
 
             </div>
+            <div v-if="tabActive==='balanceTab'" class="user-profile-tab">
+              <UserAbout :avatar="this.$auth.user.avatar"
+                         :level="this.$auth.user.level"
+                         :fio="this.$auth.user.fio"
+                         :nickname="this.$auth.user.nickname"
+                         :balance="this.$auth.user.balance"
+                         :is_man="true"/>
+              <div class="user-profile-block">
+                <h3 class="user-profile-block__title">个怎么运作</h3>
+                <div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 20px">
+                  <img style="cursor: pointer" @click="balanceAddAmount=150,balanceDialogVisible=true" src="/card1.png" alt="">
+                  <img style="cursor: pointer" @click="balanceAddAmount=300,balanceDialogVisible=true" src="/card2.png" alt="">
+                  <img style="cursor: pointer" @click="balanceAddAmount=750,balanceDialogVisible=true" src="/card3.png" alt="">
+                  <img style="cursor: pointer" @click="balanceAddAmount=1500,balanceDialogVisible=true" src="/card4.png" alt="">
+                </div>
+
+              </div>
+
+            </div>
             <div v-if="tabActive==='friendsTab'" class="user-profile-tab">
               <UserAbout :avatar="this.$auth.user.avatar"
                          :level="this.$auth.user.level"
@@ -365,7 +394,7 @@
                     <div class="user-profile-friends-item__info">
                       <p @click="$router.push(`/profile/${friend.nickname}`)" class="user-profile-friends-item__info--name">{{friend.fio}}</p>
                       <p class="user-profile-friends-item__info--link mb-20">@{{friend.nickname}}</p>
-<!--                      <p class="user-profile-friends-item__info&#45;&#45;yo">{{friend.years}}岁</p>-->
+                      <!--                      <p class="user-profile-friends-item__info&#45;&#45;yo">{{friend.years}}岁</p>-->
                     </div>
                     <div class="user-profile-friends-item__buttons">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -412,7 +441,7 @@
                           </div>
                         </div>
                         <div v-else class="chat-user" :class="{'chatSelected':chat.chat_opened}">
-                         <div class="chat-user__img" :class="{'chatUserOnline':chat.starter.is_online,'userVIP':chat.starter.is_vip}">
+                          <div class="chat-user__img" :class="{'chatUserOnline':chat.starter.is_online,'userVIP':chat.starter.is_vip}">
                             <img :src="chat.starter.avatar" alt="">
                           </div>
                           <div class="chat-user__user">
@@ -646,12 +675,7 @@
                          :is_man="true"/>
               <div class="user-profile-block">
                 <h3 class="user-profile-block__title">个怎么运作</h3>
-                <div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 20px">
-                  <img style="cursor: pointer" @click="balanceAddAmount=150,balanceDialogVisible=true" src="/card1.png" alt="">
-                  <img style="cursor: pointer" @click="balanceAddAmount=300,balanceDialogVisible=true" src="/card2.png" alt="">
-                  <img style="cursor: pointer" @click="balanceAddAmount=750,balanceDialogVisible=true" src="/card3.png" alt="">
-                  <img style="cursor: pointer" @click="balanceAddAmount=1500,balanceDialogVisible=true" src="/card4.png" alt="">
-                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci illo impedit ratione velit? Eius expedita laudantium perferendis tempore? Accusamus amet earum explicabo modi tempora voluptate voluptatem. Delectus, quibusdam?</p>
 
               </div>
             </div>
@@ -689,28 +713,28 @@
                   <el-form-item label="Ник">
                     <el-input v-model="userData.nickname"></el-input>
                   </el-form-item>
-                  <el-form-item label="city">
-                    <el-input v-model="userData.city"></el-input>
+                  <el-form-item label="Город">
+                    <el-input v-model="userData.city" placeholder="Город"></el-input>
                   </el-form-item>
-                  <el-form-item label="education">
-                    <el-input v-model="userData.education" placeholder="education"></el-input>
+                  <el-form-item label="Образование">
+                    <el-input v-model="userData.education" placeholder="Образование"></el-input>
                   </el-form-item>
-                  <el-form-item label="work_place">
-                    <el-input v-model="userData.work_place" placeholder="work_place"></el-input>
+                  <el-form-item label="Профессия">
+                    <el-input v-model="userData.work_place" placeholder="Профессия"></el-input>
                   </el-form-item>
-                  <el-form-item label="birthday">
-                    <el-date-picker v-model="userData.birthday" type="date" placeholder="birthday"
+                  <el-form-item label="Д.Р.">
+                    <el-date-picker v-model="userData.birthday" type="date" placeholder="День рождения"
                                     format="yyyy/MM/dd" value-format="yyyy-MM-dd">
                     </el-date-picker>
                   </el-form-item>
-                  <el-form-item label="about">
-                    <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.about"></el-input>
+                  <el-form-item label="Обо мне">
+                    <el-input type="textarea" :rows="2" placeholder="Обо мне" v-model="userData.about"></el-input>
                   </el-form-item>
-                  <el-form-item label="interests">
-                    <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests"></el-input>
+                  <el-form-item label="Интересы">
+                    <el-input type="textarea" :rows="2" placeholder="Интересы" v-model="userData.interests"></el-input>
                   </el-form-item>
-                  <el-form-item label="interests_additional">
-                    <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests_additional"></el-input>
+                  <el-form-item label="Искусство">
+                    <el-input type="textarea" :rows="2" placeholder="Искусство" v-model="userData.interests_additional"></el-input>
                   </el-form-item>
                 </el-form>
                 <p class="btn btn-l-blue" @click="updateUser">Сохранить</p>
@@ -872,6 +896,24 @@
 
             </div>
             <div v-if="tabActive==='streamerStreamsTab'" class="user-profile-tab">
+              <div class="user-profile-block">
+
+                <h3 class="user-profile-block__title">Как пользоваться стримами?</h3>
+                <p class="mb-20">В данном разделе вы видите инструкцию по созданию и настройке своей трансляции. Если у вас возникли вопросы или вам нужна помощь - свяжитесь с нами!</p>
+                <p class="mb-20">Ваш ключ трансляции: <strong>9afziq9w8d9i0fq--akjf9f$</strong></p>
+                <el-collapse v-model="streamerStreamsTab_activeAccordion">
+                  <el-collapse-item title="Как запустить трансляцию" name="1">
+                    <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
+                    <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+                  </el-collapse-item>
+                  <el-collapse-item title="Правила ведения трансляции" name="2">
+                    <div>Operation feedback: enable the users to clearly perceive their operations by style updates and interactive effects;</div>
+                    <div>Visual feedback: reflect current state by updating or rearranging elements of the page.</div>
+                  </el-collapse-item>
+
+                </el-collapse>
+              </div>
+
 
               <div class="user-profile-block">
 
@@ -899,10 +941,21 @@
                       <p>{{scope.row.is_private? 'Да' : 'Нет'}}</p>
                     </template>
                   </el-table-column>
-                  <el-table-column  label="Действие" >
+                  <el-table-column  label="Действие" width="200">
                     <template slot-scope="scope">
-                      <el-button type="danger" size="mini" @click="deleteStream(scope.row.id)"><i class="el-icon-delete"></i></el-button>
-                      <el-button type="info" size="mini" @click="copyToClipboard(scope.row.url)"><i class="el-icon-link"></i></el-button>
+                      <el-tooltip class="item" effect="dark" content="Удалить стрим" placement="top-start">
+                        <el-button type="danger" size="mini" @click="updateStream(scope.row.id,'delete')"><i class="el-icon-delete"></i></el-button>
+                      </el-tooltip>
+                      <el-tooltip class="item" effect="dark" content="Скопировать ссылку на стрим в буфер обмена" placement="top-start">
+                        <el-button type="info" size="mini" @click="copyToClipboard(scope.row.url)"><i class="el-icon-link"></i></el-button>
+                      </el-tooltip>
+                      <el-tooltip v-if="!scope.row.is_active" class="item" effect="dark" content="Активировить страницу со стримом" placement="top-start">
+                        <el-button type="success" size="mini" @click="updateStream(scope.row.id,'start')" ><i class="el-icon-video-play"></i></el-button>
+                      </el-tooltip>
+                      <el-tooltip v-else class="item" effect="dark" content="Деактивировить страницу со стримом" placement="top-start">
+                        <el-button type="danger" size="mini" @click="updateStream(scope.row.id,'stop')"><i class="el-icon-video-pause"></i></el-button>
+                      </el-tooltip>
+
                     </template>
                   </el-table-column>
                 </el-table>
@@ -913,20 +966,20 @@
                 <el-input class="mb-10" v-model="newStreamData.name" placeholder="Название стрима"></el-input>
                 <el-input class="mb-10" type="textarea"  :rows="4" v-model="newStreamData.description" placeholder="Описание стрима"></el-input>
                 <div style="display: flex;align-items: center;justify-content: space-between" class="mb-10">
-                   <el-date-picker  v-model="newStreamData.date" type="datetime" placeholder="Дата и время начала"></el-date-picker>
+                  <el-date-picker  v-model="newStreamData.date" type="datetime" placeholder="Дата и время начала"></el-date-picker>
                   <div class="">
                     <el-checkbox v-model="newStreamData.is_vip">Для вип</el-checkbox>
-                  <el-checkbox v-model="newStreamData.is_private">Приватный</el-checkbox>
+                    <el-checkbox v-model="newStreamData.is_private">Приватный</el-checkbox>
                   </div>
                 </div>
                 <div class="mb-30">
                   <p class="mb-20">Изображение</p>
-                <el-upload class="avatar-uploader" action="" :show-file-list="false" :on-success="handleStreamImage">
-                  <div style="padding:5px; display: flex; align-items: center;justify-content: center;width: 300px;height: 200px;border: 1px dashed #cecece">
-                    <img style="object-fit: cover; height: 200px; width: 300px;" v-if="newStreamImgPreview" :src="newStreamImgPreview" alt="" class="avatar">
-                    <p v-else style="font-size: 30px">+</p>
-                  </div>
-                </el-upload>
+                  <el-upload class="avatar-uploader" action="" :show-file-list="false" :on-success="handleStreamImage">
+                    <div style="padding:5px; display: flex; align-items: center;justify-content: center;width: 300px;height: 200px;border: 1px dashed #cecece">
+                      <img style="object-fit: cover; height: 200px; width: 300px;" v-if="newStreamImgPreview" :src="newStreamImgPreview" alt="" class="avatar">
+                      <p v-else style="font-size: 30px">+</p>
+                    </div>
+                  </el-upload>
                 </div>
 
                 <el-button type="success" @click="addStream">Добавить</el-button>
@@ -1048,6 +1101,7 @@
         balanceDialogVisible:false,
         newPostDialogVisible:false,
         balanceAddAmount:0,
+        streamerStreamsTab_activeAccordion:0,
         tabActive: this.$auth.user.is_streamer ? 'streamerInfoTab' : 'infoTab',//'infoTab',
         user_from_url:null,
         current_chat_id:null,
@@ -1171,9 +1225,9 @@
           type: type
         });
       },
-      async deleteStream(stream_id){
-        await this.$axios.delete(`/api/v1/stream/delete_stream/${stream_id}`)
-        this.notify('Успешно','Стрим удален','success')
+      async updateStream(stream_id,action){
+        await this.$axios.post(`/api/v1/stream/update_stream`,{id:stream_id,action:action})
+        this.notify('Успешно','Операция успешно выполнена','success')
         this.getStreams()
 
       },
@@ -1288,11 +1342,11 @@
 
         }
       },
-      async sendBlankChatMessage(nickname){
-        await this.$axios.post('/api/v1/chat/new_message',{nickname:nickname,message:'Привет'})
-        this.user_from_url = nickname
-        this.tabActive = 'chatsTab'
-      },
+      // async sendBlankChatMessage(nickname){
+      //   await this.$axios.post('/api/v1/chat/new_message',{nickname:nickname,message:'Привет'})
+      //   this.user_from_url = nickname
+      //   this.tabActive = 'chatsTab'
+      // },
       async sendChatMessage(){
         const rex = /[\u{1f300}-\u{1f5ff}\u{1f900}-\u{1f9ff}\u{1f600}-\u{1f64f}\u{1f680}-\u{1f6ff}\u{2600}-\u{26ff}\u{2700}-\u{27bf}\u{1f1e6}-\u{1f1ff}\u{1f191}-\u{1f251}\u{1f004}\u{1f0cf}\u{1f170}-\u{1f171}\u{1f17e}-\u{1f17f}\u{1f18e}\u{3030}\u{2b50}\u{2b55}\u{2934}-\u{2935}\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{3297}\u{3299}\u{303d}\u{00a9}\u{00ae}\u{2122}\u{23f3}\u{24c2}\u{23e9}-\u{23ef}\u{25b6}\u{23f8}-\u{23fa}]/ug;
         const updated = this.newMessage.replace(rex, match => `<span class="chat-emoji">&#x${match.codePointAt(0).toString(16)};</span>`);

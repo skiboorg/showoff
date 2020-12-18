@@ -1,11 +1,12 @@
 $color-text: #383845
 $color-text-grey: #AEADC6
-$color-text-d-blue: #F64953
+$color-text-d-blue: #f64953
 $color-text-blue: #F64953
 $color-text-pink: #EC75F6
 $color-scrollbar: #CECFDF
 $color-l-green: #C1343D
-$footer-bg: #e2e2e2
+$footer-top-bg: #f64953
+$footer-bg: #524e4e
 $bg-gradient-l-blue: linear-gradient(180deg, #C1343D 0%, #C1343D 100%)
 
 body
@@ -13,6 +14,10 @@ body
   color: $color-text
   background: #f8f8f8
 
+html
+  overflow-x: hidden
+.main-color
+  color: $color-l-green
 .container
   max-width: 1180px
   padding: 0 10px
@@ -56,6 +61,7 @@ body
   height: 40px
   width: 180px
   margin: 0 auto
+  border: none
   &.btn-l-blue
     background: $bg-gradient-l-blue
   &.btnDisabled
@@ -142,13 +148,17 @@ body
   right: 15px
   bottom: 15px
   &__top-btn
-    background: rgba(255, 255, 255, 0.8)
+    background: #FFFFFF
+    box-shadow: -9px 9px 14px rgba(0, 0, 0, 0.08)
     border-radius: 8px
-    padding: 11px
-    display: inline-block
+    padding: 12px
+    display: flex
+    align-items: center
+    justify-content: center
     cursor: pointer
   &__info-btn
-    background: rgba(255, 255, 255, 0.8)
+    background: #FFFFFF
+    box-shadow: -9px 9px 14px rgba(0, 0, 0, 0.08)
     border-radius: 8px
     padding: 5px
     display: inline-flex
@@ -164,7 +174,8 @@ body
       text-align: center
       display: block
       max-width: 35px
-      font-size: 14px
+      font-size: 12px
+      color: #696969
       margin: 0 auto
 
 .page-top
@@ -179,3 +190,27 @@ body
     color: $color-l-green
     cursor: pointer
     font-weight: bold
+
+.bg-none
+  background: unset !important
+  box-shadow: none !important
+
+.login-page
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  background: #FFFFFF
+  &__tabs
+    width: 800px
+
+    &--steps
+      width: 100%
+      margin: 20px 0 40px 0
+    h3
+      margin-bottom: 20px
+      font-weight: bold
+      font-size: 20px
+    p
+      margin-bottom: 20px
+

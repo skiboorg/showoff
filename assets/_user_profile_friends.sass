@@ -26,6 +26,12 @@
       display: flex
       align-items: center
       justify-content: space-evenly
+    &__friend-button
+      cursor: pointer
+      transition: all .2s linear
+      fill: $color-l-green
+      &:hover
+        background: $color-l-green
     &__button
       background: #F8F8FB
       border-radius: 22.5px
@@ -36,12 +42,22 @@
       height: 45px
       cursor: pointer
       transition: all .2s linear
+      span
+        height: 22px
       svg
         transition: all .2s linear
         fill: $color-l-green
+
       &:hover
         background: $color-l-green
         svg
           fill: #ffffff
+      &.friend-button
+        svg
+          stroke: #C1343D
+        &:hover
+          svg
+            fill: #ffffff
+            stroke: #FFFFFF
 
 

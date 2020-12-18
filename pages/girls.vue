@@ -9,8 +9,8 @@
             返回专辑
         </p>
       </div>
-      <div class="girls-page-wrapper">
-        <GirlCard v-for="streamer in streamers"
+      <div class="user-profile-friends-wrapper">
+        <FriendCard v-for="streamer in streamers"
                   :key="streamer.id"
                   :nickname="streamer.nickname"
                   :avatar="streamer.avatar"
@@ -22,13 +22,14 @@
   </section>
 </template>
 <script>
-  import GirlCard from '@/components/GirlCard'
+  import FriendCard from '@/components/FriendCard'
 
   export default {
     components: {
-      GirlCard
+      FriendCard
 
     },
+    auth: false,
     async asyncData({$axios,params}){
       console.log(params)
      try{

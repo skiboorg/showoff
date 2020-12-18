@@ -1,5 +1,5 @@
 <template>
-  <header class="header" >
+  <header id="top" class="header" >
     <div class="header-wrapper">
       <div class="header-logo">
         <nuxt-link to="/">
@@ -11,9 +11,9 @@
           <li><nuxt-link to="/">我们的女孩</nuxt-link></li>
           <li><nuxt-link to="/lk">社会团体</nuxt-link></li>
           <li><nuxt-link to="/stream">我们的广播</nuxt-link></li>
-          <li><nuxt-link to="/1">我们的女孩</nuxt-link></li>
-          <li><nuxt-link to="/2">社会团体</nuxt-link></li>
-          <li><nuxt-link to="/faq">我们的广播</nuxt-link></li>
+          <li><nuxt-link to="/girls">我们的女孩</nuxt-link></li>
+          <li><nuxt-link to="/faq">社会团体</nuxt-link></li>
+          <li><nuxt-link to="/contacts">我们的广播</nuxt-link></li>
 
         </ul>
       </div>
@@ -184,14 +184,22 @@
         this.$auth.logout()
       },
       async userRegister(){
-        let response =  this.$axios.post('/auth/users/', {
+        try{
+          let response =  this.$axios.post('/auth/users/', {
           email:this.registerData.email,
           password:this.registerData.password2,
           fio:this.registerData.fio,
           wechatid:this.registerData.wechatid,
           nickname:this.registerData.nickname,
         })
-        console.log(response)
+          console.log(await response)
+          this.notify('Успешно','Регистрация завершена','success')
+          this.$router.push('/')
+        }catch (e) {
+          this.notify('Ошибка','Проверьте введеные данные','error')
+        }
+
+
       }
 
     }
