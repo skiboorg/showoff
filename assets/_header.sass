@@ -1,11 +1,8 @@
 .header
+  position: relative
   background: #FFFFFF
   height: fit-content
-
-
-
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10)
-
   padding: 7px 0
   &-wrapper
     display: flex
@@ -19,6 +16,10 @@
     a
       color: #ffffff
   &-nav
+    &-mobile
+      display: none
+      &__toggle
+        display: none
     flex-grow: 3
     ul
       display: flex
@@ -40,7 +41,6 @@
               background-color: $color-text-d-blue
               left: 0
               bottom: -18px
-
   &-btn
     flex-grow: 5
     display: flex
@@ -87,7 +87,6 @@
       display: flex
       align-items: center
       justify-content: center
-
       &--img
         position: relative
         background: #F9F9F9
@@ -168,6 +167,93 @@
           bottom: -60px
           opacity: 1
           pointer-events: all
+    &__user-menu
+      display: none
+  &-user-menu
+    display: none
 
+@media (max-width: 576px)
+  .header
+    padding: 0
+    &-wrapper
+      padding: 0
+    &-logo
+      display: none
+    &-nav
+      display: none
+      &-mobile
+        position: absolute
+        display: block
+        left: 100%
+        transition: all .2s linear
+        right: 0
+        top: 58px
+        background: #FFFFFF
+        height: 100vh
+        padding: 65px 0
+        z-index: 100
+        ul
+          li
+            a
+              padding: 20px 30px
+              display: flex
+              align-items: center
+              justify-content: flex-start
+              color: $color-text
+              svg
+                margin-right: 20px
+                stroke: #CECFDF
+              &.nuxt-link-exact-active
+                background: #F8F8FB
+                color: $color-text-d-blue
+                svg
+                  stroke: $color-text-d-blue
+        &.mobileNavActive
+          transform: translateX(0)
+          left: 0
+        &__toggle
+          display: flex
+          flex-basis: 50px
+          align-items: center
+          justify-content: center
+          position: absolute
+          background: #FFFFFF
+          top: 0
+          bottom: 0
+          right: 0
+          width: 50px
+          &.mobileNavToggleActive
+            z-index: 10
+            box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
 
-
+    &-btn
+      position: relative
+      justify-content: space-between
+      max-width: 87%
+      background: $color-text-d-blue
+      padding: 7px 0 7px 10px
+      &__balance
+        display: none
+      &__notify
+        order: 2
+      &__user-menu
+        display: flex
+        order: 3
+        flex-basis: 50px
+        align-items: center
+        justify-content: center
+        svg
+          fill: #FFFFFF
+    &-user-menu
+      z-index: 100
+      display: block
+      position: absolute
+      top: 58px
+      transition: all .2s linear
+      left: -100%
+      right: 100%
+      height: 100vh
+      background: $color-text-d-blue
+      &.userMenuActive
+        left: 0
+        right: 0

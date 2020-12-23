@@ -13,11 +13,14 @@ body
   font-family: 'Msyh',sans-serif
   color: $color-text
   background: #f8f8f8
+  overflow-x: hidden
 
 html
   overflow-x: hidden
+
 .main-color
   color: $color-l-green
+
 .container
   max-width: 1180px
   padding: 0 10px
@@ -92,6 +95,7 @@ html
   border-color: $color-text-d-blue
 .el-select-dropdown.is-multiple .el-select-dropdown__item.selected
   color: $color-text-d-blue
+
 .authModal
   &-group
     display: flex
@@ -102,7 +106,6 @@ html
       flex-direction: column
       align-items: flex-start
       margin-bottom: 100px
-
   & .el-radio__input.is-checked+.el-radio__label
     color: inherit
   & .el-input__icon
@@ -137,6 +140,11 @@ html
   & .el-tabs__nav
     height: 50px
 
+@media (max-width: 576px)
+  .authModal
+    & .el-dialog
+      width: 340px
+      padding: 0
 
 .page-fixed
   display: flex
@@ -191,6 +199,12 @@ html
     cursor: pointer
     font-weight: bold
 
+
+@media (max-width: 576px)
+  .page-fixed
+    display: none
+
+
 .bg-none
   background: unset !important
   box-shadow: none !important
@@ -214,3 +228,10 @@ html
     p
       margin-bottom: 20px
 
+@media (max-width: 576px)
+  .el-form-item
+    display: flex
+    flex-direction: column
+    margin-bottom: 10px
+  .el-form-item__content
+    margin-left: 0 !important

@@ -8,13 +8,7 @@
       </div>
       <div class="header-nav">
         <ul>
-          <li><nuxt-link to="/">我们的女孩</nuxt-link></li>
-          <li><nuxt-link to="/lk">社会团体</nuxt-link></li>
-          <li><nuxt-link to="/stream">我们的广播</nuxt-link></li>
-          <li><nuxt-link to="/girls">我们的女孩</nuxt-link></li>
-          <li><nuxt-link to="/faq">社会团体</nuxt-link></li>
-          <li><nuxt-link to="/contacts">我们的广播</nuxt-link></li>
-
+          <li v-for="item in navItems" :key="item.id"><nuxt-link :to="item.link">{{item.name}}</nuxt-link></li>
         </ul>
       </div>
       <div v-if="this.$auth.loggedIn" class="header-btn">
@@ -35,7 +29,7 @@
 
           </div>
         </div>
-        <div   class="header-btn__user">
+        <div class="header-btn__user">
           <img :src="this.$auth.user.avatar" alt="">
           <div @click="$router.push('/lk')" class="header-btn__user--name">
             <p>{{this.$auth.user.fio.length > 5 ? this.$auth.user.fio.slice(0,5) + '...' : this.$auth.user.fio }}</p>
@@ -48,14 +42,27 @@
           </div>
           <div   class="header-btn__user--dropdown" :class="{'dropdownActive':hovered}">
             <div @click="logOut" class="header-btn__user--dropdown__inner">
-                     <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15.92 6.62C15.8724 6.49725 15.801 6.3851 15.71 6.29L12.71 3.29C12.5217 3.1017 12.2663 2.99591 12 2.99591C11.7337 2.99591 11.4783 3.1017 11.29 3.29C11.1017 3.4783 10.9959 3.7337 10.9959 4C10.9959 4.2663 11.1017 4.5217 11.29 4.71L12.59 6H3C2.73478 6 2.48043 5.89464 2.29289 5.70711C2.10536 5.51957 2 5.26522 2 5V1C2 0.734784 1.89464 0.48043 1.70711 0.292893C1.51957 0.105357 1.26522 0 1 0C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1V5C0 5.79565 0.316071 6.55871 0.87868 7.12132C1.44129 7.68393 2.20435 8 3 8H12.59L11.29 9.29C11.1963 9.38296 11.1219 9.49356 11.0711 9.61542C11.0203 9.73728 10.9942 9.86799 10.9942 10C10.9942 10.132 11.0203 10.2627 11.0711 10.3846C11.1219 10.5064 11.1963 10.617 11.29 10.71C11.383 10.8037 11.4936 10.8781 11.6154 10.9289C11.7373 10.9797 11.868 11.0058 12 11.0058C12.132 11.0058 12.2627 10.9797 12.3846 10.9289C12.5064 10.8781 12.617 10.8037 12.71 10.71L15.71 7.71C15.801 7.6149 15.8724 7.50275 15.92 7.38C16.02 7.13654 16.02 6.86346 15.92 6.62Z" fill="#383845"/>
-</svg>
-            <p>登出帐户</p>
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.92 6.62C15.8724 6.49725 15.801 6.3851 15.71 6.29L12.71 3.29C12.5217 3.1017 12.2663 2.99591 12 2.99591C11.7337 2.99591 11.4783 3.1017 11.29 3.29C11.1017 3.4783 10.9959 3.7337 10.9959 4C10.9959 4.2663 11.1017 4.5217 11.29 4.71L12.59 6H3C2.73478 6 2.48043 5.89464 2.29289 5.70711C2.10536 5.51957 2 5.26522 2 5V1C2 0.734784 1.89464 0.48043 1.70711 0.292893C1.51957 0.105357 1.26522 0 1 0C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1V5C0 5.79565 0.316071 6.55871 0.87868 7.12132C1.44129 7.68393 2.20435 8 3 8H12.59L11.29 9.29C11.1963 9.38296 11.1219 9.49356 11.0711 9.61542C11.0203 9.73728 10.9942 9.86799 10.9942 10C10.9942 10.132 11.0203 10.2627 11.0711 10.3846C11.1219 10.5064 11.1963 10.617 11.29 10.71C11.383 10.8037 11.4936 10.8781 11.6154 10.9289C11.7373 10.9797 11.868 11.0058 12 11.0058C12.132 11.0058 12.2627 10.9797 12.3846 10.9289C12.5064 10.8781 12.617 10.8037 12.71 10.71L15.71 7.71C15.801 7.6149 15.8724 7.50275 15.92 7.38C16.02 7.13654 16.02 6.86346 15.92 6.62Z" fill="#383845"/>
+              </svg>
+              <p>登出帐户</p>
 
             </div>
 
           </div>
+        </div>
+        <div @click="mobileNavActive=false,userMenuActive  = !userMenuActive" class="header-btn__user-menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="6" r="2" />
+        <circle cx="12" cy="12" r="2" />
+        <circle cx="12" cy="18" r="2" />
+        </svg>
+
+        </div>
+        <div class="header-user-menu" :class="{'userMenuActive':userMenuActive}">
+
+            <UserMenu :show_top="false" :menu_class="'user-profile-menu header-user-menu'"/>
+
         </div>
       </div>
       <div v-else class="header-btn">
@@ -65,6 +72,32 @@
           </svg>
           <p>授权</p>
         </div>
+      </div>
+
+      <div @click="userMenuActive=false,mobileNavActive  = !mobileNavActive" class="header-nav-mobile__toggle" :class="{'mobileNavToggleActive':mobileNavActive}">
+        <transition name="home">
+        <svg v-if="!mobileNavActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 18H21" stroke="#CECFDF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 12H21" stroke="#CECFDF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 6H21" stroke="#CECFDF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg v-else width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#CECFDF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 9L9 15" stroke="#CECFDF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 9L15 15" stroke="#CECFDF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </transition>
+
+      </div>
+      <div class="header-nav-mobile" :class="{'mobileNavActive':mobileNavActive}">
+        <ul>
+          <li v-for="item in navItems" :key="item.id"><nuxt-link :to="item.link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{item.name}}
+          </nuxt-link></li>
+        </ul>
       </div>
     </div>
     <el-dialog class="authModal" :visible.sync="authModal"  >
@@ -118,7 +151,12 @@
 </template>
 
 <script>
+  import UserMenu from '@/components/UserMenu';
   export default {
+    components: {
+      UserMenu
+    },
+    transition: 'home',
     data() {
       return {
         hovered:false,
@@ -126,7 +164,18 @@
         activeTab:'loginTab',
         logInDialogVisible:false,
         registerDialogVisible:false,
+        mobileNavActive:false,
+        userMenuActive:false,
         register_step:1,
+        navItems:[
+          {id:1,name:'我们的女孩',link:'/'},
+          {id:2,name:'社会团体',link:'/lk'},
+          {id:3,name:'我们的广播',link:'/stream'},
+          {id:4,name:'我们的女孩',link:'/girls'},
+          {id:5,name:'社会团体',link:'/faq'},
+          {id:6,name:'我们的广播',link:'/contacts'},
+
+        ],
         userData:{
           email:null,
           password:null,
@@ -186,12 +235,12 @@
       async userRegister(){
         try{
           let response =  this.$axios.post('/auth/users/', {
-          email:this.registerData.email,
-          password:this.registerData.password2,
-          fio:this.registerData.fio,
-          wechatid:this.registerData.wechatid,
-          nickname:this.registerData.nickname,
-        })
+            email:this.registerData.email,
+            password:this.registerData.password2,
+            fio:this.registerData.fio,
+            wechatid:this.registerData.wechatid,
+            nickname:this.registerData.nickname,
+          })
           console.log(await response)
           this.notify('Успешно','Регистрация завершена','success')
           this.$router.push('/')
@@ -207,3 +256,7 @@
 </script>
 
 
+<style>
+  .home-enter-active, .home-leave-active { transition: opacity .5s; }
+  .home-enter, .home-leave-active { opacity: 0; }
+</style>

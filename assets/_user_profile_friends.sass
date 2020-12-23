@@ -61,3 +61,13 @@
             stroke: #FFFFFF
 
 
+@media (max-width: 576px)
+  .user-profile-friends
+    &-wrapper
+      grid-template-columns: repeat(auto-fill, minmax(135px, 1fr))
+      grid-row-gap: 20px
+    &-item
+      &__img
+        img
+          width: 135px
+          height: 135px

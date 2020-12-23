@@ -31,7 +31,7 @@
     },
     auth: false,
     async asyncData({$axios,params}){
-      console.log(params)
+
      try{
         const get_streamers = await $axios.get(`/api/v1/user/get_streamers?at_home=false`)
         const streamers = get_streamers.data

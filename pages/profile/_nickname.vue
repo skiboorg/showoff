@@ -675,7 +675,8 @@
         await this.$axios.post(`/api/v1/gift/send_gift_to_user`,{
           gift_id:this.selected_gift_id,
           nickname:this.$route.params.nickname,
-          message:this.gift_message
+          message:this.gift_message,
+          stream:false
         })
         this.notify('Успешно','Подарок отправлен','success')
         await this.$auth.fetchUser()

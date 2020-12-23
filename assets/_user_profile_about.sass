@@ -126,3 +126,31 @@
             &:last-child
               font-size: 14px
 
+@media (max-width: 576px)
+  .user
+    &-profile
+      &-about
+        padding: 100px 10px 0 10px
+        height: 275px
+        flex-wrap: wrap
+        &__name
+          flex-grow: 1
+          flex-basis: 100%
+          text-align: center
+        &__img
+          width: 200px
+          height: 200px
+          top: -100px
+          left: 50%
+          transform: translateX(-50%)
+          img
+            width: 200px
+            height: 200px
+        &__form
+          flex-direction: column
+          & .el-input
+            margin-right: 0
+            margin-bottom: 10px
+            &:last-child
+              margin-bottom: 0
+

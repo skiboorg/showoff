@@ -4,7 +4,7 @@
     margin-bottom: 75px
   &-wrapper
     display: grid
-    grid-template-columns: repeat(3,1fr)
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr))
     grid-gap: 20px
   &-item
     position: relative
@@ -58,3 +58,5 @@
       font-size: 50px
       span
         font-size: 30px
+
+//@media (max-width: 576px)
