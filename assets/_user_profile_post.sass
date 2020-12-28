@@ -5,7 +5,6 @@
     align-items: center
     justify-content: flex-start
     margin-bottom: 10px
-
     img
       width: 45px
       height: 45px
@@ -150,3 +149,42 @@
       border-radius: 16px 16px 16px 0
       display: inline-block
       padding: 10px 20px
+
+.user-profile-post
+  &--preview
+    &__inner
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 5px
+      img
+        width: 40px
+        height: 40px
+        object-fit: cover
+        border-radius: 100%
+    &__text
+      position: relative
+      background: #f3f3f3
+      color: #000000
+      padding: 10px
+      border-radius: 4px
+      margin-bottom: 20px
+      span
+        position: absolute
+        display: flex
+        align-items: center
+        justify-content: center
+        right: 0
+        top: 0
+        background: #FFFFFF
+        color: $color-text-d-blue
+        width: 20px
+        height: 20px
+        border-radius: 100%
+        cursor: pointer
+        transition: all .2s linear
+        &:hover
+          transform: scale(1.4)
+          background: $color-text-d-blue
+          color: #FFFFFF
+

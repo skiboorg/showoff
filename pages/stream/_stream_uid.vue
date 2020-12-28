@@ -3,8 +3,9 @@
            element-loading-background="rgba(0, 0, 0, 0.8)" class="stream">
     <div class="container">
       <div v-if="stream.uid" class="stream-wrapper">
-        <div class="stream-left">
-          <div class="stream-video">
+        <div  class="stream-left">
+          <div v-if="!this.$auth.user.is_streamer" class="stream-video">
+
             <div class="stream-video__top">
               <div @click="$router.push(`/profile/${stream.streamer.nickname}`)" class="stream-video__top--user">
                 <img :src="stream.streamer.avatar" alt="">
@@ -45,7 +46,29 @@
               </video>
             </div>
           </div>
-          <el-button type="primary" @click="giftModal=true">openW</el-button>
+          <div  v-else class="user-profile-block" style="min-height: 450px">
+            <h3 class="user-profile-block__title">Донаты</h3>
+            <div  class="gift-table-item stream-donate-item" v-for="donate in donates" :key="donate.id">
+              <p class="gift-table-item__date">{{donate.gift_time}}</p>
+              <div class="gift-table-item__user">
+                <img :src="img_url+donate.gift_from_avatar" alt="">
+                <div class="gift-table-item__user--name">
+                  <p>{{donate.gift_from_fio}}</p>
+                  <p>@{{donate.gift_from}}</p>
+                </div>
+              </div>
+              <div class="gift-table-item__img">
+                {{donate.gift_message}}
+              </div>
+
+              <div class="gift-table-item__price">
+                <img src="/diamond.svg" alt="">
+                <p>{{donate.gift_price}}</p>
+              </div>
+
+            </div>
+          </div>
+          <el-button v-if="!this.$auth.user.is_streamer" type="primary" @click="giftModal=true">openW</el-button>
           <div class="stream-best-donaters">
             <h3>捐款</h3>
             <div class="stream-best-donaters__top"></div>
@@ -67,6 +90,7 @@
             </div>
           </div>
         </div>
+
         <div class="stream-right">
           <div class="stream-tabs">
             <div class="stream-tab streamTabActive">
@@ -188,6 +212,13 @@
         loading: true,
         giftModal: false,
         streamBtnActive:true,
+        img_url:process.env.img_url,
+        donates:[],
+        // donates:[
+        //   {id:1,gift_from: "admin06",gift_from_avatar: "/media/user/avatars/1_12_vGs7rsx.jpg",
+        //   gift_from_fio: "John Doegfh1",gift_img: "/media/gifts/diamond.png",gift_message: "uu",gift_price: 50,
+        //   gift_time: "13:57:00"}
+        // ],
         smiles:[
           {id:1,name:'GRINNING FACE',code:'😀'},
           {id:2,name:'FACE WITH TEARS OF JOY',code:'😁'},
@@ -210,20 +241,27 @@
     watch:{
       async giftRecieved(val){
         console.log('giftRecieved',val)
-        val['gift_to'] === await this.$auth.user.id ? this.$auth.fetchUser() : null
+        //val['gift_to'] === this.$auth.user.id ? this.$auth.fetchUser() : null
         await this.getDonaters()
-            this.$notify({
-              title: `Подарок от @${val['gift_from']}`,
-              dangerouslyUseHTMLString: true,
-              message: ` <img src="${process.env.img_url+val['gift_img']}"> - ${val['gift_message']}`
-            });
+        this.$notify({
+          title: `Подарок от @${val['gift_from']}`,
+          dangerouslyUseHTMLString: true,
+          message: ` <img src="${process.env.img_url+val['gift_img']}"> - ${val['gift_message']}`
+        });
+        this.donates.push(val)
+        if (val['gift_to'] === this.$auth.user.id){
+          this.$auth.fetchUser()
+          let audio = new Audio('/donate-notify.mp3');
+          await audio.play();
+        }
+
 
       }
     },
     created() {
       try{
         !this.stream.uid ? this.$router.push('/') : this.loading = false
-      this.openChat(this.stream.chat_id)
+        this.openChat(this.stream.chat_id)
       }catch (e) {
         console.log('error')
       }

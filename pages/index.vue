@@ -449,30 +449,31 @@
         accordeon3Active:false,
         accordeon4Active:false,
         swiperOption: {
-          slidesPerView: 5,
+          //slidesPerView: 5,
           spaceBetween: 20,
           //centeredSlides: true,
           pagination: {
             el: '.swiper-pagination',
             dynamicBullets: true
           },
-          // breakpoints: {
-          //   // when window width is >= 320px
-          //   320: {
-          //     slidesPerView: 1,
-          //     spaceBetween: 20
-          //   },
-          //   // when window width is >= 480px
-          //   480: {
-          //     slidesPerView: 1,
-          //     spaceBetween: 30
-          //   },
-          //   // when window width is >= 640px
-          //   640: {
-          //     slidesPerView: 7,
-          //     spaceBetween: 40
-          //   }
-          // }
+          breakpoints: {
+            // when window width is >= 320px
+            320: {
+              centeredSlides: true,
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 1,
+              spaceBetween: 30
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 5,
+              spaceBetween: 40
+            }
+          }
         },
 
 

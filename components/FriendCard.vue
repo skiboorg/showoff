@@ -71,7 +71,7 @@
       async sendBlankChatMessage(nickname){
         await this.$axios.post('/api/v1/chat/new_message',{nickname:nickname,message:this.message})
         console.log('message send')
-        this.$router.push(`/lk?chats&user=${nickname}`)
+        this.$auth.user.is_streamer ?  this.$router.push( `/streamer/chats#${nickname}`) : this.$router.push( `/lk/chats#${nickname}`)
       },
       async friendAction(nickname){
         let checkFriendList = this.$auth.user.own_friend_list[0].friend_list.filter(x => x.nickname === nickname)

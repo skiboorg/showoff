@@ -90,3 +90,53 @@
   &__item
     img
       object-fit: cover
+
+
+.streamerAlbumTab
+  &-table-img
+    &__wrapper
+      display: grid
+      grid-template-columns: repeat(auto-fill,minmax(100px,1fr))
+      grid-gap: 20px
+    &__item
+      position: relative
+      img
+        width: 120px
+        height: 90px
+        object-fit: cover
+        border-radius: 4px
+      p
+        position: absolute
+        display: flex
+        align-items: center
+        justify-content: center
+        right: 0
+        top: 0
+        background: #FFFFFF
+        color: $color-text-d-blue
+        width: 20px
+        height: 20px
+        border-radius: 100%
+        cursor: pointer
+        transition: all .2s linear
+        &:hover
+          transform: scale(1.4)
+          background: $color-text-d-blue
+          color: #FFFFFF
+      &.addNewImage
+        border: 1px dashed $color-text-grey
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 120px
+        height: 90px
+        border-radius: 4px
+        cursor: pointer
+        transition: all .2s linear
+        &:hover
+          border-color: $color-text-d-blue
+          color: $color-text-d-blue
+    &__preview
+      width: 100px
+      height: 100px
+      object-fit: cover

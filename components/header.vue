@@ -31,7 +31,7 @@
         </div>
         <div class="header-btn__user">
           <img :src="this.$auth.user.avatar" alt="">
-          <div @click="$router.push('/lk')" class="header-btn__user--name">
+          <div @click="$router.push($auth.user.is_streamer ? '/streamer' : '/lk')" class="header-btn__user--name">
             <p>{{this.$auth.user.fio.length > 5 ? this.$auth.user.fio.slice(0,5) + '...' : this.$auth.user.fio }}</p>
             <p>@{{this.$auth.user.nickname}}</p>
           </div>
@@ -60,9 +60,10 @@
 
         </div>
         <div class="header-user-menu" :class="{'userMenuActive':userMenuActive}">
-
-            <UserMenu :show_top="false" :menu_class="'user-profile-menu header-user-menu'"/>
-
+            <UserMenu :is_streamer_menu="this.$auth.user.is_streamer"
+                      :show_top="false"
+                      :show_home_link="true"
+                      :menu_class="'user-profile-menu header-user-menu'"/>
         </div>
       </div>
       <div v-else class="header-btn">
@@ -73,7 +74,6 @@
           <p>授权</p>
         </div>
       </div>
-
       <div @click="userMenuActive=false,mobileNavActive  = !mobileNavActive" class="header-nav-mobile__toggle" :class="{'mobileNavToggleActive':mobileNavActive}">
         <transition name="home">
         <svg v-if="!mobileNavActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -193,7 +193,10 @@
       };
     },
     watch: {
-
+      '$route.path': function(val) {
+        this.mobileNavActive = false
+        this.userMenuActive = false
+      }
     },
     mounted() {
       this.$auth.user ? this.ws_connect() : null

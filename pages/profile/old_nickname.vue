@@ -1,6 +1,5 @@
 <template>
   <div class="">
-
     <section class="user-profile-bg" :style="'background: url(' + user.bg_image+ ') no-repeat center'">
       <div class="container">
         <div class="user-profile-bg__wrapper">
@@ -139,6 +138,7 @@
                 <p>未来广播</p>
               </div>
             </div>
+
             <div v-show="tabActive==='infoTab'" class="user-profile-tab">
               <div class="user-profile-block">
 
@@ -571,7 +571,7 @@
         tabActive: 'infoTab',//'infoTab',
         comment_text: null,
         giftDialogVisible:false,
-        galleryShow:false,
+
         gift_message:null,
         selected_gift_img:null,
         selected_gift_price:null,
@@ -582,8 +582,8 @@
         posts:[],
         galleries:[],
         galleryTitle:null,
-        imgList:[]
-
+        imgList:[],
+        galleryShow:false,
       }
     },
 

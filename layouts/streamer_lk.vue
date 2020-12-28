@@ -14,8 +14,8 @@
           <div class="user-profile-left">
             <UserAbout :avatar="this.$auth.user.avatar"
                        :level="this.$auth.user.level"
-                       :fio="this.$auth.user.fio"
                        :is_own_profile="true"
+                       :fio="this.$auth.user.fio"
                        :nickname="this.$auth.user.nickname"
                        :balance="this.$auth.user.balance"
                        :is_streamer="this.$auth.user.is_streamer"/>
@@ -38,7 +38,6 @@
     transition: "default",
     data:function(){
       return{
-
       }
     },
     components:{

@@ -8,6 +8,20 @@
     &.header-user-menu
       background: transparent
       box-shadow: unset
+      & .user-profile-menu__item--wrapper
+        color: #FFFFFF
+        &.nuxt-link-exact-active
+          color: $color-text
+      & .user-profile-menu__item
+        svg
+          fill: #FFFFFF
+
+
+      & .profileMenuActive
+        svg
+          fill: $color-text-d-blue
+        a
+          color: $color-text
     &__top
       display: flex
       align-items: center
@@ -24,8 +38,10 @@
           border-radius: 100%
           object-fit: cover
           margin-right: 15px
-
     &__item
+      &--wrapper
+        color: inherit
+
       position: relative
       padding: 15px 35px
       display: flex
@@ -43,6 +59,7 @@
       a
         color: inherit
         font-size: 14px
+
       & .is__vip
         color: #F48502
       &:hover
@@ -80,3 +97,4 @@
           border-radius: 5px
         &.menu-item-vip::before
           background: #F48502
+
