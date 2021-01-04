@@ -47,10 +47,11 @@
             <el-input class="mb-10" v-model="registerData.email" placeholder="Email"></el-input>
             <el-input class="mb-10" v-model="registerData.password1"  placeholder="Пароль" show-password></el-input>
             <el-input class="mb-10" v-model="registerData.password2" placeholder="Пароль повтор" show-password></el-input>
+            <p style="font-size: 12px">Пароль должен состоять минимум из 8 символов</p>
 
             <div style="display: flex; align-items: center;justify-content: space-between">
               <p @click="activeStep-=1" class="btn btn-l-blue">Назад</p>
-              <p @click="activeStep+=1" class="btn btn-l-blue">Далее</p>
+              <p @click="activeStep+=1" class="btn btn-l-blue " :class="{'btnDisabled':!is_valid}">Далее</p>
             </div>
           </div>
 
@@ -86,6 +87,7 @@
           agree:null,
         },
         registerData:{
+          fio:null,
           nickname:null,
           email:null,
           wechatid:null,
@@ -95,7 +97,6 @@
           subscribe_type:'1',
         },
 
-
       };
     },
 
@@ -104,6 +105,13 @@
     },
     mounted() {
 
+    },
+    computed:{
+      is_valid(){
+        return this.registerData.fio && this.registerData.nickname && this.registerData.email && this.registerData.wechatid &&
+            this.registerData.password1 && this.registerData.password2 && this.registerData.password1 === this.registerData.password2 &&
+            this.registerData.password1.length >= 8
+      }
     },
     methods: {
       notify(title,message,type){

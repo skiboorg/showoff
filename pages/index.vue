@@ -33,7 +33,7 @@
         </div>
       </a>
     </div>
-    <section class="banner" style="background: url(/banner.jpg) no-repeat center">
+    <section class="banner">
       <div style="display: none" class="banner-inner">
         <h1 class="section-title text-white text-center">来自俄罗斯的美丽女孩在我们的网站上见面并交流！</h1>
         <div class="banner-checks">
@@ -61,7 +61,61 @@
         <img class="banner-decor" src="/banner-decor.png" alt="">
       </div>
     </section>
+    <section>
+      <div class="container">
+        <h3 class="section-title mb-30"><nuxt-link to="/streams">与女孩预定的广播</nuxt-link> </h3>
+        <p class="mb-30">培训，如果您真的有兴趣的话，您将会成功。例如，经常在视频流的前半小时或一个小时，我一直在讲话直到订阅者赶上。如果您对我的操作方式感兴趣-签名中有一个链接，则可以执行相同的操作。只是在您玩游戏和思考某件事时，如果它不会干扰游戏玩法，请大声说出来（例如，在两个角色之间的情节对话中）。</p>
+        <div class="stream-video bg-none">
+          <div class="stream-video__top">
+            <div  class="stream-video__top--user">
+              <img :src="streamers[0].avatar" alt="">
+              <div class="stream-video__top--user--info">
+                <p>{{streamers[0].fio}}</p>
+                <p>@{{streamers[0].nickname}}</p>
+              </div>
+            </div>
+            <p style="font-size: 24px;font-weight: bold">烹饪您最喜欢的食物</p>
+            <div class="stream-video__top--stats">
+              <img src="/girl_rating_icon.png" alt="">
+              <div class="user-profile-about__girl-stats--item--info">
+                <p>{{streamers[0].streamer_rating}}</p>
+                <p>广播评级</p>
+              </div>
+            </div>
+          </div>
+          <div class="stream-video__content mb-40 ">
 
+            <video style="width: 100%;height: 100%" controls>
+              <source src="/video.mp4" type="video/mp4">
+
+              Your browser does not support HTML video.
+            </video>
+
+          </div>
+          <p>培训，如果您真的有兴趣的话，您将会成功。例如，经常在视频流的前半小时或一个小时，我一直在讲话直到订阅者赶上。如果您对我的操作方式感兴趣-签名中有一个链接，则可以执行相同的操作。只是在您玩游戏和思考某件事时，如果它不会干扰游戏玩法，请大声说出来（例如，在两个角色之间的情节对话中）。</p>
+        </div>
+      </div>
+    </section>
+    <section class="slider-streams">
+      <div class="container">
+        <h3 class="section-title"><nuxt-link to="/streams">与女孩预定的广播</nuxt-link> </h3>
+      </div>
+      <client-only>
+        <swiper class="slider-streams__wrapper"  :options="swiperOption">
+          <div class="swiper-pagination" slot="pagination"></div>
+          <swiper-slide v-for="stream in streams"
+                        :key="stream.id">
+            <StreamCard :name="stream.name"
+                        :avatar="stream.streamer.avatar"
+                        :stream_img="stream.image"
+                        :nickname="stream.streamer.nickname"
+                        :is_vip="stream.is_vip" :url="stream.url"/>
+          </swiper-slide>
+        </swiper>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </client-only>
+
+    </section>
     <section class="features">
       <div class="container">
         <div class="features-wrapper">
@@ -157,61 +211,8 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="container">
-        <h3 class="section-title mb-30"><nuxt-link to="/streams">与女孩预定的广播</nuxt-link> </h3>
-        <p class="mb-30">培训，如果您真的有兴趣的话，您将会成功。例如，经常在视频流的前半小时或一个小时，我一直在讲话直到订阅者赶上。如果您对我的操作方式感兴趣-签名中有一个链接，则可以执行相同的操作。只是在您玩游戏和思考某件事时，如果它不会干扰游戏玩法，请大声说出来（例如，在两个角色之间的情节对话中）。</p>
-        <div class="stream-video bg-none">
-          <div class="stream-video__top">
-            <div  class="stream-video__top--user">
-              <img src="http://placehold.it/200" alt="">
-              <div class="stream-video__top--user--info">
-                <p>Anna Markina</p>
-                <p>@annamarkina</p>
-              </div>
-            </div>
-            <p style="font-size: 24px;font-weight: bold">烹饪您最喜欢的食物</p>
-            <div class="stream-video__top--stats">
-              <img src="/girl_rating_icon.png" alt="">
-              <div class="user-profile-about__girl-stats--item--info">
-                <p>712</p>
-                <p>广播评级</p>
-              </div>
-            </div>
-          </div>
-          <div class="stream-video__content mb-40 ">
 
-            <video style="width: 100%;height: 100%" controls>
-              <source src="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4" type="video/mp4">
 
-              Your browser does not support HTML video.
-            </video>
-
-          </div>
-          <p>培训，如果您真的有兴趣的话，您将会成功。例如，经常在视频流的前半小时或一个小时，我一直在讲话直到订阅者赶上。如果您对我的操作方式感兴趣-签名中有一个链接，则可以执行相同的操作。只是在您玩游戏和思考某件事时，如果它不会干扰游戏玩法，请大声说出来（例如，在两个角色之间的情节对话中）。</p>
-        </div>
-      </div>
-    </section>
-    <section class="slider-streams">
-      <div class="container">
-        <h3 class="section-title"><nuxt-link to="/streams">与女孩预定的广播</nuxt-link> </h3>
-      </div>
-      <client-only>
-        <swiper class="slider-streams__wrapper"  :options="swiperOption">
-          <div class="swiper-pagination" slot="pagination"></div>
-          <swiper-slide v-for="stream in streams"
-                        :key="stream.id">
-            <StreamCard :name="stream.name"
-                        :avatar="stream.streamer.avatar"
-                        :stream_img="stream.image"
-                        :nickname="stream.streamer.nickname"
-                        :is_vip="stream.is_vip" :url="stream.url"/>
-          </swiper-slide>
-        </swiper>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </client-only>
-
-    </section>
     <section class="pricing">
       <div class="container">
         <h3 class="section-title">我们的房价</h3>
@@ -232,7 +233,7 @@
             </div>
             <p class="btn btn-l-blue">找出联络人</p>
           </div>
-          <div class="pricing-item">
+          <div class="pricing-item  price-vip">
             <div class="pricing-item__decor decor-two">
               <div class="crown">
                 <svg  width="44" height="31" viewBox="0 0 44 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -304,6 +305,7 @@
           <h3 class="section-title">
             有关我们 平台的问 题的答案
           </h3>
+
           <div class="faq-items">
             <div class="faq-item" :class="{'faqItemActive':accordeon1Active}">
               <div class="faq-item__top" @click="accordeon1Active ? accordeon1Active=false : accordeon1Active=true">

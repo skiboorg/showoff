@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="main-wrapper">
     <Header/>
     <ProfileBg :is_own_profile="true"/>
     <section class="user-profile-content">
@@ -36,6 +36,16 @@
   import ProfileBg from '@/components/userLk/ProfileBg';
   export default {
     transition: "default",
+    head: {
+    title: 'Профиль',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description'
+      }
+    ],
+  },
     data:function(){
       return{
       }

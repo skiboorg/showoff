@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="main-wrapper">
     <Header/>
     <ProfileBg :is_own_profile="true"/>
     <section class="user-profile-content">
@@ -30,29 +30,39 @@
 </template>
 
 <script>
-  import Header from '@/components/header';
-  import Footer from '@/components/footer';
-  import UserMenu from '@/components/UserMenu';
-  import ProfileBg from '@/components/userLk/ProfileBg';
-  export default {
-    transition: "default",
-    data:function(){
-      return{
-
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import UserMenu from '@/components/UserMenu';
+import ProfileBg from '@/components/userLk/ProfileBg';
+export default {
+  transition: "default",
+  head: {
+    title: '我的个人帐号',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description'
       }
-    },
-    components:{
-      Header,
-      Footer,
-      UserMenu,
-      ProfileBg
-    },
+    ],
+  },
+  data:function(){
+    return{
 
-  }
+    }
+  },
+  components:{
+    Header,
+    Footer,
+    UserMenu,
+    ProfileBg
+  },
+
+}
 </script>
 
 <style>
-  .page-enter-active,
+.page-enter-active,
 .page-leave-active {
   transition-property: opacity;
   transition-timing-function: ease-in-out;

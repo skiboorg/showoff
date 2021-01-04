@@ -1,11 +1,11 @@
 <template>
-  <div class="">
+  <div class="main-wrapper">
     <Header/>
     <ProfileBg :is_own_profile="false"/>
     <section class="user-profile-content">
       <div class="container">
         <div class="user-profile-wrapper" :class="{'hideRight':!this.$auth.loggedIn}">
-          <div v-show="this.$auth.loggedIn" class="user-profile-right">
+          <div v-if="this.$auth.loggedIn" class="user-profile-right">
              <UserMenu :is_streamer_menu="this.$auth.user.is_streamer"
                       :class="'user-profile-menu side-menu'"
                       :show_home_link="false"
@@ -42,8 +42,17 @@
   import ProfileMenu from '@/components/ProfileMenu';
   import ProfileBg from '@/components/userLk/ProfileBg';
   export default {
-
     transition: "default",
+    head: {
+    title: `个人资料`,
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description'
+      }
+    ],
+  },
 
     data(){
       return{

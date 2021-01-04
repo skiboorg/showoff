@@ -1,0 +1,18 @@
+.contacts
+  &-wrapper
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    flex-wrap: wrap
+  &-left
+    flex-basis: 49%
+  &-right
+    flex-basis: 49%
+    & .el-textarea__inner
+      border-radius: 20px
+      resize: none
+    & .el-select
+      width: 100%
+    & .el-select-dropdown__item
+      &.selected
+        color: $color-text-d-blue

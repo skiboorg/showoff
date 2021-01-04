@@ -1,4 +1,6 @@
 .banner
+  background: url(/banner.jpg) no-repeat
+  background-position-x: center
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
   height: 748px
   margin-bottom: 115px
@@ -73,4 +75,7 @@
 
         line-height: 150%
 
-//https://rt.pornhub.com/view_video.php?viewkey=ph58db6bc4b2056
+@media (max-width: 576px)
+  .banner
+    background: url(http://placehold.it/400) no-repeat
+    height: 400px
