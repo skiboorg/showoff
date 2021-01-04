@@ -60,12 +60,10 @@
               <div class="gift-table-item__img">
                 {{donate.gift_message}}
               </div>
-
               <div class="gift-table-item__price">
                 <img src="/diamond.svg" alt="">
                 <p>{{donate.gift_price}}</p>
               </div>
-
             </div>
           </div>
           <el-button v-if="!this.$auth.user.is_streamer" type="primary" @click="giftModal=true">openW</el-button>
@@ -235,7 +233,6 @@
         selected_gift_price:null,
         selected_gift_id:null,
         top_donaters:[],
-
       }
     },
     watch:{
@@ -254,8 +251,7 @@
           let audio = new Audio('/donate-notify.mp3');
           await audio.play();
         }
-
-
+        console.log(this.donates)
       }
     },
     created() {

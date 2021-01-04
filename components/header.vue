@@ -29,9 +29,9 @@
 
           </div>
         </div>
-        <div class="header-btn__user">
+        <div @click="$router.push($auth.user.is_streamer ? '/streamer' : '/lk')" class="header-btn__user">
           <img :src="this.$auth.user.avatar" alt="">
-          <div @click="$router.push($auth.user.is_streamer ? '/streamer' : '/lk')" class="header-btn__user--name">
+          <div  class="header-btn__user--name">
             <p>{{this.$auth.user.fio.length > 5 ? this.$auth.user.fio.slice(0,5) + '...' : this.$auth.user.fio }}</p>
             <p>@{{this.$auth.user.nickname}}</p>
           </div>
@@ -174,6 +174,7 @@
           {id:4,name:'我们的女孩',link:'/girls'},
           {id:5,name:'社会团体',link:'/faq'},
           {id:6,name:'我们的广播',link:'/contacts'},
+          {id:6,name:'ВХОД ДЛЯ ДЕВУШЕК',link:'/login'},
 
         ],
         userData:{

@@ -3,7 +3,7 @@
     <div class="user-profile-block">
       <h3 class="user-profile-block__title">Подарки</h3>
       <div class="gift-table-item" v-for="gift in user_gifts" :key="gift.id">
-        <p class="gift-table-item__date">{{gift.created_at}}</p>
+        <p class="gift-table-item__date">{{new Date(gift.created_at).getHours()}}:{{new Date(gift.created_at).getMinutes()}} {{new Date(gift.created_at).toLocaleDateString()}}</p>
         <div class="gift-table-item__user">
           <img :src="gift.from_user.avatar" alt="">
           <div class="gift-table-item__user--name">

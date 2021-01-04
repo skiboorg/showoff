@@ -62,7 +62,7 @@
     data() {
       return {
         userData:{
-          avatar:this.$auth.user.avatar,
+          avatar:this.$auth.loggedIn ? this.$auth.user.avatar : null,
           password1:null,
           password2:null
         },

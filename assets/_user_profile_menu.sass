@@ -5,6 +5,11 @@
     border-radius: 5px
     position: sticky
     top: 20px
+    &.faq-menu
+      & .user-profile-menu__item
+        p
+          flex-basis: 100%
+          text-align: unset
     &.header-user-menu
       background: transparent
       box-shadow: unset
@@ -15,8 +20,6 @@
       & .user-profile-menu__item
         svg
           fill: #FFFFFF
-
-
       & .profileMenuActive
         svg
           fill: $color-text-d-blue
@@ -41,7 +44,6 @@
     &__item
       &--wrapper
         color: inherit
-
       position: relative
       padding: 15px 35px
       display: flex
@@ -63,12 +65,12 @@
       & .is__vip
         color: #F48502
       &:hover
-        background: #F8F8FB
+        //background: #F8F8FB
         border-radius: 2px
         transition: all .2s linear
         svg
           transition: all .2s linear
-          fill: $color-text-d-blue
+        //  fill: $color-text-d-blue
         //&::before
         //  transition: all .2s linear
         //  position: absolute
